@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    --background: 240 6% 10%;
+    @apply bg-[hsl(var(--background))];
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-2 {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes marquee-reverse-2 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee-2 {
+  animation: marquee-2 25s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 30s linear infinite;
+}
+
+.animate-marquee-reverse-2 {
+  animation: marquee-reverse-2 30s linear infinite;
+}
+
+/* Testimonials carousel styles */
+.testimonials-carousel {
+    padding: 0 60px;
+    margin: 0 -60px;
+}
+
+.testimonials-carousel .carousel-cell {
+    opacity: 0.5;
+    transform: scale(0.85);
+    transition: opacity 0.4s, transform 0.4s;
+}
+
+.testimonials-carousel .carousel-cell.is-selected {
+    opacity: 1;
+    transform: scale(0.95);
+}
+
+.testimonials-carousel .flickity-viewport {
+    overflow: visible;
+    padding: 20px 0;
+}
+
+.testimonials-carousel .flickity-page-dots {
+    bottom: -40px;
+}
+
+.testimonials-carousel .flickity-page-dots .dot {
+    width: 8px;
+    height: 8px;
+    margin: 0 6px;
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.testimonials-carousel .flickity-page-dots .dot.is-selected {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.2);
+}

@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+/* @layer base {
   body {
     --background: 240 6% 10%;
     @apply bg-[hsl(var(--background))];
   }
-}
+} */
 
 @keyframes marquee {
   from {

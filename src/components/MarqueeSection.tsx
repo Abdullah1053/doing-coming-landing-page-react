@@ -24,19 +24,19 @@ const MarqueeSection = () => {
   const bottomRowItems = [
     "مطاعم",
     "منظمات خيرية",
-    "Enterpreneurs",
-    "Copywriters",
-    "Digital Marketers",
-    "Developers",
+    "المنتجات الغذائية",
+    "الخدمات الرقمية",
+    "الصناعات اليدوية",
+    "منتجات صحية وتجميلية",
   ];
 
   const bottomRowItems2 = [
-    "Digital Agencies",
-    "Product Designers",
-    "Enterpreneurs",
-    "Copywriters",
-    "Digital Marketers",
-    "Developers",
+    "المنتجات الزراعية",
+    "الخدمات اللوجستية",
+    "السياحة والسفر",
+    "أدوات الرياضة واللياقة",
+    "تجارة التجزئة",
+    "الصناعات اليدوية",
   ];
 
   return (
@@ -51,7 +51,7 @@ const MarqueeSection = () => {
           {topRowItems.map((text, index) => (
             <h5
               key={index}
-              className="group/heading inline-flex rounded-2xl bg-[#111114] px-8 py-5 font-medium leading-snug lg:text-3xl"
+              className="group/heading inline-flex rounded-2xl bg-stone-200 dark:bg-neutral-800 text-gray-900 dark:text-dark-text px-8 py-5 font-medium leading-snug lg:text-2xl"
             >
               <span className="bg-gradient-to-r from-[#DBDADA] to-[#7A7878] bg-clip-text leading-tight text-transparent group-hover/heading:from-gradient-to group-hover/heading:to-gradient-from">
                 {text}
@@ -63,7 +63,7 @@ const MarqueeSection = () => {
           {topRowItems2.map((text, index) => (
             <h5
               key={index}
-              className="group/heading inline-flex rounded-2xl bg-[#111114] px-8 py-5 font-medium leading-tight lg:text-3xl"
+              className="group/heading inline-flex rounded-2xl bg-stone-200 dark:bg-neutral-800 text-gray-900 dark:text-dark-text px-8 py-5 font-medium leading-tight lg:text-2xl"
             >
               <span className="bg-gradient-to-r from-[#DBDADA] to-[#7A7878] bg-clip-text leading-tight text-transparent group-hover/heading:from-gradient-to group-hover/heading:to-gradient-from">
                 {text}
@@ -77,7 +77,7 @@ const MarqueeSection = () => {
           {bottomRowItems.map((text, index) => (
             <h5
               key={index}
-              className="group/heading inline-flex rounded-2xl bg-[#111114] px-8 py-5 font-medium leading-snug lg:text-3xl"
+              className="group/heading inline-flex rounded-2xl bg-stone-200 dark:bg-neutral-800 text-gray-900 dark:text-dark-text px-8 py-5 font-medium leading-snug lg:text-2xl"
             >
               <span className="bg-gradient-to-r from-[#DBDADA] to-[#7A7878] bg-clip-text leading-tight text-transparent group-hover/heading:from-gradient-to group-hover/heading:to-gradient-from">
                 {text}
@@ -89,7 +89,7 @@ const MarqueeSection = () => {
           {bottomRowItems2.map((text, index) => (
             <h5
               key={index}
-              className="group/heading inline-flex rounded-2xl bg-[#111114] px-8 py-5 font-medium leading-tight lg:text-3xl"
+              className="group/heading inline-flex rounded-2xl bg-stone-200 dark:bg-neutral-800 text-gray-900 dark:text-dark-text px-8 py-5 font-medium leading-tight lg:text-2xl"
             >
               <span className="bg-gradient-to-r from-[#DBDADA] to-[#7A7878] bg-clip-text leading-tight text-transparent group-hover/heading:from-gradient-to group-hover/heading:to-gradient-from">
                 {text}

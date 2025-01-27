@@ -10,6 +10,7 @@ import TemplatesSection from "./components/TemplatesSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import PricingSection from "./components/PricingSection";
 import FaqSection from "./components/FaqSection";
+import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 import { useState } from "react";
 
@@ -25,25 +26,26 @@ function App() {
     <div
       dir="rtl"
       className={`min-h-screen ${
-        darkMode ? "bg-black text-white" : "bg-white text-black"
+        darkMode ? "bg-black text-white" : "bg-white text-gray-950"
       }`}
     >
       <Header
         theme={darkMode}
         onChangeTheme={(theme) => toggleDarkMode(theme)}
       />
-      <Banner />
-      <BannerImage />
+      <Banner theme={darkMode} />
+      {/* <BannerImage /> */}
       <Generators />
       <Features />
+      <HowItWorks />
       <MarqueeSection />
       <ToolsSection />
-      <TemplatesSection />
+      {/* <TemplatesSection /> */}
       <TestimonialsSection />
-      <HowItWorks />
       <PricingSection />
       <FaqSection />
-      <Footer />
+      <CTASection />
+      <Footer theme={darkMode} />
     </div>
   );
 }

@@ -65,12 +65,12 @@ const ToolsSection = () => {
         </figure>
 
         <div className="w-full lg:w-5/12">
-          <h3 className="mb-10 text-white">{tab.title}</h3>
-          <p className="mb-10 text-white/80">{tab.description}</p>
+          <h3 className="mb-10 text-gray-900 dark:text-white">{tab.title}</h3>
+          <p className="mb-10 text-gray-800 dark:text-white/80">{tab.description}</p>
 
           <div className="flex flex-wrap items-center gap-8 text-sm">
             <a
-              className="relative inline-flex w-56 gap-3 overflow-hidden whitespace-nowrap rounded-lg bg-gradient-to-r from-blue-300 to-blue-500 to-50% py-5 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20"
+              className="relative inline-flex w-56 gap-3 overflow-hidden whitespace-nowrap rounded-lg bg-gradient-to-r from-sky-600 to-sky-700 to-50% py-5 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20"
               href="https://codecanyon.net/item/magicai-openai-content-text-image-chat-code-generator-as-saas/45408109"
             >
               <span
@@ -87,7 +87,7 @@ const ToolsSection = () => {
               </span>
             </a>
             <a
-              className="group/btn flex items-center gap-2 text-white/80 transition-colors hover:text-primary"
+              className="group/btn flex items-center gap-2 text-gray-800 dark:text-white/80 transition-colors hover:text-primary"
               href="index.html#templates"
             >
               Discover MagicAI
@@ -108,24 +108,23 @@ const ToolsSection = () => {
     >
       <div className="container">
         <header className="mx-auto mb-20 w-full text-center lg:w-4/5">
-          <h2 className="mb-7 text-white">Magic Tools.</h2>
-          <p className="m-0 mx-auto text-xl/7 text-white/80 lg:w-9/12">
-            Glide gives you the powers of a developer and a code — for designer
-            to create remarkable tools that solve your most challenging business
-            problems.
+          <h2 className="mb-7 text-gray-900 dark:text-white">قيمة استثنائية لتجارتك</h2>
+          <p className="m-0 mx-auto text-xl/12 text-gray-600 dark:text-white/60 lg:w-9/12">
+            أدواتنا تدعمك في بناء تجربة مميزة تعزز ولاء العملاء ، تحقق لك مبيعات
+            وتبنيّ لك مستقبل تجاري استثنائي.
           </p>
         </header>
 
         <div className="mb-14">{tabs.map((tab) => renderTabContent(tab))}</div>
 
-        <div className="lqd-tabs flex flex-wrap justify-between gap-3 rounded-3xl border border-white/5 p-2 lg:flex-nowrap lg:rounded-full">
+        <div className="lqd-tabs flex flex-wrap justify-between gap-3 rounded-3xl border border-white/3 p-2 lg:flex-nowrap lg:rounded-full">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               data-target={`#${tab.id}`}
-              className={`group/trigger flex text-base max-sm:w-full px-3 py-3.5 rounded-full max-mdbasis-1/3 max-md:grow text-center justify-center transition-all md:px-8 text-white/60 hover:text-white hover:scale-105 ${
+              className={`group/trigger flex text-base max-sm:w-full px-3 py-3.5 rounded-full max-mdbasis-1/3 max-md:grow text-center justify-center transition-all md:px-8  hover:scale-105 ${
                 activeTab === tab.id
-                  ? "lqd-is-active bg-heading-foreground/10 !text-white"
+                  ? "lqd-is-active bg-stone-200 text-gray-900"
                   : ""
               }`}
               onClick={() => setActiveTab(tab.id)}

@@ -1,13 +1,20 @@
+@font-face {
+  font-family: "questv";
+  src: url("../public/assets/fonts/Questv.otf");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
+@layer base {
   body {
-    --background: 240 6% 10%;
-    @apply bg-[hsl(var(--background))];
+    /* --background: 240 6% 10%;
+    @apply bg-[hsl(var(--background))]; */
+    font-family: 'questv', sans-serif;
+    /* font-size: 62.5%; */
   }
-} */
+}
 
 @keyframes marquee {
   from {
@@ -98,4 +105,9 @@
 .testimonials-carousel .flickity-page-dots .dot.is-selected {
     background: rgba(255, 255, 255, 0.9);
     transform: scale(1.2);
+}
+
+.bg-dark-theme {
+  /* background-color: #23272A; */
+  /* background-color: #212124; */
 }

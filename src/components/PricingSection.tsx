@@ -29,29 +29,29 @@ const PricingSection = () => {
   const renderPricingCard = (plan) => (
     <div
       className={`relative flex flex-col items-start rounded-3xl px-10 py-10 text-start transition-all md:hover:-translate-y-1 md:hover:scale-[1.025] lg:py-12 ${
-        plan.featured ? "bg-[#0d0d0d]" : "bg-black"
+        plan.featured ? "bg-stone-100 dark:bg-black" : "bg-stone-100 dark:bg-white/20"
       }`}
     >
       <h5 className="gradient-text relative mb-6 inline-block text-xs font-medium uppercase">
         {plan.name}
       </h5>
 
-      <p className="mb-7 text-sm text-white">
-        <small className="font-heading text-[24px] font-bold leading-none text-white">
-          $
-        </small>
-        <span className="align-sub font-heading text-[50px] font-bold leading-none text-white">
+      <p className="mb-7 text-sm text-gray-900 dark:text-white">
+        <span className="align-sub font-heading text-[50px] font-bold leading-none text-gray-900 dark:text-white">
           {plan.price}
         </span>
-        <span className="text-white/70">/ mo</span>
+        <small className="font-heading mr-2 text-[24px] font-bold leading-none text-gray-900 dark:text-white">
+          ريال
+        </small>
+        <span className="text-gray-700 dark:text-white/70"> / شهرياً</span>
       </p>
 
       <hr className="w-full opacity-10" />
 
-      <ul className="mb-12 mt-8 flex flex-col gap-6 text-base text-white/80">
+      <ul className="mb-12 mt-8 flex flex-col gap-6 text-base text-gray-900 dark:text-white/80">
         {plan.features.map((feature, index) => (
           <li key={index} className="group flex items-center">
-            <span className="size-7 me-5 inline-grid shrink-0 place-content-center rounded-full bg-white/10 text-white transition-all group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
+            <span className="size-7 me-5 inline-grid shrink-0 place-content-center rounded-full bg-secondary text-white transition-all group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
               {renderCheckIcon()}
             </span>
             {feature}
@@ -60,13 +60,11 @@ const PricingSection = () => {
       </ul>
 
       <a
-        className="relative mx-auto inline-flex w-full max-w-[400px] gap-3 overflow-hidden whitespace-nowrap rounded-lg bg-gradient-to-r   from-blue-300 to-blue-500 to-50% py-5 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20
-            
-            "
+        className="relative mx-auto inline-flex w-full max-w-[400px] gap-3 overflow-hidden whitespace-nowrap rounded-lg bg-gradient-to-r   from-sky-600 to-sky-700 to-50% py-5 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20"
         href={plan.link}
       >
         <span className="flex w-full justify-center text-center">
-          Select {plan.name}
+          {plan.button}
         </span>
       </a>
 
@@ -99,34 +97,34 @@ const PricingSection = () => {
       } lg:pb-24 lg:pt-16`}
       id="pricing"
     >
-      <div className="container">
-        <header className="mx-auto mb-14 w-full text-center lg:w-4/5">
-          <h2 className="mb-7 text-white">باقات المنصة</h2>
-          <p className="mx-auto mb-4 text-xl/7 text-white/70 lg:w-9/12">
-            تقدم منصة دوينج الأدوات التي تحتاجها لإنشاء وإدارة متجرك الإلكتروني
-            بكل سهولة. سواء كنت مبتدئًا أو محترفًا، نحن هنا لمساعدتك على تحقيق
-            أهدافك التجارية."
+      <div className="container relative w-full max-w-[1680px]">
+        <header className="container mx-auto mb-14 w-full text-center lg:w-4/5">
+          <h2 className="mb-7 text-gray-900 dark:text-white">باقات المنصة</h2>
+          <p className="mx-auto mb-4 text-xl/12 text-gray-700 dark:text-white/70 lg:w-9/12">
+            {" "}
+            باقات مصممة خصيصًا لتتناسب مع تطلعات وإمكانية كل تاجر، اختر الي
+            يناسبك وانطلق مع متجر إلكتروني متكامل
           </p>
         </header>
 
-        <div className="lqd-tabs flex flex-wrap justify-center">
-          <div className="lqd-tabs-triggers mx-auto mb-24 inline-flex flex-wrap justify-between gap-3 rounded-2xl border border-white/5 p-2 max-sm:w-full md:rounded-full">
+        <div className="container lqd-tabs flex flex-wrap justify-center">
+          <div className="lqd-tabs-triggers mx-auto mb-24 inline-flex flex-wrap justify-between gap-3 rounded-2xl border border-white/3 p-2 max-sm:w-full md:rounded-full">
             <button
               onClick={() => handleTabClick("pricing-monthly")}
-              className={`group/trigger flex relative max-sm:grow text-center justify-center text-base gap-2 px-3 py-3.5 rounded-full transition-all md:px-8 text-white/60 hover:text-white hover:scale-105 ${
-                activeTab === "pricing-monthly" ? "bg-white/10 !text-white" : ""
+              className={`group/trigger flex relative max-sm:grow text-center justify-center text-base gap-2 px-3 py-3.5 rounded-full transition-all md:px-8 hover:scale-105 ${
+                activeTab === "pricing-monthly" ? "bg-stone-200 text-gray-900" : ""
               }`}
             >
-              Monthly
+              شهري
             </button>
             <button
               onClick={() => handleTabClick("pricing-annual")}
-              className={`group/trigger flex relative max-sm:grow text-center justify-center text-base gap-2 px-3 py-3.5 rounded-full transition-all md:px-8 text-white/60 hover:text-white hover:scale-105 ${
-                activeTab === "pricing-annual" ? "bg-white/10 !text-white" : ""
+              className={`group/trigger flex relative max-sm:grow text-center justify-center text-base gap-2 px-3 py-3.5 rounded-full transition-all md:px-8 hover:scale-105 ${
+                activeTab === "pricing-annual" ? "bg-stone-200 text-gray-900" : ""
               }`}
             >
-              Annual
-              <span className="inline-block whitespace-nowrap sm:absolute sm:start-full sm:top-full sm:-ms-8 sm:-mt-3">
+              سنوي
+              <span className="inline-block whitespace-nowrap sm:absolute sm:start-full sm:top-full sm:-ms-24 sm:-mt-1">
                 <svg
                   className="hidden sm:block"
                   width="47"
@@ -144,30 +142,12 @@ const PricingSection = () => {
                     fill="#7A7A82"
                   />
                 </svg>
-                <span className="gradient-text inline-block">Save 30%</span>
+                <span className="gradient-text inline-block">وفر 30%</span>
               </span>
-            </button>
-            <button
-              onClick={() => handleTabClick("pricing-lifetime")}
-              className={`group/trigger flex relative max-sm:grow text-center justify-center text-base gap-2 px-3 py-3.5 rounded-full transition-all md:px-8 text-white/60 hover:text-white hover:scale-105 ${
-                activeTab === "pricing-lifetime"
-                  ? "bg-white/10 !text-white"
-                  : ""
-              }`}
-            >
-              Lifetime
-            </button>
-            <button
-              onClick={() => handleTabClick("pricing-prepaid")}
-              className={`group/trigger flex relative max-sm:grow text-center justify-center text-base gap-2 px-3 py-3.5 rounded-full transition-all md:px-8 text-white/60 hover:text-white hover:scale-105 ${
-                activeTab === "pricing-prepaid" ? "bg-white/10 !text-white" : ""
-              }`}
-            >
-              Pre-Paid
             </button>
           </div>
 
-          <div className="lqd-tabs-content-wrap w-full px-10 max-xl:px-0">
+          <div className="container lqd-tabs-content-wrap w-full px-10 max-xl:px-0">
             <div className="lqd-tabs-content">
               <div
                 id="pricing-monthly"
@@ -175,40 +155,49 @@ const PricingSection = () => {
               >
                 <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
                   {renderPricingCard({
-                    name: "Free",
+                    name: 'الباقة المجانية " للبدأ "',
                     price: "0",
                     features: [
-                      "ChatGPT 3.5",
-                      "Basic Support",
-                      "10,000 Word Tokens",
-                      "5,000 Image Tokens",
+                      "عدد المنتجات 30 منتج",
+                      "طلبات لا محدودة",
+                      "عملاء لا محدودين",
+                      "خدمة عملاء على مدار اليوم",
+                      "إمكانية تصدير واستيراد المنتجات",
+                      'خيارات الشحن والتوصيل "مستعجل"',
                     ],
+                    button: "اختر المجاني",
                     link: "https://dark.projecthub.ai/register?plan=3",
                   })}
                   {renderPricingCard({
-                    name: "Teams",
-                    price: "19",
+                    name: ' الباقة المتقدمة " لنمو التجار " ',
+                    price: "16,600",
                     features: [
-                      "ChatGPT 4",
-                      "5 Seats Available",
-                      "VIP Support",
-                      "Access to premium templates",
-                      "30,000 Word Tokens",
-                      "10,000 Image Tokens",
+                      "عدد لا محدود من المنتجات والطلبات والعملاء",
+                      "الدفع الإلكتروني وربط مع شركات الشحن",
+                      "التقارير المتقدمة: تحليل شامل لأداء متجرك",
+                      "خيارات تصميم مرنة مخصصة للمتجر مع إمكانية اختيار ثيم جاهز",
+                      "(One-Page Checkout) تجربة شراء سهلة وسريعة للعملاء",
+                      "كوبونات التخفيض المتقدمة والسلات المتروكة ",
                     ],
+                    button: "اختر الباقة",
                     link: "https://dark.projecthub.ai/register?plan=4",
                   })}
                   {renderPricingCard({
-                    name: "Premium",
-                    price: "29",
+                    name: ' الباقة الاحترافية "لتُجار الأعمال الكبرى " ',
+                    price: "44,000",
                     featured: true,
                     features: [
-                      "2 Days of free trial.",
-                      "All features in previous plans",
-                      "VIP Support",
-                      "Unlimited Word Tokens",
-                      "Unlimited Image Tokens",
+                      "كوبونات تخفيض وحملات تسويقية عبر SMS",
+                      "تحسين محركات البحث SEO",
+                      "عدد لا محدود من المنتجات والعملاء",
+                      "الدفع الإلكتروني و الربط مع شركات الشحن",
+                      "التقارير المتقدمة وGoogle Tag Manager",
+                      "إمكانية تخصيص التصميم باستخدام Custom CSS",
+                      "استعادة البيانات المحذوفة ووضع الصيانة",
+                      "ربط مع خدمات الإعلانات مثل Google Ads و Facebook Ads",
+                      "إعدادات متقدمة للعملاء والطلبات",
                     ],
+                    button: "الباقة الاحترافية \"التاجر المحترف\"",
                     link: "https://dark.projecthub.ai/register?plan=2",
                   })}
                 </div>
@@ -229,60 +218,6 @@ const PricingSection = () => {
                       "50,000 Image Tokens",
                     ],
                     link: "https://dark.projecthub.ai/register?plan=5",
-                  })}
-                </div>
-              </div>
-              <div
-                id="pricing-prepaid"
-                className={activeTab === "pricing-prepaid" ? "" : "hidden"}
-              >
-                <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
-                  {renderPricingCard({
-                    name: "Standard",
-                    price: "199",
-                    featured: true,
-                    features: [
-                      "ChatGPT 4",
-                      "VIP Support",
-                      "Access to premium templates",
-                      "300,000 Word Tokens",
-                      "100,000 Image Tokens",
-                    ],
-                    link: "https://dark.projecthub.ai/register?plan=6",
-                  })}
-                  {renderPricingCard({
-                    name: "Premium",
-                    price: "299",
-                    features: [
-                      "All features in previous plans",
-                      "VIP Support",
-                      "Unlimited Word Tokens",
-                      "200 Image Tokens",
-                    ],
-                    link: "https://dark.projecthub.ai/register?plan=1",
-                  })}
-                </div>
-              </div>
-              <div
-                id="pricing-lifetime"
-                className={activeTab === "pricing-lifetime" ? "" : "hidden"}
-              >
-                <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
-                  {renderPricingCard({
-                    name: "Lifetime Premium",
-                    price: "960",
-                    featured: true,
-                    features: [
-                      "Access All Templates",
-                      "Generate Images",
-                      "Generate Text",
-                      "AI Chat",
-                      "Access AI Chat Templates",
-                      "VIP Support",
-                      "Unlimited Word Tokens",
-                      "Unlimited Image Tokens",
-                    ],
-                    link: "https://dark.projecthub.ai/register?plan=7",
                   })}
                 </div>
               </div>

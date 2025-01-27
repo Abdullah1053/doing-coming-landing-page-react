@@ -65,8 +65,8 @@ const TestimonialsSection = () => {
       }`}
       id="testimonials"
     >
-      <div className="container">
-        <div className="relative w-full overflow-hidden rounded-3xl bg-black px-5 py-20 md:px-8 lg:px-20 lg:py-24">
+      <div className="container relative w-full max-w-[1680px]">
+        <div className="relative w-full overflow-hidden rounded-3xl bg-stone-100 dark:bg-white/20 px-5 py-20 md:px-8 lg:px-20 lg:py-24">
           <figure
             className="pointer-events-none absolute start-1/2 top-0 z-0 w-full max-w-none -translate-x-1/2 -translate-y-1/2"
             aria-hidden="true"
@@ -79,14 +79,13 @@ const TestimonialsSection = () => {
             />
           </figure>
 
-          <header className="mb-24 flex flex-wrap items-end justify-between gap-y-5 [&_strong]:text-white/70">
+          <header className="container mb-24 flex flex-wrap items-end justify-between gap-y-5 [&_strong]:text-white/70">
             <div className="w-full lg:w-2/3 lg:pe-8">
-              <h2 className="text-white">ثقة من الآلاف.</h2>
+              <h2 className="text-gray-900 dark:text-white">ثقة من الآلاف.</h2>
             </div>
             <div className="w-full lg:w-1/3">
-              <p className="mb-6 text-white/60">
-                Content and <strong>kickstart your earnings</strong> in minutes
-                kickstart your earnings in minutes
+              <p className="mb-6 text-gray-900 dark:text-white/60">
+                يثق بنا أكثر من <span className="font-bold text-gray-900 dark:text-white/60">+1000</span> تاجر
               </p>
             </div>
           </header>
@@ -96,7 +95,7 @@ const TestimonialsSection = () => {
               {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="carousel-cell w-[60%] px-4 mx-4 transition-all duration-300"
+                  className="carousel-cell w-full px-4 mx-4 transition-all duration-300"
                 >
                   <div className="flex flex-col items-center justify-center text-center">
                     <div className="mb-12">
@@ -113,15 +112,15 @@ const TestimonialsSection = () => {
                         </span>
                       </figure>
                       <div className="text-center opacity-60 group-[&.is-selected]:opacity-100 transition-opacity duration-300">
-                        <p className="text-xl font-semibold text-white mb-1">
+                        <p className="text-xl font-semibold text-gray-900 dark:text-white mb-1">
                           {testimonial.name}
                         </p>
-                        <p className="text-base text-white/60">
+                        <p className="text-base text-gray-600 dark:text-white/60">
                           {testimonial.role}
                         </p>
                       </div>
                     </div>
-                    <blockquote className="max-w-2xl mx-auto text-xl text-white/80 opacity-60 group-[&.is-selected]:opacity-100 transition-opacity duration-300">
+                    <blockquote className="max-w-2xl mx-auto text-xl text-gray-800 dark:text-white/80 opacity-60 group-[&.is-selected]:opacity-100 transition-opacity duration-300">
                       <p>{testimonial.quote}</p>
                     </blockquote>
                   </div>

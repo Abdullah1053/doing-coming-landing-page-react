@@ -509,9 +509,9 @@ hr {
     max-width: 768px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .container {
-    max-width: 992px;
+    max-width: 1024px;
   }
 }
 @media (min-width: 1170px) {
@@ -10646,7 +10646,7 @@ hr {
     opacity: 1;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .lg\:sticky {
     position: sticky;
   }
@@ -12148,7 +12148,7 @@ hr {
 .\[\&_\.flickity-viewport\]\:w-full .flickity-viewport {
   width: 100%;
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .lg\:\[\&_\.flickity-viewport\]\:\[mask-image\:linear-gradient\(to_right\,transparent\,black_20\%\,black_80\%\,transparent\)\]
     .flickity-viewport {
     -webkit-mask-image: linear-gradient(

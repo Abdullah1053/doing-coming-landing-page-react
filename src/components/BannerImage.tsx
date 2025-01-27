@@ -1,6 +1,10 @@
 import useScrollAnimation from "../hooks/useScrollAnimation";
 
-const BannerImage = () => {
+interface Props {
+  theme: boolean;
+}
+
+const BannerImage = ({ theme }: Props) => {
   const [sectionRef, isInView] = useScrollAnimation();
 
   return (
@@ -21,8 +25,8 @@ const BannerImage = () => {
             className="w-full rounded-3xl custome-width"
             width="2880"
             height="1750"
-            src="./assets/img/banner-img.jpg"
-            alt="Image of MagicAI dashboard"
+            src={theme ? "./assets/img/banner-img-dark-1.png" : "./assets/img/banner-img-light-1.jpg"}
+            alt="Image of Doing dashboard"
           />
           <span className="lqd-outline-glow absolute inline-block rounded-[inherit] pointer-events-none overflow-hidden lqd-outline-glow-effect-1">
             <span className="lqd-outline-glow-inner absolute start-1/2 top-1/2 inline-block aspect-square min-h-[125%] min-w-[125%] rounded-[inherit]"></span>

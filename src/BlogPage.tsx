@@ -151,10 +151,10 @@ function HelpPage() {
               <div className="flex flex-1 flex-col justify-between bg-white dark:bg-white/20 p-6">
                 <div className="flex-1">
                   <Link to={`/blogs/${post.id}`} className="mt-2 block">
-                    <p className="text-xl font-semibold text-gray-900 dark:text-white">
+                    <p className="text-xl leading-7 font-semibold text-gray-900 dark:text-white">
                       {post.title}
                     </p>
-                    <p className="mt-3 text-base text-gray-500 dark:text-white/70">
+                    <p className="mt-3 text-base leading-6 text-gray-500 dark:text-white/70">
                       {post.description}
                     </p>
                   </Link>
@@ -176,10 +176,10 @@ function HelpPage() {
       <section className="mt-20 mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl">
         <div className="container">
           <div className="mx-auto max-w-2xl py-12 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-4xl">
+            <h2 className="text-[1.8rem] font-bold text-gray-900 dark:text-white sm:text-4xl">
               جاهز لتحوّل فكرتك إلى واقع؟
             </h2>
-            <p className="mt-6 text-large text-gray-700 dark:text-white/70">
+            <p className="mt-6 text-[1.3rem] text-gray-700 dark:text-white/70">
               مع دوينج، البداية دائماً أسهل مما تتخيل
             </p>
             <a

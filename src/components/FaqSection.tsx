@@ -90,7 +90,7 @@ const FaqSection = () => {
                 </svg>{" "}
                 الأسئلة المتداولة
               </h6>
-              <h2 className="mb-7 text-gray-900 dark:text-white">عندك سؤال ؟ احصل على المساعدة</h2>
+              <h2 className="mb-7 text-gray-900 dark:text-white text-[2.3rem]">عندك سؤال ؟ احصل على المساعدة</h2>
               <p className="m-0 text-gray-600 dark:text-white/60">
                 "فريق خدمة التُجار مستعد للإجابة عن جميع الأسئلة والاستفسارات يُسعدنا تواصلكم معنا."
               </p>

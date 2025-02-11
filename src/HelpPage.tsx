@@ -40,15 +40,15 @@ function HelpPage() {
       {/* Start Banner */}
       <section className="mt-12 mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl py-8">
         <div className="container">
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col justify-center">
-              <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h2 className="text-[2.5rem] font-bold tracking-tight text-gray-900 dark:text-white">
                 معك في كل خطوة
               </h2>
-              <p className="mt-4 text-xl text-gray-800 dark:text-white/80">
+              <p className="mt-6 text-[1.5rem] font-semibold text-gray-800 dark:text-white/80">
                 فريقنا جاهز للإجابة عن أسئلتك على مدار الساعة
               </p>
-              <p className="mt-4 text-xl text-gray-800 dark:text-white/80">
+              <p className="mt-4 text-[1.3rem] leading-[30px] text-gray-800 dark:text-white/80">
                 نحن هنا لدعمك في أي وقت تحتاجه! فريقنا متاح 24/7 للإجابة على
                 استفساراتك ومساعدتك في تجاوز أي تحديات
               </p>
@@ -62,10 +62,10 @@ function HelpPage() {
       {/* End Banner */}
       {/* Start Content */}
       <section className="container mt-20">
-        <h3 className="text-3xl text-center font-bold leading-7 text-gray-900 dark:text-white">
+        <h3 className="text-[2rem] text-center font-bold leading-7 text-gray-900 dark:text-white">
           دليل استخدام منصة دوينج
         </h3>
-        <div className="mt-16 grid grid-cols-3 gap-5">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {types.map((item) => (
             <div
               key={item.name}
@@ -94,10 +94,10 @@ function HelpPage() {
       <section className="mt-20 mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl">
         <div className="container">
           <div class="mx-auto max-w-2xl py-12 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-4xl">
+            <h2 className="text-[1.8rem] font-bold text-gray-900 dark:text-white sm:text-4xl">
               جاهز لتحوّل فكرتك إلى واقع؟
             </h2>
-            <p className="mt-6 text-large text-gray-700 dark:text-white/70">
+            <p className="mt-6 text-[1.3rem] text-gray-700 dark:text-white/70">
               مع دوينج، البداية دائماً أسهل مما تتخيل
             </p>
             <a

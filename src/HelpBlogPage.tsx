@@ -120,7 +120,7 @@ function HelpBlogPage() {
                 <h1 className="text-gray-900 dark:text-white text-2xl font-semibold mb-4">
                   {selectedBlog.title}
                 </h1>
-                <p className="text-gray-900 dark:text-white text-md mb-4">
+                <p className="text-gray-900 dark:text-white text-md leading-7 mb-4">
                   {selectedBlog.content}
                 </p>
               </div>
@@ -135,10 +135,10 @@ function HelpBlogPage() {
       <section className="mt-20 mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl">
         <div className="container">
           <div class="mx-auto max-w-2xl py-12 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-4xl">
+            <h2 className="text-[1.8rem] font-bold text-gray-900 dark:text-white sm:text-4xl">
               جاهز لتحوّل فكرتك إلى واقع؟
             </h2>
-            <p className="mt-6 text-large text-gray-700 dark:text-white/70">
+            <p className="mt-6 text-[1.3rem] text-gray-700 dark:text-white/70">
               مع دوينج، البداية دائماً أسهل مما تتخيل
             </p>
             <a

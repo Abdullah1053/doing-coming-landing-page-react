@@ -76,9 +76,9 @@ const HowItWorks = () => {
 
           <div className="container mb-24 flex flex-wrap items-end justify-between gap-y-5">
             <div className="w-full lg:w-2/3 lg:pe-8">
-              <h4 className="text-gray-900 dark:text-white">
+              <h2 className="text-gray-900 dark:text-white text-[2rem]">
                 خطوات للبدأ في تجارتك الإلكترونية ، ولا أسهل !
-              </h4>
+              </h2>
             </div>
 
             {/* <div className="w-full lg:w-1/3">

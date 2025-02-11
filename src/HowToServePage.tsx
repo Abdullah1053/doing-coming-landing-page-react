@@ -24,12 +24,12 @@ function HowToServe() {
       {/* Start Banner */}
       <section className="mt-12 mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl py-8">
         <div className="container">
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col justify-center">
-              <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h2 className="text-[3rem] font-bold tracking-tight text-gray-900 dark:text-white">
                 متجرك، موقعك أو مدونتك؟
               </h2>
-              <p className="mt-4 text-xl text-gray-800 dark:text-white/80">
+              <p className="mt-8 text-[1.5rem] text-gray-800 dark:text-white/80">
                 مهما كانت فكرتك، دوينج هي انطلاقتك
               </p>
             </div>
@@ -42,44 +42,44 @@ function HowToServe() {
       {/* End Banner */}
       {/* Start Content */}
       <section className="container mt-20">
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="rounded-xl overflow-hidden">
+            <img src="../public/assets/img/serve.jpg" alt="" />
+          </div>
           <div className="flex flex-col justify-center">
-            <h3>أنشئ متجراً إلكترونياً بدقائق</h3>
-            <p>
+            <h3 className="text-[2.2rem] font-bold tracking-tight text-gray-900 dark:text-white">أنشئ متجراً إلكترونياً بدقائق</h3>
+            <p className="mt-8 text-[1.2rem] leading-7 text-gray-800 dark:text-white/80">
               أنشئ متجرًا احترافيًا يعكس اسم علامتك التجارية في دقائق، نوفر لك
               القوالب والخيارات التي تجعل بناء متجرك أمرًا سهلاً، سواء كنت تبيع
               منتجات مادية أو رقمية.
             </p>
           </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20">
           <div className="rounded-xl overflow-hidden">
             <img src="../public/assets/img/serve.jpg" alt="" />
           </div>
-        </div>
-        <div className="grid grid-cols-2 gap-8 mt-20">
-          <div className="flex flex-col justify-center order-last">
-            <h3>أنشئ مدونة احترافية</h3>
-            <p>
+          <div className="flex flex-col justify-center md:order-first">
+            <h3 className="text-[2.2rem] font-bold tracking-tight text-gray-900 dark:text-white">أنشئ مدونة احترافية</h3>
+            <p className="mt-8 text-[1.2rem] leading-7 text-gray-800 dark:text-white/80">
               شارك أفكارك، تجاربك، وأحدث أخبارك مع جمهورك من خلال مدونة متكاملة،
               يمكنك كتابة ونشر مقالاتك بسهولة، مع إمكانية تخصيص القالب بما
               يتناسب مع محتواك.
             </p>
           </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20">
           <div className="rounded-xl overflow-hidden">
             <img src="../public/assets/img/serve.jpg" alt="" />
           </div>
-        </div>
-        <div className="grid grid-cols-2 gap-8 mt-20">
           <div className="flex flex-col justify-center">
-            <h3>موقع إلكتروني فريد لهويتك</h3>
-            <p>
+            <h3 className="text-[2.2rem] font-bold tracking-tight text-gray-900 dark:text-white">موقع إلكتروني فريد لهويتك</h3>
+            <p className="mt-8 text-[1.2rem] leading-7 text-gray-800 dark:text-white/80">
               هل تحتاج إلى موقع ويب لعلامتك التجارية أو مشروعك؟ نوفر لك الأدوات
               اللازمة لإنشاء موقع يبرز شخصيتك ويعكس رسالتك، يمكنك التحكم في
               تصميمه ومواضيعه بكل سهولة، والتأكد من أنه يتوافق مع احتياجاتك
               وأهدافك.
             </p>
-          </div>
-          <div className="rounded-xl overflow-hidden">
-            <img src="../public/assets/img/serve.jpg" alt="" />
           </div>
         </div>
       </section>
@@ -88,10 +88,10 @@ function HowToServe() {
       <section className="mt-20 mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl">
         <div className="container">
           <div class="mx-auto max-w-2xl py-12 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-4xl">
+            <h2 className="text-[1.8rem] font-bold text-gray-900 dark:text-white sm:text-4xl">
               جاهز لتحوّل فكرتك إلى واقع؟
             </h2>
-            <p className="mt-6 text-large text-gray-700 dark:text-white/70">
+            <p className="mt-6 text-[1.3rem] text-gray-700 dark:text-white/70">
               مع دوينج، البداية دائماً أسهل مما تتخيل
             </p>
             <a

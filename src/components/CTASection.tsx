@@ -30,7 +30,7 @@ const CTASection = () => {
         <div className="mx-auto w-2/3 text-center max-lg:w-10/12 max-sm:w-full">
           <p
             style={{ lineHeight: "2 !important" }}
-            className="-from-[5%] mb-10 inline-block bg-gradient-to-br from-white from-30% text-gray-700 dark:text-transparent to-white/70 bg-clip-text font-heading text-[82px] font-bold leading-tight tracking-tight max-sm:text-[18vw]"
+            className="-from-[5%] mb-10 inline-block bg-gradient-to-br from-white from-30% text-gray-700 dark:text-transparent to-white/70 bg-clip-text font-heading font-bold leading-tight tracking-tight text-[3rem]"
           >
             مستقبل تجاري متكامل في منصة واحدة
           </p>

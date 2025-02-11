@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import logoLight from "../../public/assets/img/logo/logoLight.png";
 import logoDark from "../../public/assets/img/logo/logoDark.webp";
+import { Link } from "react-router-dom";
 
 interface Props {
   theme: boolean;
@@ -39,18 +40,20 @@ const Footer = ({ theme }: Props) => {
           
           <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-14 max-sm:justify-center">
             <div>
-              <a href="index.html">
+              <Link to="/">
                 <img
                   src={theme ? logoLight : logoDark}
                   alt="Doing logo"
                   style={{ maxHeight: "2.75rem" }}
                 />
-              </a>
-              <p className="mt-4 text-sm text-gray-500 dark:text-white w-2/3">
+              </Link>
+              <p className="mt-2 text-sm xl:text-md leading-7 text-gray-500 dark:text-white w-2/3">
                 يوم جديد لتحقيق انطلاقتك في تجارتك، ابدأ الآن مع منصة دوينج، وكن
                 جزءاً من مستقبل التجارة الإلكترونية
               </p>
-              <button className="mt-4 text-gray-500 dark:text-white">اطلق متجرك الآن</button>
+              <button 
+                className="mt-2 inline-flex items-center rounded-md border border-transparent bg-sky-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+              >اطلق متجرك الآن</button>
             </div>
             <div className="">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white">
@@ -58,39 +61,39 @@ const Footer = ({ theme }: Props) => {
               </h3>
               <ul role="list" className="mt-4 space-y-4">
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/about"
                     className="text-base text-gray-600 dark:text-white/80 hover:text-sky-400 hover:dark:text-sky-400"
                   >
                     عن دوينج
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/how-to-serve"
                     className="text-base text-gray-600 dark:text-white/80 hover:text-sky-400 hover:dark:text-sky-400"
                   >
                     كيف نخدمك؟
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/timeline"
                     className="text-base text-gray-600 dark:text-white/80 hover:text-sky-400 hover:dark:text-sky-400"
                   >
                     رحلة النجاح
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/price"
                     className="text-base text-gray-600 dark:text-white/80 hover:text-sky-400 hover:dark:text-sky-400"
                   >
                     الأسعار
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -100,39 +103,39 @@ const Footer = ({ theme }: Props) => {
               </h3>
               <ul role="list" className="mt-4 space-y-4">
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/help"
                     className="text-base text-gray-600 dark:text-white/60 hover:text-sky-400 hover:dark:text-sky-400"
                   >
                     مركز المساعدة
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/blogs"
                     className="text-base text-gray-600 dark:text-white/60 hover:text-sky-400 hover:dark:text-sky-400"
                   >
                     المدونة
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-600 dark:text-white/60 hover:text-sky-400 hover:dark:text-sky-400"
-                  >
-                    الشروط و الأحكام
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/privacy-policy"
                     className="text-base text-gray-600 dark:text-white/60 hover:text-sky-400 hover:dark:text-sky-400"
                   >
                     سياسة الخصوصية
-                  </a>
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/terms-and-conditions"
+                    className="text-base text-gray-600 dark:text-white/60 hover:text-sky-400 hover:dark:text-sky-400"
+                  >
+                    الشروط و الأحكام
+                  </Link>
                 </li>
               </ul>
             </div>

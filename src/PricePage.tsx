@@ -340,7 +340,7 @@ function Price() {
       />
       <div className="bg-white dark:bg-black">
         <div className="mx-auto max-w-7xl bg-white dark:bg-black py-16 sm:py-24 sm:px-6 lg:px-8">
-          <h4 className="mb-28 text-center text-4xl font-bold leading-6 text-gray-900 dark:text-white">ابدأ تجارتك مع دوينج! باقات مرنة تناسب انطلاقتك</h4>
+          <h4 className="mb-28 text-center text-[2.4rem] font-bold leading-[44px] text-gray-900 dark:text-white">ابدأ تجارتك مع دوينج! باقات مرنة تناسب انطلاقتك</h4>
           {/* xs to lg */}
           <div className="mx-auto max-w-2xl space-y-16 lg:hidden">
             {tiers.map((tier, tierIdx) => (

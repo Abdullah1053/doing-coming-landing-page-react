@@ -76,10 +76,10 @@ const Generators = () => {
     >
       <div className="container relative w-full max-w-[1680px]">
         <header className="mx-auto mb-24 w-full text-center lg:w-4/5">
-          <h2 className="mt-7 mb-7 text-gray-900 dark:text-white text-3xl md:text-4xl lg:text-5xl">
+          <h2 className="mt-7 mb-7 text-gray-900 dark:text-white text-[2.5rem]">
             دوينج تفهمك وتلبي كل متطلباتك
           </h2>
-          <p className="m-0 mx-auto text-xl text-gray-600 dark:text-white/60">
+          <p className="mt-10 mx-auto text-xl text-gray-600 dark:text-white/60">
             مهما كان مجال تجارتك صغير أو كبير ! معنا تقدر تبني متجرك الإلكتروني
             وتطلقه بكل ثقة
           </p>

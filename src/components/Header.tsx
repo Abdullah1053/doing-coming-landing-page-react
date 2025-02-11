@@ -184,12 +184,12 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
                 >
                   كيف نخدمك
                 </Link>
-                <a
-                  href="#how-it-works"
+                <Link
+                  to="/timeline"
                   className="transition-all text-md pl-5 hover:text-sky-400 [&.active]:opacity-100"
                 >
                   رحلة دوينج
-                </a>
+                </Link>
                 <Link
                   to="/about"
                   className="transition-all text-md pl-5 hover:text-sky-400 [&.active]:opacity-100"
@@ -256,15 +256,15 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
               >
                 تسجيل الدخول
               </Link>
-              <a
+              <Link
                 className="relative inline-flex items-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 bg-white/[2%] px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:scale-105 hover:border-sky-400 hover:bg-sky-400 hover:text-white hover:shadow-lg hover:shadow-primary/5"
-                href="https://dark.projecthub.ai/register"
+                to="signup"
               >
                 انشاء حساب
                 <span className="lqd-outline-glow absolute inline-block rounded-[inherit] pointer-events-none overflow-hidden lqd-outline-glow-effect-1 [--outline-glow-w:2px]">
                   <span className="lqd-outline-glow-inner absolute start-1/2 top-1/2 inline-block aspect-square min-h-[125%] min-w-[125%] rounded-[inherit]"></span>
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -312,12 +312,12 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
           >
             كيف نخدمك
           </Link>
-          <a
-            href="#how-it-works"
+          <Link
+            to="/timeline"
             className="block transition-all text-md px-3 py-2 hover:text-sky-400 [&.active]:opacity-100"
           >
             رحلة دوينج
-          </a>
+          </Link>
           <Link
             to="/about"
             className="block transition-all text-md px-3 py-2 hover:text-sky-400 [&.active]:opacity-100"
@@ -366,12 +366,16 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
 
           {/* Login & Signup Buttons in Mobile */}
           <div className="flex flex-col space-y-2 mt-4">
-            <a className="relative inline-flex items-center justify-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:scale-100 hover:border-sky-400 hover:bg-sky-400 hover:text-white hover:shadow-lg hover:shadow-primary/5">
+            <Link
+              to="/login"
+              className="relative inline-flex items-center justify-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:scale-100 hover:border-sky-400 hover:bg-sky-400 hover:text-white hover:shadow-lg hover:shadow-primary/5">
               تسجيل الدخول
-            </a>
-            <a className="relative inline-flex items-center justify-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:scale-100 hover:border-sky-400 hover:bg-sky-400 hover:text-white hover:shadow-lg hover:shadow-primary/5">
+            </Link>
+            <Link 
+              to="/signup"
+              className="relative inline-flex items-center justify-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:scale-100 hover:border-sky-400 hover:bg-sky-400 hover:text-white hover:shadow-lg hover:shadow-primary/5">
               انشاء حساب
-            </a>
+            </Link>
           </div>
         </div>
       )}

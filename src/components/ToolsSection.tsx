@@ -108,7 +108,7 @@ const ToolsSection = () => {
     >
       <div className="container">
         <header className="mx-auto mb-20 w-full text-center lg:w-4/5">
-          <h2 className="mb-7 text-gray-900 dark:text-white">قيمة استثنائية لتجارتك</h2>
+          <h2 className="mb-7 text-gray-900 dark:text-white text-[3rem]">قيمة استثنائية لتجارتك</h2>
           <p className="m-0 mx-auto text-xl/12 text-gray-600 dark:text-white/60 lg:w-9/12">
             أدواتنا تدعمك في بناء تجربة مميزة تعزز ولاء العملاء ، تحقق لك مبيعات
             وتبنيّ لك مستقبل تجاري استثنائي.

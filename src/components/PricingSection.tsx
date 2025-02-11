@@ -29,7 +29,7 @@ const PricingSection = () => {
   const renderPricingCard = (plan) => (
     <div
       className={`relative flex flex-col items-start rounded-3xl px-10 py-10 text-start transition-all md:hover:-translate-y-1 md:hover:scale-[1.025] lg:py-12 ${
-        plan.featured ? "bg-stone-100 dark:bg-black" : "bg-stone-100 dark:bg-white/20"
+        plan.featured ? "bg-stone-100 dark:bg-white/20" : "bg-stone-100 dark:bg-white/20"
       }`}
     >
       <h5 className="gradient-text relative mb-6 inline-block text-xs font-medium uppercase">
@@ -48,25 +48,27 @@ const PricingSection = () => {
 
       <hr className="w-full opacity-10" />
 
-      <ul className="mb-12 mt-8 flex flex-col gap-6 text-base text-gray-900 dark:text-white/80">
-        {plan.features.map((feature, index) => (
-          <li key={index} className="group flex items-center">
-            <span className="size-7 me-5 inline-grid shrink-0 place-content-center rounded-full bg-secondary text-white transition-all group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
-              {renderCheckIcon()}
-            </span>
-            {feature}
-          </li>
-        ))}
-      </ul>
+      <div className="relative mt-8 flex flex-col justify-between flex-grow">
+        <ul className="mb-12 mt-8 flex flex-col gap-6 text-base text-gray-900 dark:text-white/80">
+          {plan.features.map((feature, index) => (
+            <li key={index} className="group flex items-center">
+              <span className="size-7 me-5 inline-grid shrink-0 place-content-center rounded-full bg-secondary text-white transition-all group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
+                {renderCheckIcon()}
+              </span>
+              {feature}
+            </li>
+          ))}
+        </ul>
 
-      <a
-        className="relative mx-auto inline-flex w-full max-w-[400px] gap-3 overflow-hidden whitespace-nowrap rounded-lg bg-gradient-to-r   from-sky-600 to-sky-700 to-50% py-5 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20"
-        href={plan.link}
-      >
-        <span className="flex w-full justify-center text-center">
-          {plan.button}
-        </span>
-      </a>
+        <a
+          className="relative mx-auto inline-flex w-full max-w-[400px] gap-3 overflow-hidden whitespace-nowrap rounded-lg bg-gradient-to-r   from-sky-600 to-sky-700 to-50% py-5 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20"
+          href={plan.link}
+        >
+          <span className="flex w-full justify-center text-center">
+            {plan.button}
+          </span>
+        </a>
+      </div>
 
       {plan.featured && (
         <div className="pointer-events-none absolute inset-[1px] overflow-hidden rounded-[inherit]">
@@ -99,7 +101,7 @@ const PricingSection = () => {
     >
       <div className="container relative w-full max-w-[1680px]">
         <header className="container mx-auto mb-14 w-full text-center lg:w-4/5">
-          <h2 className="mb-7 text-gray-900 dark:text-white">باقات المنصة</h2>
+          <h2 className="mb-7 text-gray-900 dark:text-white text-[3rem]">باقات المنصة</h2>
           <p className="mx-auto mb-4 text-xl/12 text-gray-700 dark:text-white/70 lg:w-9/12">
             {" "}
             باقات مصممة خصيصًا لتتناسب مع تطلعات وإمكانية كل تاجر، اختر الي

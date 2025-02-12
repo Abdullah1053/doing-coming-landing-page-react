@@ -13,7 +13,7 @@ const posts = [
     date: "Mar 10, 2024",
     datetime: "2024-03-10",
     imageUrl:
-      "../public/assets/img/blog.jpg",
+      "/assets/img/blog.jpg",
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const posts = [
     date: "Mar 10, 2024",
     datetime: "2024-03-10",
     imageUrl:
-      "../public/assets/img/blog.jpg",
+      "/assets/img/blog.jpg",
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const posts = [
     date: "Mar 10, 2024",
     datetime: "2024-03-10",
     imageUrl:
-      "../public/assets/img/blog.jpg",
+      "/assets/img/blog.jpg",
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const posts = [
     date: "Mar 10, 2024",
     datetime: "2024-03-10",
     imageUrl:
-      "../public/assets/img/blog.jpg",
+      "/assets/img/blog.jpg",
   },
 ];
 

@@ -9,7 +9,7 @@ const LoginPage = () => {
             <div> 
               <img
                 className="h-12 w-auto m-auto"
-                src="../public/assets/img/logo/logoDark.webp"
+                src="/assets/img/logo/logoDark.webp"
                 alt="Doing Logo"
               />
               <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
@@ -112,7 +112,7 @@ const LoginPage = () => {
           </div>
           {/* <img
             className="absolute inset-0 h-full w-full object-cover"
-            src="../public/assets/img/blog.jpg"
+            src="/assets/img/blog.jpg"
             alt=""
           /> */}
         </div>

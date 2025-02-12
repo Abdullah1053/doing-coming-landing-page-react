@@ -4,8 +4,8 @@ import {
   faXTwitter,
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
-import logoLight from "../../public/assets/img/logo/logoLight.png";
-import logoDark from "../../public/assets/img/logo/logoDark.webp";
+import logoLight from "/assets/img/logo/logoLight.png";
+import logoDark from "/assets/img/logo/logoDark.webp";
 import { Link } from "react-router-dom";
 
 interface Props {

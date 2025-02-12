@@ -39,7 +39,7 @@ function HelpPage() {
               </a>
             </div>
             <div className="rounded-xl overflow-hidden">
-              <img src="../public/assets/img/serve.jpg" alt="" />
+              <img src="/assets/img/serve.jpg" alt="" />
             </div>
           </div>
         </div>

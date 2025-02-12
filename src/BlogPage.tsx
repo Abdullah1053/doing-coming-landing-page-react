@@ -13,7 +13,7 @@ const posts = [
       "لم يعد سلوك المستهلك اليوم كما كان قبل عشر سنوات، أو حتى قبل عام يتمتع المستهلك الحديث بأربع خصائص أساسية تحتاج إلى معرفتها لفهم التقليدية التجزئة الإلكترونية والحديثة...",
     date: "Mar 10, 2024",
     datetime: "2024-03-10",
-    imageUrl: "../public/assets/img/blog.jpg",
+    imageUrl: "/assets/img/blog.jpg",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const posts = [
       "تعد الحملات التسويقية الناجحة للمتاجر الإلكترونية من أكبر الأهداف التسويقية لتجار التجزئة لجذب المزيد من العملاء المحتملين وتحقيق مبيعات وأرباح أعلى ، والحصول على أفضل النتائج من الحملات التسويقية على منصات التواصل الاجتماعي يتطلب إطلاق جيد للتخطيط من خلال استراتيجية واضحة، والتي يتم وصفها بالتفصيل في هذه المقالة... ",
     date: "Mar 10, 2024",
     datetime: "2024-03-10",
-    imageUrl: "../public/assets/img/blog.jpg",
+    imageUrl: "/assets/img/blog.jpg",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const posts = [
       "تعد الحملات التسويقية الناجحة للمتاجر الإلكترونية من أكبر الأهداف التسويقية لتجار التجزئة لجذب المزيد من العملاء المحتملين وتحقيق مبيعات وأرباح أعلى ، والحصول على أفضل النتائج من الحملات التسويقية.... ",
     date: "Mar 10, 2024",
     datetime: "2024-03-10",
-    imageUrl: "../public/assets/img/blog.jpg",
+    imageUrl: "/assets/img/blog.jpg",
   },
 ];
 
@@ -61,7 +61,7 @@ function HelpPage() {
         <div className="relative">
           <img
             className="w-full h-96 object-cover rounded-lg shadow-lg"
-            src="../public/assets/img/blog.jpg"
+            src="/assets/img/blog.jpg"
             alt="Blog Post Image"
           />
         </div>
@@ -122,7 +122,7 @@ function HelpPage() {
         </div>
         <div className="mt-10 flex items-center justify-start gap-x-6">
           <img
-            src="../public/assets/img/testimonialAvatar/202306020840avatar-2.jpg"
+            src="/assets/img/testimonialAvatar/202306020840avatar-2.jpg"
             className="w-16 h-16 rounded-full object-cover"
             alt=""
           />

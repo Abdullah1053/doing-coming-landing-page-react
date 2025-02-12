@@ -34,7 +34,7 @@ function HowToServe() {
               </p>
             </div>
             <div className="rounded-xl overflow-hidden">
-              <img src="../public/assets/img/serve.jpg" alt="" />
+              <img src="/assets/img/serve.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@ function HowToServe() {
       <section className="container mt-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="rounded-xl overflow-hidden">
-            <img src="../public/assets/img/serve.jpg" alt="" />
+            <img src="/assets/img/serve.jpg" alt="" />
           </div>
           <div className="flex flex-col justify-center">
             <h3 className="text-[2.2rem] font-bold tracking-tight text-gray-900 dark:text-white">أنشئ متجراً إلكترونياً بدقائق</h3>
@@ -57,7 +57,7 @@ function HowToServe() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20">
           <div className="rounded-xl overflow-hidden">
-            <img src="../public/assets/img/serve.jpg" alt="" />
+            <img src="/assets/img/serve.jpg" alt="" />
           </div>
           <div className="flex flex-col justify-center md:order-first">
             <h3 className="text-[2.2rem] font-bold tracking-tight text-gray-900 dark:text-white">أنشئ مدونة احترافية</h3>
@@ -70,7 +70,7 @@ function HowToServe() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20">
           <div className="rounded-xl overflow-hidden">
-            <img src="../public/assets/img/serve.jpg" alt="" />
+            <img src="/assets/img/serve.jpg" alt="" />
           </div>
           <div className="flex flex-col justify-center">
             <h3 className="text-[2.2rem] font-bold tracking-tight text-gray-900 dark:text-white">موقع إلكتروني فريد لهويتك</h3>

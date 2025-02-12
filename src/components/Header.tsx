@@ -1,6 +1,6 @@
 // import { useState } from "react";
-// import logoLight from "../../public/assets/img/logo/logoLight.png";
-// import logoDark from "../../public/assets/img/logo/logoDark.webp";
+// import logoLight from "..//assets/img/logo/logoLight.png";
+// import logoDark from "/assets/img/logo/logoDark.webp";
 // import { Link } from "react-router-dom";
 
 // interface Props {
@@ -128,8 +128,8 @@
 // export default Header;
 
 import { useState } from "react";
-import logoLight from "../../public/assets/img/logo/logoLight.png";
-import logoDark from "../../public/assets/img/logo/logoDark.webp";
+import logoLight from "/assets/img/logo/logoLight.png";
+import logoDark from "/assets/img/logo/logoDark.webp";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -368,12 +368,14 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
           <div className="flex flex-col space-y-2 mt-4">
             <Link
               to="/login"
-              className="relative inline-flex items-center justify-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:scale-100 hover:border-sky-400 hover:bg-sky-400 hover:text-white hover:shadow-lg hover:shadow-primary/5">
+              className="relative inline-flex items-center justify-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:scale-100 hover:border-sky-400 hover:bg-sky-400 hover:text-white hover:shadow-lg hover:shadow-primary/5"
+            >
               تسجيل الدخول
             </Link>
-            <Link 
+            <Link
               to="/signup"
-              className="relative inline-flex items-center justify-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:scale-100 hover:border-sky-400 hover:bg-sky-400 hover:text-white hover:shadow-lg hover:shadow-primary/5">
+              className="relative inline-flex items-center justify-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:scale-100 hover:border-sky-400 hover:bg-sky-400 hover:text-white hover:shadow-lg hover:shadow-primary/5"
+            >
               انشاء حساب
             </Link>
           </div>

@@ -1,18 +1,15 @@
 import { useState, useEffect, useRef } from "react";
-import useScrollAnimation from "../hooks/useScrollAnimation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useOutletContext } from "react-router-dom";
 
-interface Props {
-  theme: boolean;
-}
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Banner = ({ theme }: Props) => {
+const Banner = () => {
+  const { darkMode } = useOutletContext();
   const [isInView, setIsInView] = useState(false);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  // const [sectionRef, isSectionRef] = useScrollAnimation();
   const image1Ref = useRef(null);
   const box1Ref = useRef(null);
   const sectionRef = useRef(null);
@@ -27,47 +24,6 @@ const Banner = ({ theme }: Props) => {
     const interval = setInterval(() => {
       setCurrentTextIndex((prev) => (prev + 1) % rotatingTexts.length);
     }, 3000);
-
-    // Setup image animation
-    // if (window.innerWidth > 1024) {
-    //   const image1 = image1Ref.current;
-    //   const box1 = box1Ref.current;
-    //   const originalSrc1 = image1.src;
-  
-    //   const timeline = gsap.timeline({
-    //     scrollTrigger: {
-    //       trigger: sectionRef.current,
-    //       start: "top 5%",
-    //       end: "+=500px",
-    //       scrub: 2,
-    //       onUpdate: (self) => {
-    //         const halfwayProgress = 0.2;
-  
-    //         if (self.progress >= halfwayProgress && image1.dataset.changed !== "true") {
-    //           image1.src = "./assets/img/faza1.png";
-    //           image1.dataset.changed = "true";
-    //         } else if (self.progress < halfwayProgress && image1.dataset.changed !== "false") {
-    //           image1.src = originalSrc1;
-    //           image1.dataset.changed = "false";
-    //         }
-    //       },
-    //     },
-    //   });
-  
-    //   timeline
-    //     .to(image1, {
-    //       x: () => box1.getBoundingClientRect().left - image1.getBoundingClientRect().left + 450,
-    //       y: () => box1.getBoundingClientRect().top + 250,
-    //       duration: 1,
-    //     });
-  
-    //   // return () => clearInterval(interval);
-    //   return () => {
-    //     clearInterval(interval);
-    //     if (timeline.scrollTrigger) timeline.scrollTrigger.kill();
-    //     timeline.kill();
-    //   };
-    // }
 
     const handleResize = () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -168,15 +124,17 @@ const Banner = ({ theme }: Props) => {
 
   return (
     <>
-    <div className="hidden lg:block relative z-2 w-64 xl:w-72 2xl:w-80 top-20">
-      <div className="landing-section absolute z-2">
-        <img
-          ref={image1Ref}
-          src="./assets/img/faza1.png"
-          id="image1"
-          className="floating-image"
-          alt="Faza"
-        />
+    <div className="container">
+      <div className="hidden lg:block relative z-2 w-64 xl:w-72 2xl:w-80 top-20 -right-20">
+        <div className="landing-section absolute z-2">
+          <img
+            ref={image1Ref}
+            src="./assets/img/faza1.png"
+            id="image1"
+            className="floating-image"
+            alt="Faza"
+          />
+        </div>
       </div>
     </div>
     
@@ -245,7 +203,7 @@ const Banner = ({ theme }: Props) => {
                     className="w-full rounded-3xl custome-width"
                     width="2880"
                     height="1750"
-                    src={theme ? "./assets/img/banner-img-dark-1.png" : "./assets/img/banner-img-light-1.jpg"}
+                    src={darkMode ? "./assets/img/banner-img-dark-1.png" : "./assets/img/banner-img-light-1.jpg"}
                     alt="Image of Doing dashboard"
                   />
                   <span className="lqd-outline-glow absolute inline-block rounded-[inherit] pointer-events-none overflow-hidden lqd-outline-glow-effect-1">

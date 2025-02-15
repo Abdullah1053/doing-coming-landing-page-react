@@ -1,7 +1,5 @@
-import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 
 const posts = [
   {
@@ -38,26 +36,17 @@ const posts = [
 ];
 
 function HelpPage() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
-  };
+  const { darkMode } = useOutletContext();
 
   return (
     <div
       dir="rtl"
-      className={`min-h-screen ${
+      className={`min-h-screen pt-4 ${
         darkMode ? "bg-black text-white" : "bg-white text-gray-950"
       }`}
     >
-      <Header
-        theme={darkMode}
-        onChangeTheme={(theme) => toggleDarkMode(theme)}
-      />
       {/* Start Content */}
-      <section className="container mt-20">
+      <section className="container">
         <div className="relative">
           <img
             className="w-full h-96 object-cover rounded-lg shadow-lg"
@@ -66,20 +55,20 @@ function HelpPage() {
           />
         </div>
         <div className="mt-8 space-y-6">
-          <h1 className="text-3xl font-semibold text-gray-900">
+          <h1 className="text-3xl font-semibold text-gray-900 dark:text-white">
             7 نصائح لإطلاق حملة تسويقية ذكية للمتاجر الإلكترونية مثل المحترفين
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 dark:text-white/90 text-lg">
             تعد الحملات التسويقية الناجحة للمتاجر الإلكترونية من أكبر الأهداف
             التسويقية لتجار التجزئة لجذب المزيد من العملاء المحتملين وتحقيق
             مبيعات وأرباح أعلى ، والحصول على أفضل النتائج من الحملات التسويقية
             على منصات التواصل الاجتماعي يتطلب إطلاق جيد للتخطيط من خلال
             استراتيجية واضحة، والتي يتم وصفها بالتفصيل في هذه المقالة.
           </p>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 dark:text-white/90 leading-relaxed">
             1 - تحديد أهداف الحملة التسويقية.
           </p>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 dark:text-white/90 leading-relaxed">
             نظرا لاختلاف أهداف الحملات التسويقية على منصات التواصل الاجتماعي ،
             للحصول على حملة تسويقية ناجحة ، تحتاج إلى تحديد الأهداف بوضوح ،
             اعتمادا على احتياجاتك. على سبيل المثال ، إذا كان الهدف هو الحصول على
@@ -92,10 +81,10 @@ function HelpPage() {
             يؤدي إلى زيادة متوسط قيمة الطلب الآن بعد أن تمكنت من تحديد أهداف
             حملتك التسويقية بشكل صحيح ، ننتقل إلى الخطوة التالية.
           </p>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 dark:text-white/90 leading-relaxed">
             2 - تحديد جمهورك المستهدف
           </p>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 dark:text-white/90 leading-relaxed">
             الجمهور المستهدف أو المجموعة المستهدفة هي مجموعة من العملاء
             المحتملين أو الحاليين الذين يحاول التاجر الوصول إليهم وإقناعهم بمنتج
             أو خدمة ، أو تحويلهم إلى عملاء حقيقيين ، أو شرائهم مرة أخرى، لأن
@@ -127,8 +116,8 @@ function HelpPage() {
             alt=""
           />
           <div>
-            <h3 className="font-semibold text-gray-600 text-lg">المؤلف</h3>
-            <p className="text-gray-600 text-sm">محمد الحمادي</p>
+            <h3 className="font-semibold text-gray-600 dark:text-white/90 text-lg">المؤلف</h3>
+            <p className="text-gray-600 dark:text-white/90 text-sm">محمد الحمادي</p>
           </div>
         </div>
       </section>
@@ -192,7 +181,7 @@ function HelpPage() {
         </div>
       </section>
       {/* End CTA  */}
-      <Footer theme={darkMode} />
+      <Footer />
     </div>
   );
 }

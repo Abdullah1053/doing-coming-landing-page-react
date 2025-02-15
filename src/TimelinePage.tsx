@@ -1,29 +1,18 @@
-import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 function HelpPage() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
-  };
+  const { darkMode } = useOutletContext();
 
   return (
     <div
       dir="rtl"
-      className={`min-h-screen ${
+      className={`min-h-screen pt-4 ${
         darkMode ? "bg-black text-white" : "bg-white text-gray-950"
       }`}
     >
-      <Header
-        theme={darkMode}
-        onChangeTheme={(theme) => toggleDarkMode(theme)}
-      />
       {/* Start Banner */}
-      <section className="mt-12 mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl py-8">
+      <section className="mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl py-8">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col justify-center">
@@ -118,11 +107,11 @@ function HelpPage() {
             <div className="relative left-[10px] md:left-[62px] lg:left-[86px] xl:left-[107px] flex items-center justify-center w-10 h-10 rounded-full bg-slate-300 group-[.is-active]:bg-sky-600 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
               1
             </div>
-            <div className="w-full md:w-5/12 bg-stone-200 px-6 py-4 rounded-lg border border-slate-200 shadow-lg">
+            <div className="w-full md:w-5/12 bg-stone-200 dark:bg-white/20 px-6 py-4 rounded-lg border border-slate-200 dark:border-black shadow-lg">
               <div className="flex items-center justify-between space-x-2 mb-1">
-                <div className="font-bold text-slate-900">سجل الآن</div>
+                <div className="font-bold text-gray-900 dark:text-white">سجل الآن</div>
               </div>
-              <div className="text-gray-800">
+              <div className="text-gray-800 dark:text-white/70">
                 ببساطة، ابدأ رحلتك بتسجيل حساب جديد في خطوات سهلة وسريعة.
               </div>
             </div>
@@ -132,11 +121,11 @@ function HelpPage() {
             <div className="relative right-[10px] md:right-[62px] lg:right-[86px] xl:right-[107px] flex items-center justify-center w-10 h-10 rounded-full bg-slate-300 group-[.is-active]:bg-sky-600 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
               2
             </div>
-            <div className="w-full md:w-5/12 bg-stone-200 px-6 py-4 rounded-lg border border-slate-200 shadow-lg">
+            <div className="w-full md:w-5/12 bg-stone-200 dark:bg-white/20 px-6 py-4 rounded-lg border border-slate-200 dark:border-black shadow-lg">
               <div className="flex items-center justify-between space-x-2 mb-1">
-                <div className="font-bold text-slate-900">اختر تصميمك</div>
+                <div className="font-bold text-gray-900 dark:text-white">اختر تصميمك</div>
               </div>
-              <div className="text-gray-800">
+              <div className="text-gray-800 dark:text-white/70">
                 اختر من بين مجموعة من القوالب الجاهزة التي تناسبك احتياحاتك التجارية او ابدأ بتصميم متجرك.
               </div>
             </div>
@@ -146,11 +135,11 @@ function HelpPage() {
             <div className="relative left-[10px] md:left-[62px] lg:left-[86px] xl:left-[107px] flex items-center justify-center w-10 h-10 rounded-full bg-slate-300 group-[.is-active]:bg-sky-600 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
               3
             </div>
-            <div className="w-full md:w-5/12 bg-stone-200 px-6 py-4 rounded-lg border border-slate-200 shadow-lg">
+            <div className="w-full md:w-5/12 bg-stone-200 dark:bg-white/20 px-6 py-4 rounded-lg border border-slate-200 dark:border-black shadow-lg">
               <div className="flex items-center justify-between space-x-2 mb-1">
-                <div className="font-bold text-slate-900">اربط وسائل الدفع</div>
+                <div className="font-bold text-gray-900 dark:text-white">اربط وسائل الدفع</div>
               </div>
-              <div className="text-gray-800">
+              <div className="text-gray-800 dark:text-white/70">
                 قم بربط متجرك مع وسائل الدفع الإلكترونية الموثوقة، لتبدأ عمليات البيع بأمان.
               </div>
             </div>
@@ -160,11 +149,11 @@ function HelpPage() {
             <div className="relative right-[10px] md:right-[62px] lg:right-[86px] xl:right-[107px] flex items-center justify-center w-10 h-10 rounded-full bg-slate-300 group-[.is-active]:bg-sky-600 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
               4
             </div>
-            <div className="w-full md:w-5/12 bg-stone-200 px-6 py-4 rounded-lg border border-slate-200 shadow-lg">
+            <div className="w-full md:w-5/12 bg-stone-200 dark:bg-white/20 px-6 py-4 rounded-lg border border-slate-200 dark:border-black shadow-lg">
               <div className="flex items-center justify-between space-x-2 mb-1">
-                <div className="font-bold text-slate-900">ابدأ البيع</div>
+                <div className="font-bold text-gray-900 dark:text-white">ابدأ البيع</div>
               </div>
-              <div className="text-gray-800">
+              <div className="text-gray-800 dark:text-white/70">
                 بعد تجهيز متجرك، ابدأ بيع منتجاتك على الفور. تتيح لك منصتنا البدء في بيع المنتجات بعد دقائق من الإعداد.
               </div>
             </div>
@@ -192,7 +181,7 @@ function HelpPage() {
         </div>
       </section>
       {/* End CTA  */}
-      <Footer theme={darkMode} />
+      <Footer />
     </div>
   );
 }

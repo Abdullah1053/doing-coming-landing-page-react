@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Layout from "../Layout";
 import App from "../App";
 import HowToServePage from "../HowToServePage";
 import TimelinePage from "../TimelinePage";
@@ -16,39 +17,53 @@ import TermsConditionsPage from "../TermsConditionsPage";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
-  },
-  {
-    path: "/how-to-serve",
-    element: <HowToServePage />
-  },
-  {
-    path: "/timeline",
-    element: <TimelinePage />
-  },
-  {
-    path: "/about",
-    element: <AboutPage />
-  },
-  {
-    path: "/price",
-    element: <PricePage />
-  },
-  {
-    path: "/help",
-    element: <HelpPage />
-  },
-  {
-    path: "/help-blogs",
-    element: <HelpBlogPage />
-  },
-  {
-    path: "/blogs",
-    element: <BlogsPage />
-  },
-  {
-    path: "/blogs/:id",
-    element: <BlogPage />
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <App />
+      },
+      {
+        path: "/how-to-serve",
+        element: <HowToServePage />
+      },
+      {
+        path: "/timeline",
+        element: <TimelinePage />
+      },
+      {
+        path: "/about",
+        element: <AboutPage />
+      },
+      {
+        path: "/price",
+        element: <PricePage />
+      },
+      {
+        path: "/help",
+        element: <HelpPage />
+      },
+      {
+        path: "/help-blogs",
+        element: <HelpBlogPage />
+      },
+      {
+        path: "/blogs",
+        element: <BlogsPage />
+      },
+      {
+        path: "/blogs/:id",
+        element: <BlogPage />
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicyPage />
+      },
+      {
+        path: "/terms-and-conditions",
+        element: <TermsConditionsPage />
+      },
+    ]
   },
   {
     path: "/login",
@@ -57,14 +72,6 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignUpPage />
-  },
-  {
-    path: "/privacy-policy",
-    element: <PrivacyPolicyPage />
-  },
-  {
-    path: "/terms-and-conditions",
-    element: <TermsConditionsPage />
   },
 ])
 

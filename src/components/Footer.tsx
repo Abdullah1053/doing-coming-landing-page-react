@@ -6,13 +6,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import logoLight from "/assets/img/logo/logoLight.png";
 import logoDark from "/assets/img/logo/logoDark.webp";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 
-interface Props {
-  theme: boolean;
-}
-
-const Footer = ({ theme }: Props) => {
+const Footer = () => {
+  const { darkMode } = useOutletContext();
   const socialLinks = [
     {
       name: "فيسبوك",
@@ -42,7 +39,7 @@ const Footer = ({ theme }: Props) => {
             <div>
               <Link to="/">
                 <img
-                  src={theme ? logoLight : logoDark}
+                  src={darkMode ? logoLight : logoDark}
                   alt="Doing logo"
                   style={{ maxHeight: "2.75rem" }}
                 />
@@ -105,7 +102,7 @@ const Footer = ({ theme }: Props) => {
                 <li>
                   <Link
                     to="/help"
-                    className="text-base text-gray-600 dark:text-white/60 hover:text-sky-400 hover:dark:text-sky-400"
+                    className="text-base text-gray-600 dark:text-white/80 hover:text-sky-400 hover:dark:text-sky-400"
                   >
                     مركز المساعدة
                   </Link>
@@ -114,7 +111,7 @@ const Footer = ({ theme }: Props) => {
                 <li>
                   <Link
                     to="/blogs"
-                    className="text-base text-gray-600 dark:text-white/60 hover:text-sky-400 hover:dark:text-sky-400"
+                    className="text-base text-gray-600 dark:text-white/80 hover:text-sky-400 hover:dark:text-sky-400"
                   >
                     المدونة
                   </Link>
@@ -123,7 +120,7 @@ const Footer = ({ theme }: Props) => {
                 <li>
                   <Link
                     to="/privacy-policy"
-                    className="text-base text-gray-600 dark:text-white/60 hover:text-sky-400 hover:dark:text-sky-400"
+                    className="text-base text-gray-600 dark:text-white/80 hover:text-sky-400 hover:dark:text-sky-400"
                   >
                     سياسة الخصوصية
                   </Link>
@@ -132,7 +129,7 @@ const Footer = ({ theme }: Props) => {
                 <li>
                   <Link
                     to="/terms-and-conditions"
-                    className="text-base text-gray-600 dark:text-white/60 hover:text-sky-400 hover:dark:text-sky-400"
+                    className="text-base text-gray-600 dark:text-white/80 hover:text-sky-400 hover:dark:text-sky-400"
                   >
                     الشروط و الأحكام
                   </Link>

@@ -1,13 +1,12 @@
 import { Fragment } from "react";
-import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleCheck,
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import FaqSection from "./components/FaqSection";
+import { useOutletContext } from "react-router-dom";
 
 const tiers = [
   {
@@ -320,12 +319,7 @@ function classNames(...classes) {
 }
 
 function Price() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
-  };
+  const { darkMode } = useOutletContext();
 
   return (
     <div
@@ -334,10 +328,6 @@ function Price() {
         darkMode ? "bg-black text-white" : "bg-white text-gray-950"
       }`}
     >
-      <Header
-        theme={darkMode}
-        onChangeTheme={(theme) => toggleDarkMode(theme)}
-      />
       <div className="bg-white dark:bg-black">
         <div className="mx-auto max-w-7xl bg-white dark:bg-black py-16 sm:py-24 sm:px-6 lg:px-8">
           <h4 className="mb-28 text-center text-[2.4rem] font-bold leading-[44px] text-gray-900 dark:text-white">ابدأ تجارتك مع دوينج! باقات مرنة تناسب انطلاقتك</h4>
@@ -559,7 +549,7 @@ function Price() {
         </div>
       </div>
       <FaqSection />
-      <Footer theme={darkMode} />
+      <Footer />
     </div>
   );
 }

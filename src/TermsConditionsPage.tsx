@@ -1,14 +1,8 @@
-import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 function TermsConditionsPage() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
-  };
+  const { darkMode } = useOutletContext();
 
   return (
     <div
@@ -17,10 +11,6 @@ function TermsConditionsPage() {
         darkMode ? "bg-black text-white" : "bg-white text-gray-950"
       }`}
     >
-      <Header
-        theme={darkMode}
-        onChangeTheme={(theme) => toggleDarkMode(theme)}
-      />
       {/* Start Content */}
       <section className="container min-h-screen">
         <div className="mx-auto px-4 py-16">
@@ -191,7 +181,7 @@ function TermsConditionsPage() {
         </div>
       </section>
       {/* End CTA  */}
-      <Footer theme={darkMode} />
+      <Footer />
     </div>
   );
 }

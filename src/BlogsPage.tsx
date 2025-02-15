@@ -1,7 +1,5 @@
-import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 
 const posts = [
   {
@@ -51,26 +49,17 @@ const posts = [
 ];
 
 function HelpPage() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
-  };
+  const { darkMode } = useOutletContext();
 
   return (
     <div
       dir="rtl"
-      className={`min-h-screen ${
+      className={`min-h-screen pt-4 ${
         darkMode ? "bg-black text-white" : "bg-white text-gray-950"
       }`}
     >
-      <Header
-        theme={darkMode}
-        onChangeTheme={(theme) => toggleDarkMode(theme)}
-      />
       {/* Start Banner */}
-      <section className="mt-20 mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl">
+      <section className="mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl">
         <div className="container">
           <div class="mx-auto max-w-2xl py-12 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
             <h2 className="text-[3rem] font-bold text-gray-900 dark:text-white sm:text-4xl">
@@ -139,7 +128,7 @@ function HelpPage() {
         </div>
       </section>
       {/* End CTA  */}
-      <Footer theme={darkMode} />
+      <Footer />
     </div>
   );
 }

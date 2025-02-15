@@ -1,28 +1,18 @@
-import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 function HowToServe() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
-  };
+  const { darkMode } = useOutletContext();
 
   return (
     <div
       dir="rtl"
-      className={`min-h-screen ${
+      className={`min-h-screen pt-4 ${
         darkMode ? "bg-black text-white" : "bg-white text-gray-950"
       }`}
     >
-      <Header
-        theme={darkMode}
-        onChangeTheme={(theme) => toggleDarkMode(theme)}
-      />
       {/* Start Banner */}
-      <section className="mt-12 mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl py-8">
+      <section className="mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl py-8">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col justify-center">
@@ -104,7 +94,7 @@ function HowToServe() {
         </div>
       </section>
       {/* End CTA  */}
-      <Footer theme={darkMode} />
+      <Footer />
     </div>
   );
 }

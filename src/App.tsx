@@ -1,26 +1,18 @@
-import Header from "./components/Header";
 import Banner from "./components/Banner";
-import BannerImage from "./components/BannerImage";
 import Generators from "./components/Generators";
 import Features from "./components/Features";
 import HowItWorks from "./components/HowItWorks";
 import MarqueeSection from "./components/MarqueeSection";
 import ToolsSection from "./components/ToolsSection";
-import TemplatesSection from "./components/TemplatesSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import PricingSection from "./components/PricingSection";
 import FaqSection from "./components/FaqSection";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
-import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
-  };
+  const { darkMode } = useOutletContext();
 
   return (
     <div
@@ -29,23 +21,17 @@ function App() {
         darkMode ? "bg-black text-white" : "bg-white text-gray-950"
       }`}
     >
-      <Header
-        theme={darkMode}
-        onChangeTheme={(theme) => toggleDarkMode(theme)}
-      />
       <Banner theme={darkMode} />
-      {/* <BannerImage /> */}
       <Generators />
       <Features />
       <HowItWorks />
       <MarqueeSection />
       <ToolsSection />
-      {/* <TemplatesSection /> */}
       <TestimonialsSection />
       <PricingSection />
       <FaqSection />
       <CTASection />
-      <Footer theme={darkMode} />
+      <Footer />
     </div>
   );
 }

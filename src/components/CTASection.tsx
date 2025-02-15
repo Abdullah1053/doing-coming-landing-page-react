@@ -67,31 +67,6 @@ const CTASection = () => {
           </div>
         </div>
       </div>
-      {/* <div className="container mb-20">
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {socialLinks.map((social, index) => (
-            <a
-              key={index}
-              className="group flex flex-col items-center rounded-2xl px-4 pb-8 pt-10 text-center leading-tight text-gray-900 dark:text-white transition-all hover:scale-105 hover:text-sky-500 hover:dark:text-sky-500"
-              href="#"
-            >
-              <FontAwesomeIcon
-                className="h-20"
-                icon={social.iconClass}
-              />
-              <span className="mb-8 block">
-                {}
-              </span>
-              <span className="mb-2.5 block font-heading text-lg">
-                {social.name}
-              </span>
-              <span className="block text-2xs">
-                {social.description}
-              </span>
-            </a>
-          ))}
-        </div>
-      </div> */}
     </section>
   );
 };

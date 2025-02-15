@@ -1,8 +1,8 @@
-import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faBars } from "@fortawesome/free-solid-svg-icons";
+import { useOutletContext } from "react-router-dom";
 
 const blogs = [
   {
@@ -29,14 +29,10 @@ const blogs = [
 ];
 
 function HelpBlogPage() {
-  const [darkMode, setDarkMode] = useState(false);
+  const { darkMode } = useOutletContext();
   const [selectedBlog, setSelectedBlog] = useState(null);
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
-  };
 
   const handleBlogClick = (blog) => {
     setSelectedBlog(blog);
@@ -49,16 +45,12 @@ function HelpBlogPage() {
   return (
     <div
       dir="rtl"
-      className={`min-h-screen ${
+      className={`min-h-screen pt-4 ${
         darkMode ? "bg-black text-white" : "bg-white text-gray-950"
       }`}
     >
-      <Header
-        theme={darkMode}
-        onChangeTheme={(theme) => toggleDarkMode(theme)}
-      />
       {/* Start Banner */}
-      <section className="container mt-12 mx-5 rounded-3xl py-4">
+      <section className="container mx-5 rounded-3xl py-4">
         <h4 className="font-bold text-gray-900 dark:text-white">مركز المساعدة</h4>
       </section>
       {/* End Banner */}
@@ -151,7 +143,7 @@ function HelpBlogPage() {
         </div>
       </section>
       {/* End CTA  */}
-      <Footer theme={darkMode} />
+      <Footer />
     </div>
   );
 }

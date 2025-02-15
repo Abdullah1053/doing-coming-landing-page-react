@@ -1,6 +1,5 @@
-import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { useState } from "react";
+import { Link, useOutletContext } from "react-router-dom";
 
 const types = [
   {
@@ -19,26 +18,17 @@ const types = [
 ];
 
 function HelpPage() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
-  };
+  const { darkMode } = useOutletContext();
 
   return (
     <div
       dir="rtl"
-      className={`min-h-screen ${
+      className={`min-h-screen pt-4 ${
         darkMode ? "bg-black text-white" : "bg-white text-gray-950"
       }`}
     >
-      <Header
-        theme={darkMode}
-        onChangeTheme={(theme) => toggleDarkMode(theme)}
-      />
       {/* Start Banner */}
-      <section className="mt-12 mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl py-8">
+      <section className="mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl py-8">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col justify-center">
@@ -79,12 +69,12 @@ function HelpPage() {
                   {item.description}
                 </p>
               </div>
-              <a
-                href={item.href}
+              <Link
+                to={item.href}
                 className="mt-4 self-start inline-flex items-center rounded-md border border-transparent bg-sky-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
               >
                 ابدأ الآن
-              </a>
+              </Link>
             </div>
           ))}
         </div>
@@ -110,7 +100,7 @@ function HelpPage() {
         </div>
       </section>
       {/* End CTA  */}
-      <Footer theme={darkMode} />
+      <Footer />
     </div>
   );
 }

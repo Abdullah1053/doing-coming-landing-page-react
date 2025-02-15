@@ -215,8 +215,8 @@ video {
   --foreground: 216 11% 45%;
   --heading-background: 0 0% 100%;
   --heading-foreground: 213 13% 14%;
-  --font-body: "Golos Text";
-  --font-heading: "Onest";
+  --font-body: "questv";
+  --font-heading: "questv";
   --headings-font-family: var(--font-heading), ui-sans-serif, system-ui,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
@@ -349,8 +349,8 @@ h6 {
   --heading-background: 0 0% 0%;
   --gradient-from: 169 36% 41%;
   --gradient-to: 170 84% 70%;
-  --font-body: "Golos Text";
-  --font-heading: "Golos Text";
+  --font-body: "questv";
+  --font-heading: "questv";
   --headings-font-weight: 700;
   --h1-font-size: 5.125rem;
   --h1-line-height: 1.195em;
@@ -11440,7 +11440,7 @@ hr {
   }
   .dark\:text-white {
     --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
+    /* color: rgb(255 255 255 / var(--tw-text-opacity)); */
   }
   .dark\:placeholder\:text-\[\#a5a9b1\]::-moz-placeholder {
     --tw-text-opacity: 1;

@@ -380,6 +380,7 @@ html {
 body {
   font-size: 1.125rem;
   line-height: 1.33em;
+  overflow-x: hidden;
 }
 hr {
   border-color: #fff3;
@@ -3691,7 +3692,7 @@ hr {
 }
 .bg-black {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(9, 11, 12);
 }
 .bg-black\/10 {
   background-color: #0000001a;

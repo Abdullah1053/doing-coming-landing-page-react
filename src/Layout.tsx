@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 
 const Layout = () => {  
   const [darkMode, setDarkMode] = useState(() => {
-    return JSON.parse(localStorage.getItem('theme') || 'false');
+    return JSON.parse(localStorage.getItem('theme') || 'true');
   });
   
   useEffect(() => {
     localStorage.setItem('theme', JSON.stringify(darkMode));
+    console.log(darkMode);
     document.documentElement.classList.toggle('dark', darkMode);
   }, [darkMode]);
   

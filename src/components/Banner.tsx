@@ -210,54 +210,59 @@ const Banner = () => {
     const video3 = video3Ref.current;
     const video4 = video4Ref.current;
 
-    const handleVideo1End = () => {
-      video2.currentTime = 0; // Reset video to start
-      video2.play();
-      // Wait for fade transition to complete before updating state
-      setTimeout(() => {
-        setCurrentVideo(2);
-      }, 500); // Match this with CSS transition duration
+    const handleVideoTransition = (currentVideo: HTMLVideoElement, nextVideo: HTMLVideoElement, nextIndex: number) => {
+      // Prevent multiple transitions
+      if (currentVideo.dataset.transitioning === 'true') return;
+      currentVideo.dataset.transitioning = 'true';
+
+      // Prepare next video
+      nextVideo.currentTime = 0;
+      
+      // Direct switch between videos
+      nextVideo.play().then(() => {
+        currentVideo.style.opacity = '0';
+        nextVideo.style.opacity = '1';
+        
+        currentVideo.dataset.transitioning = 'false';
+        setCurrentVideo(nextIndex);
+        
+        // Reset current video
+        currentVideo.currentTime = 0;
+      }).catch(error => {
+        console.error('Error during video transition:', error);
+        currentVideo.dataset.transitioning = 'false';
+      });
     };
 
-    const handleVideo2End = () => {
-      video3.currentTime = 0;
-      video3.play();
-      setTimeout(() => {
-        setCurrentVideo(3);
-      }, 500);
-    };
-
-    const handleVideo3End = () => {
-      video4.currentTime = 0;
-      video4.play();
-      setTimeout(() => {
-        setCurrentVideo(4);
-      }, 500);
-    };
-
-    const handleVideo4End = () => {
-      video1.currentTime = 0;
-      video1.play();
-      setTimeout(() => {
-        setCurrentVideo(1);
-      }, 500);
-    };
+    const handleVideo1End = () => handleVideoTransition(video1, video2, 2);
+    const handleVideo2End = () => handleVideoTransition(video2, video3, 3);
+    const handleVideo3End = () => handleVideoTransition(video3, video4, 4);
+    const handleVideo4End = () => handleVideoTransition(video4, video1, 1);
 
     video1.addEventListener('ended', handleVideo1End);
     video2.addEventListener('ended', handleVideo2End);
     video3.addEventListener('ended', handleVideo3End);
     video4.addEventListener('ended', handleVideo4End);
 
-    // Start with video 1
+    // Initialize videos with proper states
+    [video1, video2, video3, video4].forEach(video => {
+      video.style.opacity = '0';
+      video.dataset.transitioning = 'false';
+      video.load();
+    });
+
+    // Start with video 1 and set its opacity to 1
+    video1.style.opacity = '1';
     video1.play();
 
+
     return () => {
-      window.removeEventListener("resize", handleResize);
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       video1.removeEventListener('ended', handleVideo1End);
       video2.removeEventListener('ended', handleVideo2End);
       video3.removeEventListener('ended', handleVideo3End);
       video4.removeEventListener('ended', handleVideo4End);
+      window.removeEventListener("resize", handleResize);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
@@ -303,8 +308,6 @@ const Banner = () => {
           height: '100%',
           objectFit: 'cover',
           zIndex: -1,
-          opacity: currentVideo === 1 ? 1 : 0,
-          transition: 'opacity 500ms ease-in-out'
         }}
         preload="auto"
         playsInline
@@ -321,8 +324,6 @@ const Banner = () => {
           height: '100%',
           objectFit: 'cover',
           zIndex: -1,
-          opacity: currentVideo === 2 ? 1 : 0,
-          transition: 'opacity 500ms ease-in-out'
         }}
         preload="auto"
         playsInline
@@ -339,8 +340,6 @@ const Banner = () => {
           height: '100%',
           objectFit: 'cover',
           zIndex: -1,
-          opacity: currentVideo === 3 ? 1 : 0,
-          transition: 'opacity 500ms ease-in-out'
         }}
         preload="auto"
         playsInline
@@ -357,8 +356,6 @@ const Banner = () => {
           height: '100%',
           objectFit: 'cover',
           zIndex: -1,
-          opacity: currentVideo === 4 ? 1 : 0,
-          transition: 'opacity 500ms ease-in-out'
         }}
         preload="auto"
         playsInline

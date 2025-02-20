@@ -13,8 +13,20 @@ const Banner = () => {
   const image1Ref = useRef(null);
   const box1Ref = useRef(null);
   const sectionRef = useRef(null);
+  const image2Ref = useRef(null);
+  const [currentVideo, setCurrentVideo] = useState(1);
+  const video1Ref = useRef(null);
+  const video2Ref = useRef(null);
+  const video3Ref = useRef(null);
+  const video4Ref = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const rotatingTexts = ["متجرك الإلكتورني", "موقعك الخاص", "مدونتك"];
+
+
+
+  // Trigger a resize event to ensure styles are applied correctly
+
 
   useEffect(() => {
     // Set initial in-view state
@@ -23,109 +35,245 @@ const Banner = () => {
     // Setup text rotation
     const interval = setInterval(() => {
       setCurrentTextIndex((prev) => (prev + 1) % rotatingTexts.length);
-    }, 3000);
+    }, 4000);
 
     const handleResize = () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       
-      let animationConfig = null;
-      let movementX = 270;
-      let movementY = 240;
-
-      if (window.innerWidth >= 1600) {
-        animationConfig = {
-          end: "+=800px",
-          scrub: 1.5,
-        };
-        movementX += 240;
-        movementY += 100;
-      } else if (window.innerWidth >= 1500) {
-        animationConfig = {
-          end: "+=700px",
-          scrub: 1.5,
-        };
-        movementX += 190;
-        movementY += 100;
-      } else if (window.innerWidth >= 1400) {
-        animationConfig = {
-          end: "+=600px",
-          scrub: 1.5,
-        };
-        movementX += 135;
-        movementY += 100;
-      } else if (window.innerWidth >= 1300) {
-        animationConfig = {
-          end: "+=500px",
-          scrub: 1.2,
-        };
-        movementX += 105;
-        movementY += 60;
-      } else if (window.innerWidth >= 1200) {
-        animationConfig = {
-          end: "+=400px",
-          scrub: 1.2,
-        };
-        movementX += 55;
-        movementY += 55;
-      } else if (window.innerWidth >= 1100) {
-        animationConfig = {
-          end: "+=300px",
-          scrub: 1,
-        };
-        movementX += 40;
-        movementY += 20;
-      } else if (window.innerWidth >= 1024) {
-        animationConfig = {
+      // Base movement values that will be adjusted based on viewport width
+      let config = {
+        image1: {
+          movementX: 270,
+          movementY: 240,
           end: "+=200px",
-          scrub: 1,
+          scrub: 1
+        },
+        image2: {
+          extraOffsetY: -100,
+          extraOffsetX: 30,
+          end: "+=200px",
+          scrub: 0.1
+        }
+      };
+
+      // Responsive breakpoints configuration
+      const breakpoints = [
+        {
+          width: 1800,
+          adjustments: {
+            image1: { movementX: 530, movementY: 340, end: "+=800px", scrub: 1.5 },
+            image2: { extraOffsetY: -90, extraOffsetX: 60, end: "center center", scrub: 0.15 }
+          }
+        },
+
+        {
+          width: 1700,
+          adjustments: {
+            image1: { movementX: 530, movementY: 340, end: "+=800px", scrub: 1.5 },
+            image2: { extraOffsetY: -100, extraOffsetX: 60, end: "center center", scrub: 0.15 }
+          }
+        },
+
+        {
+          width: 1600,
+          adjustments: {
+            image1: { movementX: 500, movementY: 340, end: "+=800px", scrub: 1.5 },
+            image2: { extraOffsetY: -100, extraOffsetX: 60, end: "center center", scrub: 0.15 }
+          }
+        },
+        {
+          width: 1500,
+          adjustments: {
+            image1: { movementX: 470, movementY: 340, end: "+=700px", scrub: 1.5 },
+            image2: { extraOffsetY: -100, extraOffsetX: 55, end: "center center", scrub: 0.15 }
+          }
+        },
+        {
+          width: 1400,
+          adjustments: {
+            image1: { movementX: 410, movementY: 340, end: "+=600px", scrub: 1.5 },
+            image2: { extraOffsetY: -95, extraOffsetX: 20, end: "center center", scrub: 0.13 }
+          }
+        },
+        {
+          width: 1300,
+          adjustments: {
+            image1: { movementX: 390, movementY: 300, end: "+=500px", scrub: 1.2 },
+            image2: { extraOffsetY: -90, extraOffsetX: 45, end: "center center", scrub: 0.12 }
+          }
+        },
+        {
+          width: 1200,
+          adjustments: {
+            image1: { movementX: 310, movementY: 293, end: "+=400px", scrub: 1.2 },
+            image2: { extraOffsetY: -90, extraOffsetX: 40, end: "center center", scrub: 0.11 }
+          }
+        },
+        {
+          width: 1100,
+          adjustments: {
+            image1: { movementX: 310, movementY: 260, end: "+=300px", scrub: 1 },
+            image2: { extraOffsetY: -80, extraOffsetX: 35, end: "center center", scrub: 0.1 }
+          }
+        },
+        {
+          width: 1024,
+          adjustments: {
+            image1: { movementX: 270, movementY: 240, end: "+=200px", scrub: 1 },
+            image2: { extraOffsetY: -80, extraOffsetX: 30, end: "center center", scrub: 0.1 }
+          }
+        }
+      ];
+
+      // Find the appropriate configuration based on window width
+      const currentBreakpoint = breakpoints.find(bp => window.innerWidth >= bp.width);
+      if (currentBreakpoint) {
+        config = {
+          image1: { ...config.image1, ...currentBreakpoint.adjustments.image1 },
+          image2: { ...config.image2, ...currentBreakpoint.adjustments.image2 }
         };
       }
 
-      if (animationConfig) {
-        const image1 = image1Ref.current;
-        const box1 = box1Ref.current;
-        const originalSrc1 = image1.src;
+      // First image animation
+      const image1 = image1Ref.current;
+      const box1 = box1Ref.current;
 
+      if (image1 && box1) {
         gsap.timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 5%",
-            ...animationConfig,
+            end: config.image1.end,
+            scrub: config.image1.scrub,
             onUpdate: (self) => {
               const halfwayProgress = 0.2;
-    
+
               if (self.progress >= halfwayProgress && image1.dataset.changed !== "true") {
-                image1.src = "./assets/img/faza1.png";
+                image1.src = "./assets/img/faza-rb.png";
                 image1.dataset.changed = "true";
               } else if (self.progress < halfwayProgress && image1.dataset.changed !== "false") {
-                image1.src = originalSrc1;
+                image1.src = "./assets/img/faza1.png";
                 image1.dataset.changed = "false";
               }
             },
           },
         })
-          .to(image1, {
-            // x: () => box1.getBoundingClientRect().left - image1.getBoundingClientRect().left + movementOffsetX,
-            // y: () => box1.getBoundingClientRect().top + movementOffsetY,
-            x: () => box1.getBoundingClientRect().left - image1.getBoundingClientRect().left + movementX,
-            y: () => box1.getBoundingClientRect().top - image1.getBoundingClientRect().top + movementY,
-            duration: 1,
-          });
+        .to(image1, {
+          x: () => box1.getBoundingClientRect().left - image1.getBoundingClientRect().left + config.image1.movementX,
+          y: () => box1.getBoundingClientRect().top - image1.getBoundingClientRect().top + config.image1.movementY,
+          duration: 1,
+        });
+      }
+      
+      // Second image animation
+      if (image2Ref.current && box1Ref.current) {
+        gsap.to(image2Ref.current, {
+          y: () => {
+            const boxBottom = box1Ref.current.getBoundingClientRect().bottom;
+            const image2Top = image2Ref.current.getBoundingClientRect().top;
+            return boxBottom - image2Top + config.image2.extraOffsetY;
+          },
+          x: () => {
+            const boxRect = box1Ref.current.getBoundingClientRect();
+            const imageRect = image2Ref.current.getBoundingClientRect();
+            const boxCenter = boxRect.left + boxRect.width / 2;
+            const imageCenter = imageRect.left + imageRect.width / 2;
+            return boxCenter - imageCenter + config.image2.extraOffsetX;
+          },
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 0%",
+            end: config.image2.end,
+            scrub: config.image2.scrub,
+            onUpdate: (self) => {
+              const halfwayProgress = 0.2;
+    
+              if (self.progress >= halfwayProgress && image2Ref.current.dataset.changed !== "true") {
+                image2Ref.current.src = "./assets/img/payment2.png";
+                image2Ref.current.dataset.changed = "true";
+              } else if (self.progress < halfwayProgress && image2Ref.current.dataset.changed !== "false") {
+                image2Ref.current.src = "./assets/img/payment1.png";
+                image2Ref.current.dataset.changed = "false";
+              }
+            },
+          },
+        });
       }
     }
 
-    handleResize();
     window.addEventListener("resize", handleResize);
+
+    handleResize();
+    
+    const video1 = video1Ref.current;
+    const video2 = video2Ref.current;
+    const video3 = video3Ref.current;
+    const video4 = video4Ref.current;
+
+    const handleVideo1End = () => {
+      video2.currentTime = 0; // Reset video to start
+      video2.play();
+      // Wait for fade transition to complete before updating state
+      setTimeout(() => {
+        setCurrentVideo(2);
+      }, 500); // Match this with CSS transition duration
+    };
+
+    const handleVideo2End = () => {
+      video3.currentTime = 0;
+      video3.play();
+      setTimeout(() => {
+        setCurrentVideo(3);
+      }, 500);
+    };
+
+    const handleVideo3End = () => {
+      video4.currentTime = 0;
+      video4.play();
+      setTimeout(() => {
+        setCurrentVideo(4);
+      }, 500);
+    };
+
+    const handleVideo4End = () => {
+      video1.currentTime = 0;
+      video1.play();
+      setTimeout(() => {
+        setCurrentVideo(1);
+      }, 500);
+    };
+
+    video1.addEventListener('ended', handleVideo1End);
+    video2.addEventListener('ended', handleVideo2End);
+    video3.addEventListener('ended', handleVideo3End);
+    video4.addEventListener('ended', handleVideo4End);
+
+    // Start with video 1
+    video1.play();
+
     return () => {
       window.removeEventListener("resize", handleResize);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      video1.removeEventListener('ended', handleVideo1End);
+      video2.removeEventListener('ended', handleVideo2End);
+      video3.removeEventListener('ended', handleVideo3End);
+      video4.removeEventListener('ended', handleVideo4End);
     };
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
     <>
     <div className="container">
-      <div className="hidden lg:block relative z-2 w-64 xl:w-72 2xl:w-80 top-20 -right-20">
+      <div className="hidden lg:block relative z-2 w-64 xl:w-72 2xl:w-80 top-30 -right-25">
         <div className="landing-section absolute z-2">
           <img
             ref={image1Ref}
@@ -137,57 +285,142 @@ const Banner = () => {
         </div>
       </div>
     </div>
-    
+
     <section
       ref={sectionRef}
       className={`site-section group relative z-1 pt-4 [&_strong]:text-white/75 ${
         isInView ? "lqd-is-in-view" : ""
       }`}
       id="banner"
+      style={{ position: 'relative' }}
     >
-      <div className="container w-full max-w-[1680px]">
-        <div className="flex w-full translate-y-8 scale-[0.985] flex-wrap items-start gap-y-8 rounded-3xl bg-stone-100 dark:bg-white/20 px-5 py-32 pb-80 opacity-0 transition-all duration-700 group-[&.lqd-is-in-view]:translate-y-0 group-[&.lqd-is-in-view]:scale-100 group-[&.lqd-is-in-view]:opacity-100 md:px-8 lg:min-h-[80vh] lg:items-center lg:justify-between lg:px-20 lg:pt-36">
+      <video 
+        ref={video1Ref}
+        className="absolute -top-20 left-0 w-full h-full object-cover"
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          zIndex: -1,
+          opacity: currentVideo === 1 ? 1 : 0,
+          transition: 'opacity 500ms ease-in-out'
+        }}
+        preload="auto"
+        playsInline
+        muted
+      >
+        <source src="./assets/videos/banner/banner-video-1.mp4" type="video/mp4" />
+      </video>
+      <video 
+        ref={video2Ref}
+        className="absolute -top-20 left-0 w-full h-full object-cover"
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          zIndex: -1,
+          opacity: currentVideo === 2 ? 1 : 0,
+          transition: 'opacity 500ms ease-in-out'
+        }}
+        preload="auto"
+        playsInline
+        muted
+      >
+        <source src="./assets/videos/banner/banner-video-2.mp4" type="video/mp4" />
+      </video>
+      <video 
+        ref={video3Ref}
+        className="absolute -top-20 left-0 w-full h-full object-cover"
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          zIndex: -1,
+          opacity: currentVideo === 3 ? 1 : 0,
+          transition: 'opacity 500ms ease-in-out'
+        }}
+        preload="auto"
+        playsInline
+        muted
+      >
+        <source src="./assets/videos/banner/banner-video-3.mp4" type="video/mp4" />
+      </video>
+      <video 
+        ref={video4Ref}
+        className="absolute -top-20 left-0 w-full h-full object-cover"
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          zIndex: -1,
+          opacity: currentVideo === 4 ? 1 : 0,
+          transition: 'opacity 500ms ease-in-out'
+        }}
+        preload="auto"
+        playsInline
+        muted
+      >
+        <source src="./assets/videos/banner/banner-video-4.mp4" type="video/mp4" />
+      </video>
+
+      <div className="container w-full max-w-[1680px] pt-20 lg:pt-0">
+        <div className="flex w-full translate-y-8 scale-[0.985] flex-wrap items-start gap-y-8 rounded-3xl px-5 lg:pb-80 pb-[195px] opacity-0 transition-all duration-700 group-[&.lqd-is-in-view]:translate-y-0 group-[&.lqd-is-in-view]:scale-100 group-[&.lqd-is-in-view]:opacity-100 md:px-8 lg:min-h-[80vh] lg:items-center lg:justify-between lg:px-20 lg:pt-36 ">
           <div className="md:w-2/12 lg:w-2/12 hidden lg:block">
             <div className="banner-title-wrap">
             </div>
           </div>
 
-          <div className="sm:px-16 md:px-28 lg:px-0 w-full lg:w-7/12">
+          <div className="sm:px-16 md:px-28 lg:px-0 w-full lg:w-9/12">
             <div className="banner-title-wrap relative">
               <div className="block md:flex items-center">
-                <h1 className="banner-title mb-0 ml-3 text-[4rem] text-gray-900 dark:text-white font-body font-bold opacity-100 transition-all delay-300 ease-out">
+                <h1 className="banner-title mb-0 ml-10 text-[8rem] text-gray-900 dark:text-white font-body font-bold opacity-100 transition-all delay-300 ease-out">
                   أنشئ
                 </h1>
-                <div className="lqd-text-rotator mt-8 w-80 h-12 relative">
+                <div className="lqd-text-rotator lg:mt-20 mt-4 w-[100%] h-[150px] relative">
                   {rotatingTexts.map((text, index) => (
                     <span
                       key={index}
-                      className={`absolute text-[2.5rem] text-sky-500 inset-0 transition-all duration-500 ${
+                      className={`absolute lg:text-[4.5rem] text-[3rem] lg:py-10 py-5 text-sky-500 inset-0 transition-all duration-500 ${
                         index === currentTextIndex
                           ? "opacity-100 translate-y-0"
-                          : "opacity-0 translate-y-8"
+                          : "opacity-0 translate-y-4"
                       }`}
+                      style={{ lineHeight: "1.2" }}
                     >
                       {text}
                     </span>
                   ))}
                 </div>
               </div>
-              <div className="mt-12">
-                <p className="mb-3 text-[2rem] font-bold text-gray-800 dark:text-white/90">في دقائق مع منصة دوينج</p>
+              <div className="lg:mt-14 mt-[0px]">
+                <p className="mb-3 text-[2rem] lg:text-[3rem] font-bold text-gray-800 dark:text-white/90">في دقائق مع منصة دوينج</p>
                 <p className="w-4/5 text-[1.4rem] text-gray-700 dark:text-white/90 mt-5 mb-5" style={{ lineHeight: "2.2rem" }}>
                   مجموعة متكاملة من الحلول الرقمية الذكية للمدفوعات والشحن،
-                  إدارة المخزون والتسويق، ودعَّ التعقيدات ورحبَّ بتجربة سهلة
+                  إدارة المخزون والتسويق، ودعَّ التعقيدات ورحبَّ بتجربة سهلة
                   ومجانية.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="w-full lg:w-3/12 flex justify-center">
-            <img src="./assets/img/payment1.png" alt="Payment" />
-          </div>
+
         </div>
+
+
+        <div className="container">
+            <div className="hidden lg:block lg:w-3/12 relative z-2 -top-[200px] right-[500px] mx-auto">
+              <div className="landing-section relative z-2">
+
+                <div className="w-full landing-section z-2">
+                  <img ref={image2Ref} src="./assets/img/payment1.png" className="floating-image" alt="Payment" />
+                </div>
+              </div>
+            </div>
+          </div>
 
         <div
           className={`site-section group p-0.5 relative z-1 -mt-44 px-5 lg:px-0 ${
@@ -198,20 +431,25 @@ const Banner = () => {
           <div className="box-section">
             <div ref={box1Ref} className="side-box" id="box1">
               <div className="container">
-                <figure className="translate-y-8 scale-[0.985] opacity-0 transition-all duration-700 group-[&.lqd-is-in-view]:translate-y-0 group-[&.lqd-is-in-view]:scale-100 group-[&.lqd-is-in-view]:opacity-100">
+                <figure className={`relative translate-y-8 scale-[0.985] transition-all duration-700 group-[&.lqd-is-in-view]:translate-y-0 group-[&.lqd-is-in-view]:scale-100 rounded-3xl ${darkMode ? "image-banner:dark" : "image-banner"}`}>
                   <img
-                    className="w-full rounded-3xl custome-width"
+                    className="w-full rounded-3xl"
                     width="2880"
                     height="1750"
-                    src={darkMode ? "./assets/img/banner-img-dark-1.png" : "./assets/img/banner-img-light-1.jpg"}
+                    src={isMobile ? "./assets/img/mobile-store.png" : "./assets/img/banner-img-dark-1.png"}
                     alt="Image of Doing dashboard"
                   />
-                  <span className="lqd-outline-glow absolute inline-block rounded-[inherit] pointer-events-none overflow-hidden lqd-outline-glow-effect-1">
-                    <span className="lqd-outline-glow-inner absolute start-1/2 top-1/2 inline-block aspect-square min-h-[125%] min-w-[125%] rounded-[inherit]"></span>
-                  </span>
-                  <span className="lqd-outline-glow absolute inline-block rounded-[inherit] pointer-events-none overflow-hidden lqd-outline-glow-effect-1 [&_.lqd-outline-glow-inner]:[animation-direction:alternate]">
-                    <span className="lqd-outline-glow-inner absolute start-1/2 top-1/2 inline-block aspect-square min-h-[125%] min-w-[125%] rounded-[inherit]"></span>
-                  </span>
+                  <div className="rounded-3xl custome-width absolute inset-0 w-[100%] my-auto h-[100%]">
+
+                    <span className="lqd-outline-glow absolute inset-0 rounded-[inherit] pointer-events-none overflow-hidden lqd-outline-glow-effect-1">
+                      <span className="lqd-outline-glow-inner absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 inline-block aspect-square w-full min-w-[125%] rounded-[inherit]"></span>
+                    </span>
+                    <span className="lqd-outline-glow absolute inset-0 rounded-[inherit] pointer-events-none overflow-hidden lqd-outline-glow-effect-1 [&_.lqd-outline-glow-inner]:[animation-direction:alternate]">
+                      <span className="lqd-outline-glow-inner absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 inline-block aspect-square w-full min-w-[125%] rounded-[inherit]"></span>
+                    </span>
+
+                  </div>
+
                 </figure>
               </div>
             </div>

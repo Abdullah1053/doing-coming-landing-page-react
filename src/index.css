@@ -1,11 +1,12 @@
-@font-face {
-  font-family: "questv";
-  src: url("/assets/fonts/Questv.otf");
-}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "questv";
+  src: url("/assets/fonts/Questv.otf");
+}
 
 @layer base {
   body {
@@ -110,4 +111,17 @@
 .bg-dark-theme {
   /* background-color: #23272A; */
   /* background-color: #212124; */
+}
+
+
+
+
+
+.image-banner {
+  background-color: #403f46;
+}
+
+
+.image-banner\:dark{
+  background-color: #403f46;
 }

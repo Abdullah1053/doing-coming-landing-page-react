@@ -117,14 +117,14 @@ const ToolsSection = () => {
 
         <div className="mb-14">{tabs.map((tab) => renderTabContent(tab))}</div>
 
-        <div className="lqd-tabs flex flex-wrap justify-between gap-3 rounded-3xl border border-white/3 p-2 lg:flex-nowrap lg:rounded-full">
+        <div className="lqd-tabs flex flex-wrap justify-between gap-3 rounded-3xl p-2 lg:flex-nowrap lg:rounded-full">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               data-target={`#${tab.id}`}
-              className={`group/trigger flex text-base max-sm:w-full px-3 py-3.5 rounded-full max-mdbasis-1/3 max-md:grow text-center justify-center transition-all md:px-8  hover:scale-105 ${
+              className={`group/trigger flex text-base max-sm:w-full px-3 py-3.5 rounded-2xl max-mdbasis-1/3 max-md:grow text-center justify-center transition-all md:px-8  hover:scale-105 ${
                 activeTab === tab.id
-                  ? "lqd-is-active bg-stone-200 text-gray-900"
+                  ? "lqd-is-active bg-stone-100 dark:bg-white/20 text-gray-900 dark:text-white"
                   : ""
               }`}
               onClick={() => setActiveTab(tab.id)}

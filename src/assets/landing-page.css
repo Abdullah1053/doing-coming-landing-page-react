@@ -1,3 +1,49 @@
+
+
+:root {
+  --primary: 198.3, 100%, 39.8%;
+
+  --background: 240 25% 98%;
+  --foreground: 216 11% 45%;
+  --heading-background: 0 0% 100%;
+  --heading-foreground: 213 13% 14%;
+  --font-body: "questv";
+  --font-heading: "questv";
+  --headings-font-family: var(--font-heading), ui-sans-serif, system-ui,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --headings-line-height: 1.25rem;
+  --headings-font-weight: 600;
+  --headings-text-transform: ;
+  --headings-letter-spacing: ;
+  --headings-color: hsl(var(--heading-foreground));
+  --h1-font-size: 5.25rem;
+  --h1-line-height: 4.8125rem;
+  --h1-letter-spacing: -0.05em;
+  --h1-font-weight: 700;
+  --h2-font-size: 3.3125rem;
+  --h2-line-height: 1;
+  --h2-letter-spacing: -0.03em;
+  --h2-font-weight: 700;
+  --h3-font-size: 2.4375rem;
+  --h3-line-height: 1.1;
+  --h3-letter-spacing: -0.03em;
+  --h3-font-weight: 700;
+  --h4-font-size: 1.125rem;
+  --h4-line-height: 1;
+  --h4-letter-spacing: -0.01em;
+  --h4-font-weight: 500;
+  --h5-font-size: 1rem;
+  --h5-line-height: 1;
+  --h5-letter-spacing: -0.01em;
+  --h5-font-weight: 500;
+  --h6-font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --h6-font-size: 0.9375rem;
+  --h6-line-height: 1;
+  --h6-font-weight: 500;
+}
+
 *,
 :before,
 :after {
@@ -25,6 +71,7 @@ html,
 }
 body {
   margin: 0;
+  overflow-x: hidden;
   line-height: inherit;
 }
 hr {
@@ -210,47 +257,7 @@ video {
 [hidden] {
   display: none;
 }
-:root {
-  --background: 240 25% 98%;
-  --foreground: 216 11% 45%;
-  --heading-background: 0 0% 100%;
-  --heading-foreground: 213 13% 14%;
-  --font-body: "questv";
-  --font-heading: "questv";
-  --headings-font-family: var(--font-heading), ui-sans-serif, system-ui,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
-  --headings-line-height: 1.25rem;
-  --headings-font-weight: 600;
-  --headings-text-transform: ;
-  --headings-letter-spacing: ;
-  --headings-color: hsl(var(--heading-foreground));
-  --h1-font-size: 5.25rem;
-  --h1-line-height: 4.8125rem;
-  --h1-letter-spacing: -0.05em;
-  --h1-font-weight: 700;
-  --h2-font-size: 3.3125rem;
-  --h2-line-height: 1;
-  --h2-letter-spacing: -0.03em;
-  --h2-font-weight: 700;
-  --h3-font-size: 2.4375rem;
-  --h3-line-height: 1.1;
-  --h3-letter-spacing: -0.03em;
-  --h3-font-weight: 700;
-  --h4-font-size: 1.125rem;
-  --h4-line-height: 1;
-  --h4-letter-spacing: -0.01em;
-  --h4-font-weight: 500;
-  --h5-font-size: 1rem;
-  --h5-line-height: 1;
-  --h5-letter-spacing: -0.01em;
-  --h5-font-weight: 500;
-  --h6-font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --h6-font-size: 0.9375rem;
-  --h6-line-height: 1;
-  --h6-font-weight: 500;
-}
+
 h1,
 h2,
 h3,
@@ -341,7 +348,6 @@ h6 {
 :root {
   --background: 240 6% 10%;
   --foreground: 0 0% 50%;
-  --primary: 170 84% 70%;
   --primary-foreground: 0 0% 0%;
   --secondary: 169 39% 11%;
   --secondary-foreground: 170 84% 70%;
@@ -380,7 +386,6 @@ html {
 body {
   font-size: 1.125rem;
   line-height: 1.33em;
-  overflow-x: hidden;
 }
 hr {
   border-color: #fff3;
@@ -492,6 +497,15 @@ hr {
   --tw-contain-layout: ;
   --tw-contain-paint: ;
   --tw-contain-style: ;
+}
+
+
+.dark\:text-white\/90:is(.dark *) {
+  color: #E6EDF4;
+}
+
+.dark\:bg-white\/20:is(.dark *) {
+  background-color: rgb(64, 63, 70);
 }
 .container {
   width: 100%;
@@ -3424,7 +3438,7 @@ hr {
 }
 .\!bg-white {
   --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+  background-color: hsl(var(--hue),10%,90%) !important;
 }
 .bg-\[\#010101\] {
   --tw-bg-opacity: 1;
@@ -3693,7 +3707,9 @@ hr {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(9, 11, 12);
+	color: hsl(var(--hue),10%,90%);
 }
+
 .bg-black\/10 {
   background-color: #0000001a;
 }

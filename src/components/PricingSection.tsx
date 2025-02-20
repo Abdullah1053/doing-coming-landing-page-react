@@ -23,12 +23,25 @@ const PricingCard = ({ plan, activated, onActivate }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // State to trigger bounce animation on the image.
+  const [shouldBounce, setShouldBounce] = useState(false);
+
+  // Clear the bounce animation class after it has run.
+  useEffect(() => {
+    if (shouldBounce) {
+      const timer = setTimeout(() => {
+        setShouldBounce(false);
+      }, 500); // duration should match your animation (500ms here)
+      return () => clearTimeout(timer);
+    }
+  }, [shouldBounce]);
 
   // Call onActivate with a unique id (here we use plan.render) when clicked.
   const handleActivate = () => {
     if (!activated) {
       onActivate(plan.render);
     }
+    setShouldBounce(true);
   };
 
   return (
@@ -111,9 +124,8 @@ const PricingCard = ({ plan, activated, onActivate }) => {
                   />
                 </video>
                 <div className="position-absolute top-100 start-100 translate-middle">
-                    <img src="/assets/img/svg/dark-mode-icon.svg" alt="Dark mode icon" />
-                  </div>
-               
+                  <img src="/assets/img/svg/dark-mode-icon.svg" alt="Dark mode icon" />
+                </div>
               </div>
             </div>
           </div>
@@ -123,7 +135,11 @@ const PricingCard = ({ plan, activated, onActivate }) => {
             style={{ opacity: 1 }}
           >
             <img
-              className="plan-image"
+              onClick={(e) => {
+                e.stopPropagation(); // avoid re-triggering the card's click
+                setShouldBounce(true);
+              }}
+              className={`plan-image ${shouldBounce ? "animate-bounce-once" : ""}`}
               alt=""
               loading="lazy"
               width="391"
@@ -243,7 +259,7 @@ const PricingSection = () => {
     {darkMode ? (
       <section
         ref={sectionRef}
-        className={`site-section py-20 transition-all duration-700 md:translate-y-8 ${
+        className={`site-section py-20 transition-all duration-700 md:translate-y-8 pricing-dark overflow-x-hidden overflow-y-hidden ${
           isInView ? "translate-y-0 opacity-100" : "md:opacity-0"
         } lg:pb-24 lg:pt-16`}
         id="pricing"
@@ -257,7 +273,7 @@ const PricingSection = () => {
           </header>
 
           <div className="container lqd-tabs flex flex-wrap justify-center">
-            <div className="lqd-tabs-triggers mx-auto mb-24 inline-flex flex-wrap justify-between gap-3 rounded-2xl border border-white/3 p-2 max-sm:w-full md:rounded-full">
+            <div className="lqd-tabs-triggers mx-auto mb-24 inline-flex flex-wrap justify-between gap-3 rounded-2xl p-2 bg-stone-100 dark:bg-white/20 max-sm:w-full md:rounded-full">
               <button
                 onClick={() => handleTabClick("pricing-monthly")}
                 className={`group/trigger flex relative max-sm:grow text-center justify-center text-base gap-2 px-3 py-3.5 rounded-full transition-all md:px-8 hover:scale-105 ${
@@ -368,6 +384,22 @@ const PricingSection = () => {
                       plan={{
                         name: "Basic",
                         price: "399",
+                        render: "rare",
+                        features: [
+                          "ChatGPT 3.5",
+                          "Basic Support",
+                          "100,000 Word Tokens",
+                          "50,000 Image Tokens",
+                        ],
+                        link: "https://dark.projecthub.ai/register?plan=5",
+                      }}
+                      activated={annualActivePlan === "rare"}
+                      onActivate={setAnnualActivePlan}
+                    />
+                    <PricingCard
+                      plan={{
+                        name: "Basic",
+                        price: "399",
                         render: "legendary",
                         features: [
                           "ChatGPT 3.5",
@@ -380,6 +412,7 @@ const PricingSection = () => {
                       activated={annualActivePlan === "legendary"}
                       onActivate={setAnnualActivePlan}
                     />
+                  
                   </div>
                 </div>
               </div>
@@ -390,7 +423,7 @@ const PricingSection = () => {
     ) : (
       <section
         ref={sectionRef}
-        className={`site-section py-20 transition-all duration-700 md:translate-y-8 ${
+        className={`site-section py-20 transition-all duration-700 md:translate-y-8 overflow-x-hidden overflow-y-hidden ${
           isInView ? "translate-y-0 opacity-100" : "md:opacity-0"
         } lg:pb-24 lg:pt-16`}
         id="pricing"

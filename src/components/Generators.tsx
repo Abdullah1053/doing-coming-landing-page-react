@@ -1,12 +1,5 @@
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBagShopping,
-  faBoxesStacked,
-  faCreditCard,
-  faCartFlatbed,
-  faChartPie,
-} from "@fortawesome/free-solid-svg-icons";
+
 import useScrollAnimation from "../hooks/useScrollAnimation";
 
 const Generators = () => {
@@ -19,7 +12,7 @@ const Generators = () => {
       title: "انضم إلى منصة التُجار الأولى في اليمن ",
       description:
         "قصة نجاحك في تجارتك تبدأ اليوم أنشئ متجرك الخاص بدقائق واحصل على استضافة مجانية وابدأ انطلاقتك التجارية بمرونة.",
-      iconClass: faBagShopping,
+      iconClass: "fa-regular fa-bag-shopping",
       image:
         "./assets/img/generatorlist/R5dw-intelligent-writing-assistant-image.png",
       alt: "Generate, edit, export.",
@@ -29,7 +22,7 @@ const Generators = () => {
       title: "مـنصـات دفـع آمـنـة",
       description:
         "نوفر لك جميع وسائل الدفع بدءاً من التحويل البنكي والدفع عند الاستلام والدفع بالبطاقات الائتمانية (فيزا وماستر كارد) والدفع بواسطة المحافظ الإلكترونية",
-      iconClass: faBoxesStacked,
+      iconClass: "fa-regular fa-credit-card",
       image:
         "./assets/img/generatorlist/X6tD-create-eye-catching-images-and-graphics-image.png",
       alt: "Imagine, Genearate, Publish.",
@@ -39,7 +32,7 @@ const Generators = () => {
       title: "خيارات شحن متنوعة",
       description:
         "استخدم خيارات شحن مُتنوعة مع عملائك وبسعر مخفص خاص بمتجرك واشحن بكل بساطة",
-      iconClass: faCreditCard,
+      iconClass: "fa-light fa-cart-flatbed",
       image:
         "./assets/img/generatorlist/jO70-generate-high-quality-code-in-no-time-image.png",
       alt: "Fix. Improve. Generate.",
@@ -49,7 +42,7 @@ const Generators = () => {
       title: "إدارة مخزون باحترافية",
       description:
         "ستتمكن من إدارة منتجاتك، مهما كان نوع هذه المنتجات سواءً منتجات جاهزة أو حسب الطلب أو منتجات رقمية وغيرها بكل سهولة",
-      iconClass: faCartFlatbed,
+      iconClass: "fa-light fa-boxes-stacked",
       image:
         "./assets/img/generatorlist/OSlG-meet-your-next-virtual-assistant-image.png",
       alt: "Chat, Solve, Repeat.",
@@ -59,7 +52,7 @@ const Generators = () => {
       title: "تقاريـر مبيعات فورية",
       description:
         "من خلال التقارير ستتمكن من الحصول على جميع المعلومات التي تحتاج إليها لمعرفة أداء المتجر واتخاذ أفضل القرارا",
-      iconClass: faChartPie,
+      iconClass: "fa-light fa-chart-pie",
       image:
         "./assets/img/generatorlist/gHfo-transcribe-your-speech-into-text-image.png",
       alt: "Upload, Analyze, Generate.",
@@ -110,7 +103,7 @@ const Generators = () => {
                 >
                   <span className="flex items-center gap-6 text-[24px] font-normal text-gray-900 dark:text-white/90 group-[&.lqd-is-active]/trigger:text-sky-500 dark:group-[&.lqd-is-active]/trigger:text-sky-500 md:text-[24px]">
                     <span className="w-8 text-gray-900 dark:text-white/90 group-[&.lqd-is-active]/trigger:text-sky-500 [&_i]:h-auto [&_i]:w-full">
-                      <FontAwesomeIcon icon={tab.iconClass} />
+                      <i className={tab.iconClass} ></i>
                     </span>
                     {tab.title}
                   </span>

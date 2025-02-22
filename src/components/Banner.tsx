@@ -49,8 +49,8 @@ const Banner = () => {
           scrub: 1
         },
         image2: {
-          extraOffsetY: -100,
-          extraOffsetX: 30,
+          movementX: 200,
+          movementY: 180,
           end: "+=200px",
           scrub: 0.1
         }
@@ -62,7 +62,7 @@ const Banner = () => {
           width: 1800,
           adjustments: {
             image1: { movementX: 530, movementY: 340, end: "+=800px", scrub: 1.5 },
-            image2: { extraOffsetY: -90, extraOffsetX: 60, end: "center center", scrub: 0.15 }
+            image2: { movementX: 400, movementY: 810, end: "center center", scrub: 0.15 }
           }
         },
 
@@ -70,7 +70,7 @@ const Banner = () => {
           width: 1700,
           adjustments: {
             image1: { movementX: 530, movementY: 340, end: "+=800px", scrub: 1.5 },
-            image2: { extraOffsetY: -100, extraOffsetX: 60, end: "center center", scrub: 0.15 }
+            image2: { movementX: 380, movementY: 810, end: "center center", scrub: 0.15 }
           }
         },
 
@@ -78,49 +78,49 @@ const Banner = () => {
           width: 1600,
           adjustments: {
             image1: { movementX: 500, movementY: 340, end: "+=800px", scrub: 1.5 },
-            image2: { extraOffsetY: -100, extraOffsetX: 60, end: "center center", scrub: 0.15 }
+            image2: { movementX: 360, movementY: 810, end: "center center", scrub: 0.15 }
           }
         },
         {
           width: 1500,
           adjustments: {
             image1: { movementX: 470, movementY: 340, end: "+=700px", scrub: 1.5 },
-            image2: { extraOffsetY: -100, extraOffsetX: 55, end: "center center", scrub: 0.15 }
+            image2: { movementX: 340, movementY: 810, end: "center center", scrub: 0.15 }
           }
         },
         {
           width: 1400,
           adjustments: {
-            image1: { movementX: 410, movementY: 340, end: "+=600px", scrub: 1.5 },
-            image2: { extraOffsetY: -95, extraOffsetX: 20, end: "center center", scrub: 0.13 }
+            image1: { movementX: 440, movementY: 340, end: "+=600px", scrub: 1.5 },
+            image2: { movementX: 320, movementY: 810, end: "center center", scrub: 0.13 }
           }
         },
         {
           width: 1300,
           adjustments: {
-            image1: { movementX: 390, movementY: 300, end: "+=500px", scrub: 1.2 },
-            image2: { extraOffsetY: -90, extraOffsetX: 45, end: "center center", scrub: 0.12 }
+            image1: { movementX: 370, movementY: 290, end: "+=500px", scrub: 1.2 },
+            image2: { movementX: 300, movementY: 710, end: "center center", scrub: 0.12 }
           }
         },
         {
           width: 1200,
           adjustments: {
-            image1: { movementX: 310, movementY: 293, end: "+=400px", scrub: 1.2 },
-            image2: { extraOffsetY: -90, extraOffsetX: 40, end: "center center", scrub: 0.11 }
+            image1: { movementX: 350, movementY: 293, end: "+=400px", scrub: 1.2 },
+            image2: { movementX: 480, movementY: 710, end: "center center", scrub: 0.11 }
           }
         },
         {
           width: 1100,
           adjustments: {
-            image1: { movementX: 310, movementY: 260, end: "+=300px", scrub: 1 },
-            image2: { extraOffsetY: -80, extraOffsetX: 35, end: "center center", scrub: 0.1 }
+            image1: { movementX: 310, movementY: 280, end: "+=300px", scrub: 1 },
+            image2: { movementX: 460, movementY: 700, end: "center center", scrub: 0.1 }
           }
         },
         {
           width: 1024,
           adjustments: {
-            image1: { movementX: 270, movementY: 240, end: "+=200px", scrub: 1 },
-            image2: { extraOffsetY: -80, extraOffsetX: 30, end: "center center", scrub: 0.1 }
+            image1: { movementX: 270, movementY: 260, end: "+=200px", scrub: 1 },
+            image2: { movementX: 400, movementY: 630, end: "center center", scrub: 0.1 }
           }
         }
       ];
@@ -168,18 +168,9 @@ const Banner = () => {
       // Second image animation
       if (image2Ref.current && box1Ref.current) {
         gsap.to(image2Ref.current, {
-          y: () => {
-            const boxBottom = box1Ref.current.getBoundingClientRect().bottom;
-            const image2Top = image2Ref.current.getBoundingClientRect().top;
-            return boxBottom - image2Top + config.image2.extraOffsetY;
-          },
-          x: () => {
-            const boxRect = box1Ref.current.getBoundingClientRect();
-            const imageRect = image2Ref.current.getBoundingClientRect();
-            const boxCenter = boxRect.left + boxRect.width / 2;
-            const imageCenter = imageRect.left + imageRect.width / 2;
-            return boxCenter - imageCenter + config.image2.extraOffsetX;
-          },
+          x: config.image2.movementX,
+          y: config.image2.movementY,
+          ease: "power1.inOut",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 0%",

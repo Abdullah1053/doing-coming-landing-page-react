@@ -66,7 +66,7 @@ const TestimonialsSection = () => {
       id="testimonials"
     >
       <div className="container relative w-full max-w-[1680px]">
-        <div className="relative w-full overflow-hidden rounded-3xl bg-stone-100 dark:bg-white/20 px-5 py-20 md:px-8 lg:px-20 lg:py-24">
+        <div className="relative w-full overflow-hidden rounded-3xl bg-stone-200 dark:bg-neutral-800 px-5 py-20 md:px-8 lg:px-20 lg:py-24">
           <figure
             className="pointer-events-none absolute start-1/2 top-0 z-0 w-full max-w-none -translate-x-1/2 -translate-y-1/2"
             aria-hidden="true"

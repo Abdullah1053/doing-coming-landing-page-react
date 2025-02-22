@@ -78,7 +78,7 @@ const Generators = () => {
           </p>
         </header>
 
-        <div className="relative w-full overflow-hidden rounded-3xl bg-stone-100 dark:bg-white/20 py-16 lg:pe-0">
+        <div className="relative w-full overflow-hidden rounded-3xl bg-stone-200 dark:bg-neutral-800 py-16 lg:pe-0">
           <figure
             className="pointer-events-none absolute start-1/2 top-0 z-0 w-full max-w-none -translate-x-1/2 -translate-y-1/2"
             aria-hidden="true"

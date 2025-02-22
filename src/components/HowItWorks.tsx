@@ -8,7 +8,7 @@ const HowItWorks = () => {
       number: "الخطوة 1",
       image: "./assets/img/step-1-img.png",
       description: "قم بالتسجيل في منصة دوينج وأنشئ متجرك بكل سهولة وسرعة.",
-      class: "bg-stone-200 dark:bg-neutral-800",
+      class: "bg-black",
       classText: "text-gray-900 dark:text-white",
       style: {
         // backgroundColor: "#0d0d0d",
@@ -21,7 +21,7 @@ const HowItWorks = () => {
       description:
         "أضف منتجاتك مع صور جذابة وأوصاف احترافية ثم خصص تصميم المتجر.",
       classText: "text-gray-900 dark:text-white",
-      class: "bg-stone-200 dark:bg-neutral-800",
+      class: "bg-black",
       style: {
         // backgroundColor: "hsl(240deg 5.17% 12.12%)",
         color: "white",
@@ -50,7 +50,7 @@ const HowItWorks = () => {
       id="how-it-works"
     >
       <div className="container relative w-full max-w-[1680px]">
-        <div className="relative w-full overflow-hidden rounded-3xl bg-stone-100 dark:bg-white/20 px-5 py-20 md:px-8 lg:px-20 lg:py-24">
+        <div className="relative w-full overflow-hidden rounded-3xl bg-stone-200 dark:bg-neutral-800 px-5 py-20 md:px-8 lg:px-20 lg:py-24">
           <figure
             className="pointer-events-none absolute start-1/2 top-0 z-0 w-full max-w-none -translate-x-1/2 -translate-y-1/2"
             aria-hidden="true"
@@ -74,7 +74,7 @@ const HowItWorks = () => {
             />
           </figure>
 
-          <div className="container mb-24 flex flex-wrap items-end justify-between gap-y-5">
+          <div className="container mb-24 flex flex-wrap items-end justify-between gap-y-5 ">
             <div className="w-full lg:w-2/3 lg:pe-8">
               <h2 className="text-gray-900 dark:text-white text-[2rem]">
                 خطوات للبدأ في تجارتك الإلكترونية ، ولا أسهل !

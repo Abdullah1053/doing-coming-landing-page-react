@@ -7,21 +7,21 @@ const Features = () => {
   const features = [
     {
       icon: (
-        <i className="fa-regular fa-chart-line"></i>
+        <i className="fa-light fa-arrow-up-right-dots"></i>
       ),
       title: "تجارتك تنمو بدون توقف",
       description: "مع أدواتنا الذكية استهدف عملاءك بناءً على اهتماماتهم وسلوكهم، وأطلق حملاتك التسويقية.",
     },
     {
       icon: (
-        <i className="fa-regular fa-truck"></i>
+        <i className="fa-light fa-map-location"></i>
       ),
       title: "توصيل طلباتك أسرع",
       description: " بضغطة زر خلي عملاءك يستلموا طلباتهم بدون تأخير ، خيارات الشحن تحت إدارتك مع إمكانية تتبع الطلبات.",
     },
     {
       icon: (
-        <i className="fa-regular fa-chart-line"></i>
+        <i className="fa-light fa-calendar-lines-pen"></i>
       ),
       title: "القرارات الصعبة صارت سهلة",
       description:
@@ -29,7 +29,7 @@ const Features = () => {
     },
     {
       icon: (
-        <i className="fa-regular fa-chart-line"></i>
+        <i className="fa-light fa-paintbrush-pencil"></i>
       ),
       title: "تجربة تصميم على مقاس طموحك",
       description:
@@ -37,7 +37,7 @@ const Features = () => {
     },
     {
       icon: (
-        <i className="fa-regular fa-credit-card"></i>
+        <i className="fa-light fa-credit-card"></i>
       ),
       title: "وسائل الدفع بدون تعقيد",
       description:
@@ -45,7 +45,7 @@ const Features = () => {
     },
     {
       icon: (
-        <i className="fa-regular fa-boxes-stacked"></i>
+        <i className="fa-light fa-box-taped"></i>
       ),
       title: "تحكم ذكي في مخزونك",
       description:

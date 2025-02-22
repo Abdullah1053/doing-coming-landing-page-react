@@ -1,5 +1,8 @@
 import { useState } from "react";
 import useScrollAnimation from "../hooks/useScrollAnimation";
+// Import Swiper React components and styles
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const ToolsSection = () => {
   const [sectionRef, isInView] = useScrollAnimation();
@@ -43,7 +46,7 @@ const ToolsSection = () => {
       label: "منظمات خيرية",
       image: "./assets/img/tools/support-platform.jpg",
       title: "منظمات خيرية",
-      description: "Access and mage support tickets from your dashboard.",
+      description: "Access and manage support tickets from your dashboard.",
     },
   ];
 
@@ -63,7 +66,6 @@ const ToolsSection = () => {
             height="426"
           />
         </figure>
-
       </div>
     </div>
   );
@@ -85,12 +87,39 @@ const ToolsSection = () => {
         </header>
 
         <div className="flex flex-col md:flex-row gap-8">
-          <div className="lqd-tabs flex flex-col gap-3 rounded-3xl p-2 lg:flex-nowrap lg:rounded-full md:w-1/4 ">
+          {/* Mobile View: Horizontal slider */}
+          <div className="block md:hidden">
+            <Swiper
+              slidesPerView="auto"
+              spaceBetween={10}
+              freeMode={true}
+              className="lqd-tabs p-2"
+            >
+              {tabs.map((tab) => (
+                <SwiperSlide key={tab.id} style={{ width: "150px" }}>
+                  <button
+                    data-target={`#${tab.id}`}
+                    className={`group/trigger flex text-base w-full px-3 py-3.5 rounded-2xl text-center justify-center transition-all hover:scale-105 ${
+                      activeTab === tab.id
+                        ? "lqd-is-active bg-stone-100 dark:bg-white/20 text-gray-900 dark:text-white"
+                        : ""
+                    }`}
+                    onClick={() => setActiveTab(tab.id)}
+                  >
+                    {tab.label}
+                  </button>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          {/* Desktop View: Vertical button list */}
+          <div className="hidden md:flex flex-col gap-3 rounded-3xl p-2 md:w-1/4">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 data-target={`#${tab.id}`}
-                className={`group/trigger flex text-base max-sm:w-full px-3 py-3.5 rounded-2xl max-mdbasis-1/3 max-md:grow text-center justify-center transition-all md:px-8  hover:scale-105 ${
+                className={`group/trigger flex text-base max-sm:w-full px-3 py-3.5 rounded-2xl max-mdbasis-1/3 max-md:grow text-center justify-center transition-all md:px-8 hover:scale-105 ${
                   activeTab === tab.id
                     ? "lqd-is-active bg-stone-100 dark:bg-white/20 text-gray-900 dark:text-white"
                     : ""
@@ -102,10 +131,10 @@ const ToolsSection = () => {
             ))}
           </div>
 
-          <div className="mb-14 md:w-3/4">{tabs.map((tab) => renderTabContent(tab))}</div>
-
+          <div className="mb-14 md:w-3/4">
+            {tabs.map((tab) => renderTabContent(tab))}
+          </div>
         </div>
-
       </div>
     </section>
   );

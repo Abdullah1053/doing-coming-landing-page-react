@@ -5,30 +5,7 @@ import "flickity/css/flickity.css";
 
 const TestimonialsSection = () => {
   const [sectionRef, isInView] = useScrollAnimation();
-  const carouselRef = useRef(null);
-
-  useEffect(() => {
-    let flkty;
-    if (typeof window !== "undefined" && carouselRef.current) {
-      flkty = new Flickity(carouselRef.current, {
-        cellAlign: "center",
-        contain: false,
-        wrapAround: true,
-        prevNextButtons: false,
-        pageDots: true,
-        draggable: true,
-        autoPlay: 5000,
-        percentPosition: false,
-        groupCells: false,
-        selectedAttraction: 0.2,
-        friction: 0.8,
-      });
-    }
-
-    return () => {
-      if (flkty) flkty.destroy();
-    };
-  }, []);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const testimonials = [
     {
@@ -57,18 +34,51 @@ const TestimonialsSection = () => {
     },
   ];
 
+  useEffect(() => {
+    let flickityInstance;
+    if (typeof window !== "undefined" && carouselRef.current) {
+      flickityInstance = new Flickity(carouselRef.current, {
+        contain: true,
+        wrapAround: true,
+        prevNextButtons: false,
+        pageDots: false,
+        adaptiveHeight: true,
+        draggable: true,
+        autoPlay: 5000,
+      });
+
+      flickityInstance.on("staticClick", (event, pointer, cellElement, cellIndex) => {
+        if (typeof cellIndex === "number") {
+          flickityInstance.select(cellIndex);
+        }
+      });
+    }
+
+    return () => {
+      if (flickityInstance) flickityInstance.destroy();
+    };
+  }, []);
+
   return (
     <section
       ref={sectionRef}
-      className={`site-section py-24 transition-all duration-700 md:translate-y-8 ${
-        isInView ? "translate-y-0 opacity-100" : ""
-      }`}
       id="testimonials"
+      className={`site-section py-24 transition-all duration-700 ${
+        isInView ? "translate-y-0 opacity-100" : "md:translate-y-8 md:opacity-0"
+      }`}
     >
-      <div className="container relative w-full max-w-[1680px]">
+      <div className="container relative z-10">
         <div className="relative w-full overflow-hidden rounded-3xl bg-stone-200 dark:bg-neutral-800 px-5 py-20 md:px-8 lg:px-20 lg:py-24">
+          <div className="absolute inset-0 opacity-20">
+            <img
+              src="./assets/img/glow-1.png"
+              alt="Decorative pattern"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          
           <figure
-            className="pointer-events-none absolute start-1/2 top-0 z-0 w-full max-w-none -translate-x-1/2 -translate-y-1/2"
+            className="pointer-events-none absolute left-1/2 top-0 z-0 w-full max-w-none -translate-x-1/2 -translate-y-1/2"
             aria-hidden="true"
           >
             <img
@@ -79,51 +89,65 @@ const TestimonialsSection = () => {
             />
           </figure>
 
-          <header className="container mb-24 flex flex-wrap items-end justify-between gap-y-5 [&_strong]:text-white/70">
+          <header className="mb-24 flex flex-wrap items-end justify-between gap-y-5 [&_strong]:text-white/70 relative z-10">
             <div className="w-full lg:w-2/3 lg:pe-8">
-              <h2 className="text-gray-900 dark:text-white">ثقة من الآلاف.</h2>
+              <h6 className="relative mb-14 inline-flex translate-y-6 items-center gap-1.5 rounded-full bg-secondary px-5 py-2 text-secondary-foreground shadow-xs shadow-primary">
+                <svg
+                  strokeWidth="1.5"
+                  className="size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3"></path>
+                  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
+                  <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+                </svg>
+                Testimonials
+              </h6>
+              <h2 className="text-white">Trusted by millions.</h2>
             </div>
+
             <div className="w-full lg:w-1/3">
-              <p className="mb-6 text-gray-900 dark:text-white/60">
-                يثق بنا أكثر من <span className="font-bold text-gray-900 dark:text-white/60">+1000</span> تاجر
+              <p className="mb-6 text-white">
+                Content and <strong>kickstart your earnings</strong> in minutes
               </p>
             </div>
           </header>
 
-          <div className="relative -mx-20">
-            <div ref={carouselRef} className="testimonials-carousel">
+          <div className="relative mx-auto lg:mb-20 lg:w-1/2 relative z-10">
+            <div
+              ref={carouselRef}
+              className="testimonials-carousel carousel text-center flickity-enabled is-draggable"
+            >
               {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="carousel-cell w-full px-4 mx-4 transition-all duration-300"
+                  className="carousel-cell w-full shrink-0 grow-0 basis-full px-4"
                 >
-                  <div className="flex flex-col items-center justify-center text-center">
-                    <div className="mb-12">
-                      <figure className="mb-4 relative">
-                        <img
-                          className="size-32 md:size-40 rounded-full object-cover object-center mx-auto transition-all duration-300 group-[&.is-selected]:scale-105 saturate-0 group-[&.is-selected]:saturate-100"
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                        />
-                        <div className="absolute inset-0 rounded-full bg-primary opacity-0 mix-blend-multiply transition-opacity group-[&.is-selected]:opacity-100"></div>
-                        <div className="absolute inset-0 rounded-full bg-secondary opacity-0 mix-blend-difference transition-opacity group-[&.is-selected]:opacity-100"></div>
-                        <span className="lqd-outline-glow absolute inline-block rounded-[inherit] pointer-events-none overflow-hidden lqd-outline-glow-effect-1 opacity-0 transition-opacity [--outline-glow-w:3px] group-[&.is-selected]:opacity-100">
-                          <span className="lqd-outline-glow-inner absolute start-1/2 top-1/2 inline-block aspect-square min-h-[125%] min-w-[125%] rounded-[inherit]"></span>
-                        </span>
-                      </figure>
-                      <div className="text-center opacity-60 group-[&.is-selected]:opacity-100 transition-opacity duration-300">
-                        <p className="text-xl font-semibold text-gray-900 dark:text-white mb-1">
-                          {testimonial.name}
-                        </p>
-                        <p className="text-base text-gray-600 dark:text-white/60">
-                          {testimonial.role}
-                        </p>
-                      </div>
-                    </div>
-                    <blockquote className="max-w-2xl mx-auto text-xl text-gray-800 dark:text-white/80 opacity-60 group-[&.is-selected]:opacity-100 transition-opacity duration-300">
-                      <p>{testimonial.quote}</p>
-                    </blockquote>
-                  </div>
+                  <figure className="mb-6 flex justify-center">
+                    <img
+                      className="h-36 w-36 rounded-full object-cover"
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                    />
+                  </figure>
+                  <blockquote className="mb-4">
+                    <p className="text-white">{testimonial.quote}</p>
+                  </blockquote>
+                  <figcaption>
+                    <p className="text-lg text-heading-foreground">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-base text-heading-foreground/50">
+                      {testimonial.role}
+                    </p>
+                  </figcaption>
                 </div>
               ))}
             </div>

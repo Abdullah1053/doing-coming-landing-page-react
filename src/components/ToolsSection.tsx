@@ -54,9 +54,9 @@ const ToolsSection = () => {
       className={activeTab === tab.id ? "" : "hidden"}
     >
       <div className="flex flex-wrap items-center justify-between gap-4 gap-y-14">
-        <figure className="w-full lg:w-6/12">
+        <figure className="w-full h-[400px]">
           <img
-            className="w-full rounded-3xl transition-all hover:scale-105"
+            className="w-full h-full object-cover rounded-3xl transition-all hover:scale-105"
             src={tab.image}
             alt={tab.label}
             width="696"
@@ -64,37 +64,6 @@ const ToolsSection = () => {
           />
         </figure>
 
-        <div className="w-full lg:w-5/12">
-          <h3 className="mb-10 text-gray-900 dark:text-white">{tab.title}</h3>
-          <p className="mb-10 text-gray-800 dark:text-white/80">{tab.description}</p>
-
-          <div className="flex flex-wrap items-center gap-8 text-sm">
-            <a
-              className="relative inline-flex w-56 gap-3 overflow-hidden whitespace-nowrap rounded-lg bg-gradient-to-r from-sky-600 to-sky-700 to-50% py-5 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20"
-              href="https://codecanyon.net/item/magicai-openai-content-text-image-chat-code-generator-as-saas/45408109"
-            >
-              <span
-                className="flex animate-marquee justify-between gap-3 before:content-[attr(data-txt)] after:content-[attr(data-txt)]"
-                data-txt="Start Making Money"
-              >
-                Start Making Money
-              </span>
-              <span
-                className="absolute start-3 top-5 flex animate-marquee-2 justify-between gap-3 before:content-[attr(data-txt)] after:content-[attr(data-txt)]"
-                data-txt="Start Making Money"
-              >
-                Start Making Money
-              </span>
-            </a>
-            <a
-              className="group/btn flex items-center gap-2 text-gray-800 dark:text-white/80 transition-colors hover:text-primary"
-              href="index.html#templates"
-            >
-              Discover MagicAI
-              <i className="fa-solid fa-chevron-left"></i>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );
@@ -115,24 +84,28 @@ const ToolsSection = () => {
           </p>
         </header>
 
-        <div className="mb-14">{tabs.map((tab) => renderTabContent(tab))}</div>
+        <div className="flex flex-col md:flex-row gap-8">
+          <div className="lqd-tabs flex flex-col gap-3 rounded-3xl p-2 lg:flex-nowrap lg:rounded-full md:w-1/4 ">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                data-target={`#${tab.id}`}
+                className={`group/trigger flex text-base max-sm:w-full px-3 py-3.5 rounded-2xl max-mdbasis-1/3 max-md:grow text-center justify-center transition-all md:px-8  hover:scale-105 ${
+                  activeTab === tab.id
+                    ? "lqd-is-active bg-stone-100 dark:bg-white/20 text-gray-900 dark:text-white"
+                    : ""
+                }`}
+                onClick={() => setActiveTab(tab.id)}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
 
-        <div className="lqd-tabs flex flex-wrap justify-between gap-3 rounded-3xl p-2 lg:flex-nowrap lg:rounded-full">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              data-target={`#${tab.id}`}
-              className={`group/trigger flex text-base max-sm:w-full px-3 py-3.5 rounded-2xl max-mdbasis-1/3 max-md:grow text-center justify-center transition-all md:px-8  hover:scale-105 ${
-                activeTab === tab.id
-                  ? "lqd-is-active bg-stone-100 dark:bg-white/20 text-gray-900 dark:text-white"
-                  : ""
-              }`}
-              onClick={() => setActiveTab(tab.id)}
-            >
-              {tab.label}
-            </button>
-          ))}
+          <div className="mb-14 md:w-3/4">{tabs.map((tab) => renderTabContent(tab))}</div>
+
         </div>
+
       </div>
     </section>
   );

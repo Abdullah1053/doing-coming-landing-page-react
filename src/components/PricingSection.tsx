@@ -58,11 +58,11 @@ const PricingCard = ({ plan, activated, onActivate }) => {
         </h3>
 
         <p className="mt-2.5 leading-snug">
-          <span className="text-[50px] font-semibold tracking-tight lg:text-48 md:text-48 sm:text-36">
+          <span className="text-[48px] font-semibold tracking-tight lg:text-48 md:text-48 sm:text-36">
             {plan.price}ريال
           </span>
           <span className="ml-1 text-20 font-medium tracking-tight text-grey-80 sm:text-16">
-            /شهرياً
+            /{plan.priceDuration}
           </span>
         </p>
 
@@ -191,7 +191,7 @@ const renderPricingCard = (plan) => (
       <small className="font-heading mr-2 text-[24px] font-bold leading-none text-gray-900 dark:text-white">
         ريال
       </small>
-      <span className="text-gray-700 dark:text-white/70"> / شهرياً</span>
+      <span className="text-gray-700 dark:text-white/70"> / {plan.priceDuration}</span>
     </p>
 
     <hr className="w-full opacity-10" />
@@ -321,6 +321,7 @@ const PricingSection = () => {
                         name: 'الباقة المجانية " للبدأ "',
                         description: 'باقة مجانية مثالية للتجار المبتدئين، تتيح لك تجربة المتجر الإلكتروني بكافة المميزات الأساسية',
                         price: "0",
+                        priceDuration: "شهرياً",
                         render: "common",
                         features: [
                           'عدد المنتجات 30 منتج',
@@ -341,6 +342,7 @@ const PricingSection = () => {
                         name: ' الباقة المتقدمة " لنمو التجار " ',
                         description: 'باقة متقدمة مثالية للتجار المبتدئين، تتيح لك تجربة المتجر الإلكتروني بكافة مميزات الباقة المجانية',
                         price: "16,600",
+                        priceDuration: "شهرياً",
                         render: "rare",
                         features: [
                           'عدد غير محدود من المنتجات',
@@ -361,6 +363,7 @@ const PricingSection = () => {
                         name: ' الباقة الاحترافية "لتُجار الأعمال الكبرى " ',
                         description: 'باقة احترافية مثالية للتجار المحترفين، تتيح لك تجربة المتجر الإلكتروني بكافة مميزات الباقة المتقدمة',
                         price: "44,000",
+                        priceDuration: "شهرياً",
                         render: "epic",
                         features: [
                           "كوبونات تسويقية وحملات  SMS",
@@ -385,7 +388,8 @@ const PricingSection = () => {
                       plan={{
                         name: ' الباقة المتقدمة " لنمو التجار " ',
                         description: 'باقة متقدمة مثالية للتجار المبتدئين، تتيح لك تجربة المتجر الإلكتروني بكافة مميزات الباقة المجانية',
-                        price: "16,600",
+                        price: "159,360",
+                        priceDuration: "سنوياً",
                         render: "rare",
                         features: [
                           'عدد غير محدود من المنتجات',
@@ -405,8 +409,9 @@ const PricingSection = () => {
                       plan={{
                         name: ' الباقة الاحترافية "لتُجار الأعمال الكبرى " ',
                         description: 'باقة احترافية مثالية للتجار المحترفين، تتيح لك تجربة المتجر الإلكتروني بكافة مميزات الباقة المتقدمة',
-                        price: "44,000",
-                        render: "epic",
+                        price: "352,000",
+                        priceDuration: "سنوياً",
+                        render: "legendary",
                         features: [
                           "كوبونات تسويقية وحملات  SMS",
                           "تحسين محركات البحث SEO",

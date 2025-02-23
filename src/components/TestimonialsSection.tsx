@@ -108,14 +108,14 @@ const TestimonialsSection = () => {
                   <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
                   <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
                 </svg>
-                Testimonials
+                التغطيات
               </h6>
-              <h2 className="text-white">Trusted by millions.</h2>
+              <h2 className="text-white">التغطيات المختلفة.</h2>
             </div>
 
             <div className="w-full lg:w-1/3">
               <p className="mb-6 text-white">
-                Content and <strong>kickstart your earnings</strong> in minutes
+                التغطيات المختلفة التي يمكنك اختيارها وفقاً لاحتياجاتك.
               </p>
             </div>
           </header>

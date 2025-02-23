@@ -68,7 +68,7 @@ const TestimonialsSection = () => {
       }`}
     >
       <div className="container relative z-10">
-        <div className="relative w-full overflow-hidden rounded-3xl bg-stone-200 dark:bg-neutral-800 px-5 py-20 md:px-8 lg:px-20 lg:py-24">
+        <div className="relative w-full overflow-hidden rounded-3xl bg-stone-100 dark:bg-white/20 bg-gradient-to-br px-5 py-20 md:px-8 lg:px-20 lg:py-24">
           <div className="absolute inset-0 opacity-20">
             <img
               src="./assets/img/glow-1.png"
@@ -154,6 +154,17 @@ const TestimonialsSection = () => {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        .carousel-cell {
+          transition: filter 0.3s ease;
+        }
+        .carousel-cell:not(.is-selected) {
+          filter: blur(3px);
+        }
+        .carousel-cell.is-selected {
+          filter: none;
+        }
+      `}</style>
     </section>
   );
 };

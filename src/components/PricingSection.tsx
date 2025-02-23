@@ -47,18 +47,18 @@ const PricingCard = ({ plan, activated, onActivate }) => {
   return (
     <div
       onClick={handleActivate}
-      className={`plan-card item relative mr-14 flex aspect-[0.7372] w-[390px] flex-shrink-0 cursor-pointer snap-center flex-col rounded-[24px] border border-[rgba(255,255,255,0.05)] p-[28px] pb-[25px] text-white transition-all duration-200 lg:mr-12 md:w-[366px] sm:mr-5 sm:w-[91%] sm:max-w-[366px] sm:p-[18px] xs:w-[288px] ${
+      className={`plan-card mb-4 item relative mr-14 flex aspect-[0.7372] w-[390px] flex-shrink-0 cursor-pointer snap-center flex-col rounded-[24px] border border-[rgba(255,255,255,0.05)] p-[28px] pb-[25px] text-white transition-all duration-200 lg:mr-12 md:w-[366px] sm:mr-5 sm:w-[91%] sm:max-w-[366px] sm:p-[18px] xs:w-[336px] ${
         plan.featured ? "bg-stone-100 dark:bg-white/20" : "bg-stone-100 dark:bg-white/20"
       }`}
       style={{ background: "unset" }}
     >
-      <div className="md:hover:-translate-y-1 md:hover:scale-[1.025]  w-[100%]">
+      <div className="md:hover:-translate-y-1 md:hover:scale-[1.025]  w-[100%] h-[400px] lg:h-[440px]  overflow-hidden">
         <h3 className="text-20 font-semibold leading-snug tracking-tight sm:text-16">
           {plan.name}
         </h3>
 
         <p className="mt-2.5 leading-snug">
-          <span className="text-64 font-semibold tracking-tight lg:text-56 md:text-48 sm:text-36">
+          <span className="text-[50px] font-semibold tracking-tight lg:text-48 md:text-48 sm:text-36">
             {plan.price}ريال
           </span>
           <span className="ml-1 text-20 font-medium tracking-tight text-grey-80 sm:text-16">
@@ -71,7 +71,7 @@ const PricingCard = ({ plan, activated, onActivate }) => {
         </p>
 
         <span
-          className="mt-[18px] block h-px bg-[rgba(255,255,255,0.10)] sm:mt-4"
+          className="mt-[18px] h-px block bg-[rgba(255,255,255,0.10)] sm:mt-4"
           aria-hidden="true"
         ></span>
 
@@ -102,7 +102,7 @@ const PricingCard = ({ plan, activated, onActivate }) => {
         <>
           <div className="pointer-events-auto select-auto rounded-[inherit]">
             <div
-              className="absolute -left-[69%] -top-[217px] -z-20 aspect-[0.925925] w-[943px] rounded-[inherit] md:-top-[275px] md:w-[932px] sm:-left-[68.666%] sm:-top-[45%] sm:w-[255%]"
+              className="absolute -left-[69%] -top-[252px] -z-20 aspect-[0.925925] w-[943px] rounded-[inherit] ms:-top-[252px] md:-top-[275px] md:w-[932px] sm:-left-[68.666%] sm:w-[255%]"
               style={{ opacity: 1 }}
             >
               <div className="absolute -inset-0">
@@ -131,11 +131,11 @@ const PricingCard = ({ plan, activated, onActivate }) => {
           </div>
 
           <div
-            className="pointer-events-auto absolute -inset-px -z-10 select-auto rounded-[inherit] opacity-0 [backdrop-filter:blur(1px)] sm:rounded-[18px]"
-            style={{ opacity: 1 }}
+            className="pointer-events-auto absolute -inset-px -z-10 select-auto rounded-[inherit] [backdrop-filter:blur(1px)] sm:rounded-[18px]"
+            style={{ opacity: 0 }}
           >
             <img
-              onClick={(e) => {
+              onClick={(e) => {5
                 e.stopPropagation(); // avoid re-triggering the card's click
                 setShouldBounce(true);
               }}
@@ -176,7 +176,7 @@ const renderCheckIcon = () => (
 
 const renderPricingCard = (plan) => (
   <div
-    className={`relative flex flex-col items-start rounded-3xl px-10 py-10 text-start transition-all md:hover:-translate-y-1 md:hover:scale-[1.025] lg:py-12 ${
+    className={`relative flex flex-col items-start rounded-3xl px-10 py-10 text-start transition-all md:hover:-translate-y-1 md:hover:scale-[1.025] lg:py-12${
       plan.featured ? "bg-stone-100 dark:bg-white/20" : "bg-stone-100 dark:bg-white/20"
     }`}
   >
@@ -319,15 +319,16 @@ const PricingSection = () => {
                     <PricingCard
                       plan={{
                         name: 'الباقة المجانية " للبدأ "',
+                        description: 'باقة مجانية مثالية للتجار المبتدئين، تتيح لك تجربة المتجر الإلكتروني بكافة المميزات الأساسية',
                         price: "0",
                         render: "common",
                         features: [
-                          "عدد المنتجات 30 منتج",
-                          "طلبات لا محدودة",
-                          "عملاء لا محدودين",
-                          "خدمة عملاء على مدار اليوم",
-                          "إمكانية تصدير واستيراد المنتجات",
-                          'خيارات الشحن والتوصيل "مستعجل"',
+                          'عدد المنتجات 30 منتج',
+                          'طلبات وعملاء غير محدودين',
+                          'تـصمـيم أسـاسي للـمتجر',
+                          'تقارير أساسية لمتابعة المبيعات', 
+                          'إمكانية تصدير واستيراد المنتجات',
+                          'خيارات شحن مرنة عبر "مستعجل"',
                         ],
                         button: "اختر المجاني",
                         link: "https://dark.projecthub.ai/register?plan=3",
@@ -338,15 +339,16 @@ const PricingSection = () => {
                     <PricingCard
                       plan={{
                         name: ' الباقة المتقدمة " لنمو التجار " ',
+                        description: 'باقة متقدمة مثالية للتجار المبتدئين، تتيح لك تجربة المتجر الإلكتروني بكافة مميزات الباقة المجانية',
                         price: "16,600",
                         render: "rare",
                         features: [
-                          "عدد لا محدود من المنتجات والطلبات والعملاء",
-                          "الدفع الإلكتروني وربط مع شركات الشحن",
-                          "التقارير المتقدمة: تحليل شامل لأداء متجرك",
-                          "خيارات تصميم مرنة مخصصة للمتجر مع إمكانية اختيار ثيم جاهز",
-                          "(One-Page Checkout) تجربة شراء سهلة وسريعة للعملاء",
-                          "كوبونات التخفيض المتقدمة والسلات المتروكة ",
+                          'عدد غير محدود من المنتجات',
+                          'خيارات الدفع الإلكتروني', 
+                          'ربط مباشر مع شركات الشحن',
+                          'حجز رابط خاص (دومين)',
+                          'التقارير المتقدمة وإحصائيات المنتجات',
+                          'كوبونات خصم وحملات تسويقية',
                         ],
                         button: "اختر الباقة",
                         link: "https://dark.projecthub.ai/register?plan=4",
@@ -357,18 +359,17 @@ const PricingSection = () => {
                     <PricingCard
                       plan={{
                         name: ' الباقة الاحترافية "لتُجار الأعمال الكبرى " ',
+                        description: 'باقة احترافية مثالية للتجار المحترفين، تتيح لك تجربة المتجر الإلكتروني بكافة مميزات الباقة المتقدمة',
                         price: "44,000",
                         render: "epic",
                         features: [
-                          "كوبونات تخفيض وحملات تسويقية عبر SMS",
+                          "كوبونات تسويقية وحملات  SMS",
                           "تحسين محركات البحث SEO",
-                          "عدد لا محدود من المنتجات والعملاء",
-                          "الدفع الإلكتروني و الربط مع شركات الشحن",
-                          "التقارير المتقدمة وGoogle Tag Manager",
-                          "إمكانية تخصيص التصميم باستخدام Custom CSS",
-                          "استعادة البيانات المحذوفة ووضع الصيانة",
-                          "ربط مع خدمات الإعلانات مثل Google Ads و Facebook Ads",
-                          "إعدادات متقدمة للعملاء والطلبات",
+                          "تقارير الأداء وتحليل الزوار",
+                          "إدارة سلات العملاء المتروكة",
+                          "تصميم مخصص مع دعم Custom CSS",
+                          "ربط مع  Google & Facebook Ads",
+                          "دعم  Google Tag Manager",
                         ],
                         button: "الباقة الاحترافية \"التاجر المحترف\"",
                         link: "https://dark.projecthub.ai/register?plan=2",
@@ -382,32 +383,41 @@ const PricingSection = () => {
                   <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
                     <PricingCard
                       plan={{
-                        name: "Basic",
-                        price: "399",
+                        name: ' الباقة المتقدمة " لنمو التجار " ',
+                        description: 'باقة متقدمة مثالية للتجار المبتدئين، تتيح لك تجربة المتجر الإلكتروني بكافة مميزات الباقة المجانية',
+                        price: "16,600",
                         render: "rare",
                         features: [
-                          "ChatGPT 3.5",
-                          "Basic Support",
-                          "100,000 Word Tokens",
-                          "50,000 Image Tokens",
+                          'عدد غير محدود من المنتجات',
+                          'خيارات الدفع الإلكتروني', 
+                          'ربط مباشر مع شركات الشحن',
+                          'حجز رابط خاص (دومين)',
+                          'التقارير المتقدمة وإحصائيات المنتجات',
+                          'كوبونات خصم وحملات تسويقية',
                         ],
-                        link: "https://dark.projecthub.ai/register?plan=5",
+                        button: "اختر الباقة",
+                        link: "https://dark.projecthub.ai/register?plan=4",
                       }}
                       activated={annualActivePlan === "rare"}
                       onActivate={setAnnualActivePlan}
                     />
                     <PricingCard
                       plan={{
-                        name: "Basic",
-                        price: "399",
-                        render: "legendary",
+                        name: ' الباقة الاحترافية "لتُجار الأعمال الكبرى " ',
+                        description: 'باقة احترافية مثالية للتجار المحترفين، تتيح لك تجربة المتجر الإلكتروني بكافة مميزات الباقة المتقدمة',
+                        price: "44,000",
+                        render: "epic",
                         features: [
-                          "ChatGPT 3.5",
-                          "Basic Support",
-                          "100,000 Word Tokens",
-                          "50,000 Image Tokens",
+                          "كوبونات تسويقية وحملات  SMS",
+                          "تحسين محركات البحث SEO",
+                          "تقارير الأداء وتحليل الزوار",
+                          "إدارة سلات العملاء المتروكة",
+                          "تصميم مخصص مع دعم Custom CSS",
+                          "ربط مع  Google & Facebook Ads",
+                          "دعم  Google Tag Manager",
                         ],
-                        link: "https://dark.projecthub.ai/register?plan=5",
+                        button: "الباقة الاحترافية \"التاجر المحترف\"",
+                        link: "https://dark.projecthub.ai/register?plan=2",
                       }}
                       activated={annualActivePlan === "legendary"}
                       onActivate={setAnnualActivePlan}
@@ -518,15 +528,13 @@ const PricingSection = () => {
                       price: "44,000",
                       featured: true,
                       features: [
-                        "كوبونات تخفيض وحملات تسويقية عبر SMS",
+                        "كوبونات تسويقية وحملات  SMS",
                         "تحسين محركات البحث SEO",
-                        "عدد لا محدود من المنتجات والعملاء",
-                        "الدفع الإلكتروني و الربط مع شركات الشحن",
-                        "التقارير المتقدمة وGoogle Tag Manager",
-                        "إمكانية تخصيص التصميم باستخدام Custom CSS",
-                        "استعادة البيانات المحذوفة ووضع الصيانة",
-                        "ربط مع خدمات الإعلانات مثل Google Ads و Facebook Ads",
-                        "إعدادات متقدمة للعملاء والطلبات",
+                        "تقارير الأداء وتحليل الزوار",
+                        "إدارة سلات العملاء المتروكة",
+                        "تصميم مخصص مع دعم Custom CSS",
+                        "ربط مع  Google & Facebook Ads",
+                        "دعم  Google Tag Manager",
                       ],
                       button: "الباقة الاحترافية \"التاجر المحترف\"",
                       link: "https://dark.projecthub.ai/register?plan=2",

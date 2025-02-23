@@ -39,9 +39,9 @@ const FaqSection = () => {
   return (
     <section
       ref={sectionRef}
-      className={`site-section py-20 transition-all duration-700 md:translate-y-8 ${
+      className={`site-section py-10 transition-all duration-700 md:translate-y-8 ${
         isInView ? "translate-y-0 opacity-100" : "md:opacity-0"
-      } lg:py-36 lg:pb-24 lg:pt-16`}
+      } lg:py-2 lg:pb-24`}
       id="faq"
     >
       <div className="container relative w-full max-w-[1680px]">

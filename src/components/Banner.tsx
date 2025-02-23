@@ -62,7 +62,7 @@ const Banner = () => {
           width: 1800,
           adjustments: {
             image1: { movementX: 530, movementY: 340, end: "+=800px", scrub: 1.5 },
-            image2: { movementX: 400, movementY: 810, end: "center center", scrub: 0.15 }
+            image2: { movementX: 400, movementY: 810, end: "center center", scrub: 1.5 }
           }
         },
 
@@ -70,7 +70,7 @@ const Banner = () => {
           width: 1700,
           adjustments: {
             image1: { movementX: 530, movementY: 340, end: "+=800px", scrub: 1.5 },
-            image2: { movementX: 380, movementY: 810, end: "center center", scrub: 0.15 }
+            image2: { movementX: 380, movementY: 810, end: "center center", scrub: 1.5 }
           }
         },
 
@@ -78,49 +78,49 @@ const Banner = () => {
           width: 1600,
           adjustments: {
             image1: { movementX: 500, movementY: 340, end: "+=800px", scrub: 1.5 },
-            image2: { movementX: 360, movementY: 810, end: "center center", scrub: 0.15 }
+            image2: { movementX: 360, movementY: 810, end: "center center", scrub: 1.5 }
           }
         },
         {
           width: 1500,
           adjustments: {
             image1: { movementX: 470, movementY: 340, end: "+=700px", scrub: 1.5 },
-            image2: { movementX: 340, movementY: 810, end: "center center", scrub: 0.15 }
+            image2: { movementX: 340, movementY: 810, end: "center center", scrub: 1.5 }
           }
         },
         {
           width: 1400,
           adjustments: {
             image1: { movementX: 440, movementY: 340, end: "+=600px", scrub: 1.5 },
-            image2: { movementX: 320, movementY: 810, end: "center center", scrub: 0.13 }
+            image2: { movementX: 320, movementY: 810, end: "center center", scrub: 1.5 }
           }
         },
         {
           width: 1300,
           adjustments: {
             image1: { movementX: 370, movementY: 290, end: "+=500px", scrub: 1.2 },
-            image2: { movementX: 300, movementY: 710, end: "center center", scrub: 0.12 }
+            image2: { movementX: 300, movementY: 710, end: "center center", scrub: 1.2 }
           }
         },
         {
           width: 1200,
           adjustments: {
             image1: { movementX: 350, movementY: 293, end: "+=400px", scrub: 1.2 },
-            image2: { movementX: 480, movementY: 710, end: "center center", scrub: 0.11 }
+            image2: { movementX: 480, movementY: 710, end: "center center", scrub: 1.2 }
           }
         },
         {
           width: 1100,
           adjustments: {
             image1: { movementX: 310, movementY: 280, end: "+=300px", scrub: 1 },
-            image2: { movementX: 460, movementY: 700, end: "center center", scrub: 0.1 }
+            image2: { movementX: 460, movementY: 700, end: "center center", scrub: 1 }
           }
         },
         {
           width: 1024,
           adjustments: {
             image1: { movementX: 270, movementY: 260, end: "+=200px", scrub: 1 },
-            image2: { movementX: 400, movementY: 630, end: "center center", scrub: 0.1 }
+            image2: { movementX: 400, movementY: 630, end: "center center", scrub: 1 }
           }
         }
       ];

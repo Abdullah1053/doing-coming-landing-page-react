@@ -19,7 +19,7 @@ const Layout = () => {
   };
 
   return (
-    <div dir="rtl">
+    <div dir="rtl" className={`${darkMode ? 'bg-black' : 'bg-white'}`}>
       <Header
         theme={darkMode}
         onChangeTheme={(theme) => toggleDarkMode(theme)}

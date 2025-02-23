@@ -66,7 +66,7 @@ const PricingCard = ({ plan, activated, onActivate }) => {
           </span>
         </p>
 
-        <p className="mt-1 pr-3 text-18 leading-snug -tracking-[0.03em] md:mt-0 sm:pr-0 sm:text-16">
+        <p className="mt-1 pr-3 text-16 leading-snug -tracking-[0.03em] md:mt-0 sm:pr-0">
           {plan.description || "Best for large multiple teams that need maximum capabilities."}
         </p>
 
@@ -197,7 +197,7 @@ const renderPricingCard = (plan) => (
     <hr className="w-full opacity-10" />
 
     <div className="relative mt-8 flex flex-col justify-between flex-grow">
-      <ul className="mb-12 mt-8 flex flex-col gap-6 text-base text-gray-900 dark:text-white/80">
+      <ul className="mb-12 mt-8 flex flex-col gap-6 text-base text-gray-900 dark:text-white/80 text-sm">
         {plan.features.map((feature, index) => (
           <li key={index} className="group flex items-center">
             <span className="size-7 me-5 inline-grid shrink-0 place-content-center rounded-full bg-secondary text-white transition-all group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
@@ -273,10 +273,10 @@ const PricingSection = () => {
           </header>
 
           <div className="container lqd-tabs flex flex-wrap justify-center">
-            <div className="lqd-tabs-triggers mx-auto mb-24 inline-flex flex-wrap justify-between gap-3 rounded-2xl p-2 bg-stone-100 dark:bg-white/20 max-sm:w-full md:rounded-full">
+            <div className="lqd-tabs-triggers mx-auto mb-24 inline-flex flex-wrap justify-between gap-3 rounded-2xl p-2 bg-stone-100 dark:bg-white/20 max-sm:w-full">
               <button
                 onClick={() => handleTabClick("pricing-monthly")}
-                className={`group/trigger flex relative max-sm:grow text-center justify-center text-base gap-2 px-3 py-3.5 rounded-full transition-all md:px-8 hover:scale-105 ${
+                className={`group/trigger flex relative max-sm:grow text-center justify-center text-base gap-2 px-3 py-3.5 rounded-2xl transition-all md:px-8 hover:scale-105 ${
                   activeTab === "pricing-monthly" ? "bg-stone-200 text-gray-900" : ""
                 }`}
               >
@@ -284,7 +284,7 @@ const PricingSection = () => {
               </button>
               <button
                 onClick={() => handleTabClick("pricing-annual")}
-                className={`group/trigger flex relative max-sm:grow text-center justify-center text-base gap-2 px-3 py-3.5 rounded-full transition-all md:px-8 hover:scale-105 ${
+                className={`group/trigger flex relative max-sm:grow text-center justify-center text-base gap-2 px-3 py-3.5 rounded-2xl transition-all md:px-8 hover:scale-105 ${
                   activeTab === "pricing-annual" ? "bg-stone-200 text-gray-900" : ""
                 }`}
               >
@@ -390,7 +390,7 @@ const PricingSection = () => {
                         description: 'باقة متقدمة مثالية للتجار المبتدئين، تتيح لك تجربة المتجر الإلكتروني بكافة مميزات الباقة المجانية',
                         price: "159,360",
                         priceDuration: "سنوياً",
-                        render: "rare",
+                        render: "epic",
                         features: [
                           'عدد غير محدود من المنتجات',
                           'خيارات الدفع الإلكتروني', 
@@ -402,7 +402,7 @@ const PricingSection = () => {
                         button: "اختر الباقة",
                         link: "https://dark.projecthub.ai/register?plan=4",
                       }}
-                      activated={annualActivePlan === "rare"}
+                      activated={annualActivePlan === "epic"}
                       onActivate={setAnnualActivePlan}
                     />
                     <PricingCard

@@ -49,7 +49,7 @@ const Footer = () => {
                 جزءاً من مستقبل التجارة الإلكترونية
               </p>
               <button 
-                className="mt-2 inline-flex items-center rounded-md border border-transparent bg-sky-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                className="mt-2 inline-flex items-center rounded-md border border-transparent bg-gradient-to-r from-sky-600 to-sky-700 px-4 py-2 text-base font-medium text-white shadow-sm hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
               >اطلق متجرك الآن</button>
             </div>
             <div className="">

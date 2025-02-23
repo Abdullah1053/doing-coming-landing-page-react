@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import logoLight from "/assets/img/logo/logoLight.png";
 import logoDark from "/assets/img/logo/logoDark.webp";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import {
   faBars,
   faXmark,
@@ -106,36 +106,57 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
 
               {/* Desktop Menu */}
               <div className="hidden lg:flex items-center justify-center mx-auto">
-                <Link
+                <NavLink
                   to="/"
-                  className="transition-all text-md pl-5 hover:text-sky-400 [&.active]:opacity-100"
+                  end
+                  className={({ isActive }) =>
+                    `transition-all text-md pl-5 hover:text-sky-400 ${
+                      isActive ? "text-sky-400" : "opacity-80"
+                    }`
+                  }
                 >
                   الرئيسية
-                </Link>
-                <Link
+                </NavLink>
+                {/* <NavLink
                   to="/how-to-serve"
-                  className="transition-all text-md pl-5 hover:text-sky-400 [&.active]:opacity-100"
+                  className={({ isActive }) =>
+                    `transition-all text-md pl-5 hover:text-sky-400 ${
+                      isActive ? "text-sky-400" : "opacity-80"
+                    }`
+                  }
                 >
                   كيف نخدمك
-                </Link>
-                <Link
+                </NavLink> */}
+                <NavLink
                   to="/timeline"
-                  className="transition-all text-md pl-5 hover:text-sky-400 [&.active]:opacity-100"
+                  className={({ isActive }) =>
+                    `transition-all text-md pl-5 hover:text-sky-400 ${
+                      isActive ? "text-sky-400" : "opacity-80"
+                    }`
+                  }
                 >
                   رحلة دوينج
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/about"
-                  className="transition-all text-md pl-5 hover:text-sky-400 [&.active]:opacity-100"
+                  className={({ isActive }) =>
+                    `transition-all text-md pl-5 hover:text-sky-400 ${
+                      isActive ? "text-sky-400" : "opacity-80"
+                    }`
+                  }
                 >
                   عن دوينج
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/price"
-                  className="transition-all text-md pl-5 hover:text-sky-400 [&.active]:opacity-100"
+                  className={({ isActive }) =>
+                    `transition-all text-md pl-5 hover:text-sky-400 ${
+                      isActive ? "text-sky-400" : "opacity-80"
+                    }`
+                  }
                 >
                   الأسعار
-                </Link>
+                </NavLink>
 
                 {/* Services Dropdown */}
                 <div
@@ -158,18 +179,26 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
                   </button>
                   {isDropdownOpen && (
                     <div className="absolute bg-stone-200 dark:bg-black text-gray-900 dark:text-white rounded-md w-40 mt-0 py-2 shadow-lg">
-                      <Link
+                      <NavLink
                         to="/help"
-                        className="block px-4 py-2 hover:text-sky-400"
+                        className={({ isActive }) =>
+                          `block px-4 py-2 hover:text-sky-400 ${
+                            isActive ? "text-sky-400" : ""
+                          }`
+                        }
                       >
                         مركز المساعدة
-                      </Link>
-                      <Link
+                      </NavLink>
+                      <NavLink
                         to="/blogs"
-                        className="block px-4 py-2 hover:text-sky-400"
+                        className={({ isActive }) =>
+                          `block px-4 py-2 hover:text-sky-400 ${
+                            isActive ? "text-sky-400" : ""
+                          }`
+                        }
                       >
                         المدونة
-                      </Link>
+                      </NavLink>
                     </div>
                   )}
                 </div>
@@ -181,16 +210,24 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
 
               <div className="hidden lg:flex gap-2 items-center layout-buttons">
 
-                <Link
-                  className="relative inline-flex items-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:scale-105 hover:border-sky-400 hover:bg-sky-400 hover:text-white hover:shadow-lg hover:shadow-primary/5"
+                <NavLink
                   to="/login"
+                  className={({ isActive }) =>
+                    `relative inline-flex items-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:scale-105 hover:border-sky-400 hover:bg-sky-400 hover:text-white hover:shadow-lg hover:shadow-primary/5 ${
+                      isActive ? "text-sky-400" : ""
+                    }`
+                  }
                 >
                   تسجيل الدخول
-                </Link>
+                </NavLink>
                 <div className="relative">
-                  <Link
-                    className="relative inline-flex items-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 bg-white/[2%] px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:scale-105 hover:border-sky-400 hover:bg-sky-400 hover:text-white hover:shadow-lg hover:shadow-primary/5"
-                    to="signup"
+                  <NavLink
+                    to="/signup"
+                    className={({ isActive }) =>
+                      `relative inline-flex items-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 bg-white/[2%] px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:scale-105 hover:border-sky-400 hover:bg-sky-400 hover:text-white hover:shadow-lg hover:shadow-primary/5 ${
+                        isActive ? "text-sky-400" : ""
+                      }`
+                    }
                   >
                     انشاء حساب
 
@@ -201,7 +238,7 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
                       <span className="lqd-outline-glow-inner absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 inline-block aspect-square w-full min-w-[125%] rounded-[inherit]"></span>
                     </span>
 
-                  </Link>
+                  </NavLink>
                 </div>
 
               </div>
@@ -246,41 +283,62 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
       >
         <div className="container mx-auto px-4 py-5">
           <div className="flex flex-col space-y-4">
-            <Link
+            <NavLink
               to="/"
-              className="block transition-all text-md px-3 py-2 hover:text-sky-400 [&.active]:opacity-100"
+              end
+              className={({ isActive }) =>
+                `block transition-all text-md px-3 py-2 hover:text-sky-400 ${
+                  isActive ? "opacity-100" : "opacity-80"
+                }`
+              }
               onClick={() => setMobileMenuOpen(false)}
             >
               الرئيسية
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/how-to-serve"
-              className="block transition-all text-md px-3 py-2 hover:text-sky-400 [&.active]:opacity-100"
+              className={({ isActive }) =>
+                `block transition-all text-md px-3 py-2 hover:text-sky-400 ${
+                  isActive ? "opacity-100" : "opacity-80"
+                }`
+              }
               onClick={() => setMobileMenuOpen(false)}
             >
               كيف نخدمك
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/timeline"
-              className="block transition-all text-md px-3 py-2 hover:text-sky-400 [&.active]:opacity-100"
+              className={({ isActive }) =>
+                `block transition-all text-md px-3 py-2 hover:text-sky-400 ${
+                  isActive ? "opacity-100" : "opacity-80"
+                }`
+              }
               onClick={() => setMobileMenuOpen(false)}
             >
               رحلة دوينج
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/about"
-              className="block transition-all text-md px-3 py-2 hover:text-sky-400 [&.active]:opacity-100"
+              className={({ isActive }) =>
+                `block transition-all text-md px-3 py-2 hover:text-sky-400 ${
+                  isActive ? "opacity-100" : "opacity-80"
+                }`
+              }
               onClick={() => setMobileMenuOpen(false)}
             >
               عن دوينج
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/price"
-              className="block transition-all text-md px-3 py-2 hover:text-sky-400 [&.active]:opacity-100"
+              className={({ isActive }) =>
+                `block transition-all text-md px-3 py-2 hover:text-sky-400 ${
+                  isActive ? "opacity-100" : "opacity-80"
+                }`
+              }
               onClick={() => setMobileMenuOpen(false)}
             >
               الأسعار
-            </Link>
+            </NavLink>
 
             {/* Services Dropdown in Mobile */}
             <div className="block">
@@ -297,35 +355,51 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
               <div className={`px-3 py-2 space-y-2 transition-all duration-300 ${
                 isMobileDropdownOpen ? 'block' : 'hidden'
               }`}>
-                <Link
+                <NavLink
                   to="/help"
-                  className="block px-3 py-2 hover:text-sky-400"
+                  className={({ isActive }) =>
+                    `block px-3 py-2 hover:text-sky-400 ${
+                      isActive ? "text-sky-400" : ""
+                    }`
+                  }
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   مركز المساعدة
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/blogs"
-                  className="block px-3 py-2 hover:text-sky-400"
+                  className={({ isActive }) =>
+                    `block px-3 py-2 hover:text-sky-400 ${
+                      isActive ? "text-sky-400" : ""
+                    }`
+                  }
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   المدونة
-                </Link>
+                </NavLink>
               </div>
             </div>
 
             {/* Login & Signup Buttons in Mobile */}
             <div className="flex flex-col space-y-3 mt-4 px-3">
-              <Link
+              <NavLink
                 to="/login"
-                className="relative inline-flex items-center justify-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:border-sky-400 hover:bg-sky-400 hover:text-white"
+                className={({ isActive }) =>
+                  `relative inline-flex items-center justify-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:border-sky-400 hover:bg-sky-400 hover:text-white ${
+                    isActive ? "opacity-100" : ""
+                  }`
+                }
                 onClick={() => setMobileMenuOpen(false)}
               >
                 تسجيل الدخول
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 to="/signup"
-                className="relative inline-flex items-center justify-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:border-sky-400 hover:bg-sky-400 hover:text-white"
+                className={({ isActive }) =>
+                  `relative inline-flex items-center justify-center rounded-lg border-2 border-gray-900/10 dark:border-white/20 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white text-center transition-all duration-300 hover:border-sky-400 hover:bg-sky-400 hover:text-white ${
+                    isActive ? "opacity-100" : ""
+                  }`
+                }
                 onClick={() => setMobileMenuOpen(false)}
               >
                 انشاء حساب
@@ -336,7 +410,7 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
                 <span className="lqd-outline-glow absolute inset-0 rounded-[inherit] pointer-events-none overflow-hidden lqd-outline-glow-effect-1 [&_.lqd-outline-glow-inner]:[animation-direction:alternate]">
                   <span className="lqd-outline-glow-inner absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 inline-block aspect-square w-full min-w-[125%] rounded-[inherit]"></span>
                 </span>
-              </Link>
+              </NavLink>
             </div>
           </div>
         </div>

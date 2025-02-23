@@ -1,19 +1,11 @@
 import Footer from "./components/Footer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCalendar,
-  faCube,
-  faGrip,
-  faLifeRing,
-  faStore,
-} from "@fortawesome/free-solid-svg-icons";
 import { useOutletContext } from "react-router-dom";
 
 const stats = [
-  { name: "مزود خدمة", stat: "+20", icon: faCube },
-  { name: "قطاع تجاري مختلف", stat: "+20", icon: faGrip },
-  { name: "دعم للتجار", stat: "24/7", icon: faLifeRing },
-  { name: "متجر فعال على دوينج", stat: "+100 متجر", icon: faStore },
+  { name: "مزود خدمة", stat: "+20", icon: "text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-600 fa-solid fa-cube fa-2x" },
+  { name: "قطاع تجاري مختلف", stat: "+20", icon: "text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-600 fa-solid fa-grip fa-2x" },
+  { name: "دعم للتجار", stat: "24/7", icon: "text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-600 fa-solid fa-handshake fa-2x" },
+  { name: "متجر فعال على دوينج", stat: "+100 متجر", icon: "text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-600 fa-solid fa-store fa-2x" },
 ];
 
 const features = [
@@ -65,7 +57,16 @@ function App() {
               </p>
             </div>
             <div className="rounded-xl overflow-hidden">
-              <img src="/assets/img/serve.jpg" alt="" />
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+              >
+                <source src="/assets/videos/doing-mobile-video.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
@@ -81,10 +82,7 @@ function App() {
             >
               <div className="flex items-center">
                 <div className="h-12 w-12 flex items-center justify-center">
-                  <FontAwesomeIcon
-                    className="w-8 h-8 text-sky-500"
-                    icon={item.icon}
-                  />
+                  <i className={item.icon}></i>
                 </div>
                 <div className="mr-5">
                   <dd className="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">

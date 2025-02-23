@@ -22,13 +22,13 @@ function HelpPage() {
               </h2>
               <a
                 href="#"
-                className="mt-4 inline-flex items-center justify-center w-36 rounded-md border border-transparent bg-sky-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                className="mt-4 inline-flex items-center justify-center w-36 rounded-md border-transparent bg-gradient-to-r from-sky-500 to-sky-700 px-4 py-2 text-base font-medium text-white shadow-sm hover:from-sky-600 hover:to-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
               >
                 ابدأ تجارتك الآن
               </a>
             </div>
-            <div className="rounded-xl overflow-hidden">
-              <img src="/assets/img/serve.jpg" alt="" />
+            <div className="rounded-xl overflow-hidden h-[485px]">
+              <img className="w-full h-full object-cover" src="/assets/img/doing-jounary.jpeg" alt="" width="620" height="620" />
             </div>
           </div>
         </div>

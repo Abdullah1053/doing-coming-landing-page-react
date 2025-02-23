@@ -27,8 +27,8 @@ function App() {
       <HowItWorks />
       <MarqueeSection />
       <ToolsSection />
-      <TestimonialsSection />
       <PricingSection />
+      <TestimonialsSection />
       <FaqSection />
       <CTASection />
       <Footer />

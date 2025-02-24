@@ -84,18 +84,18 @@ const Features = () => {
             <button
               key={index}
               onClick={() => activateFeature(index)}
-              className={`transition-all p-3 h-[200px] rounded-lg overflow-hidden focus:outline-none ${
+              className={`transition-all p-3 h-[150px] rounded-lg overflow-hidden focus:outline-none ${
                 activeStates[index]
                   ? "bg-[linear-gradient(146deg,rgba(48,120,175,1)_0%,rgba(24,59,91,1)_52%,rgba(10,162,242,1)_100%)] scale-105"
                   : "bg-stone-200 dark:bg-neutral-800 hover:scale-105"
               }`}
             >
               <div className="relative z-10 rounded-lg h-full overflow-hidden p-3">
-                <h5 className="mb-4 flex items-center gap-6 font-semibold text-gray-900 dark:text-white">
+                <h5 className="mb-4 mx-auto flex items-center gap-2 font-semibold text-gray-900 dark:text-white justify-center">
                   <span className="w-7 [&_svg]:h-auto [&_svg]:w-full">
                     {feature.icon}
                   </span>
-                  <span className="mx-2">
+                  <span className="">
                     {feature.title}
                   </span>
                 </h5>

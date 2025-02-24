@@ -7,6 +7,8 @@ import {
 import logoLight from "/assets/img/logo/logoLight.png";
 import logoDark from "/assets/img/logo/logoDark.webp";
 import { Link, useOutletContext } from "react-router-dom";
+import { SparklesPreview } from "./ui/code.demo";
+
 
 const Footer = () => {
   const { darkMode } = useOutletContext();
@@ -29,6 +31,9 @@ const Footer = () => {
   ];
 
   return (
+    <>
+    <SparklesPreview />
+
     <footer className="site-footer lg:pt-30 relative -mt-[275px] text-white">
       <div className="relative">
 
@@ -156,6 +161,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 

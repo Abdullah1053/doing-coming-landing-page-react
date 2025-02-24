@@ -68,7 +68,7 @@ const TestimonialsSection = () => {
       }`}
     >
       <div className="container relative z-10">
-        <div className="relative w-full overflow-hidden rounded-3xl bg-stone-100 dark:bg-white/20 bg-gradient-to-br px-5 py-20 md:px-8 lg:px-20 lg:py-24">
+        <div className="relative w-full overflow-hidden rounded-3xl bg-gradient-to-br px-5 py-20 md:px-8 lg:px-20 lg:py-24">
           <div className="absolute inset-0 opacity-20">
             <img
               src="./assets/img/glow-1.png"
@@ -78,7 +78,7 @@ const TestimonialsSection = () => {
           </div>
           
           <figure
-            className="pointer-events-none absolute left-1/2 top-0 z-0 w-full max-w-none -translate-x-1/2 -translate-y-1/2"
+            className="pointer-events-none absolute left-1/2 top-1/2 z-0 w-full max-w-none -translate-x-1/2 -translate-y-1/2"
             aria-hidden="true"
           >
             <img

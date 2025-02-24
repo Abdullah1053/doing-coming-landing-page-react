@@ -350,9 +350,9 @@ const PricingSection = () => {
     {darkMode ? (
       <section
         ref={sectionRef}
-        className={`site-section py-20 transition-all duration-700 md:translate-y-8 pricing-dark overflow-x-hidden overflow-y-hidden ${
+        className={`site-section transition-all duration-700 lg:pb-[200px] md:translate-y-8 pricing-dark overflow-x-hidden overflow-y-hidden ${
           isInView ? "translate-y-0 opacity-100" : "md:opacity-0"
-        } lg:pb-24 lg:pt-16`}
+        } lg:pt-16`}
         id="pricing"
       >
         <div className="container relative w-full max-w-[1680px]">

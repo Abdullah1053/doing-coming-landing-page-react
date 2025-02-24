@@ -45,7 +45,7 @@ const FaqSection = () => {
       id="faq"
     >
       <div className="container relative w-full max-w-[1680px]">
-        <div className="relative w-full overflow-hidden rounded-3xl bg-stone-100 dark:bg-white/20 px-5 py-20 md:px-8 lg:flex lg:min-h-[70vh] lg:items-center lg:px-20 lg:py-36">
+        <div className="relative w-full overflow-hidden rounded-3xl px-5 py-20 md:px-8 lg:flex lg:min-h-[70vh] lg:items-center lg:px-20 lg:py-36">
           <figure
             className="pointer-events-none absolute start-1/2 top-0 z-0 w-full max-w-none -translate-x-1/2 -translate-y-1/2"
             aria-hidden="true"
@@ -100,7 +100,7 @@ const FaqSection = () => {
               {faqItems.map((item) => (
                 <div
                   key={item.id}
-                  className="lqd-accordion-item group relative rounded-lg bg-stone-300 dark:bg-black px-7"
+                  className="lqd-accordion-item group relative rounded-lg bg-stone-300 bg-stone-100 dark:bg-white/20 px-7"
                 >
                   <button
                     onClick={() => handleAccordionClick(item.id)}

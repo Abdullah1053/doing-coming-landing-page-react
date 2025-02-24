@@ -12,7 +12,6 @@ import FaqSection from "./components/FaqSection";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 import { useOutletContext } from "react-router-dom";
-import { SparklesPreview } from "./components/ui/code.demo";
 
 function App() {
   const { darkMode } = useOutletContext<{ darkMode: boolean }>();
@@ -34,7 +33,6 @@ function App() {
       <TestimonialsSection />
       <FaqSection />
       <CTASection />
-      <SparklesPreview />
       <Footer />
     </div>
   );

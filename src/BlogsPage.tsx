@@ -1,55 +1,17 @@
 import Footer from "./components/Footer";
 import { Link, useOutletContext } from "react-router-dom";
-
-const posts = [
-  {
-    id: 1,
-    title: "دليل التاجر لفهم تجارة التجزئة التقليدية والإلكترونية والحديثة في عام 2024.",
-    href: "#",
-    description:
-      "لم يعد سلوك المستهلك اليوم كما كان قبل عشر سنوات، أو حتى قبل عام يتمتع المستهلك الحديث بأربع خصائص أساسية تحتاج إلى معرفتها لفهم التقليدية التجزئة الإلكترونية والحديثة...",
-    date: "Mar 10, 2024",
-    datetime: "2024-03-10",
-    imageUrl:
-      "/assets/img/blog.jpg",
-  },
-  {
-    id: 2,
-    title: "استراتيجيات لزيادة المبيعات",
-    href: "#",
-    description:
-      "تعد الحملات التسويقية الناجحة للمتاجر الإلكترونية من أكبر الأهداف التسويقية لتجار التجزئة لجذب المزيد من العملاء المحتملين وتحقيق مبيعات وأرباح أعلى ، والحصول على أفضل النتائج من الحملات التسويقية على منصات التواصل الاجتماعي يتطلب إطلاق جيد للتخطيط من خلال استراتيجية واضحة، والتي يتم وصفها بالتفصيل في هذه المقالة... ",
-    date: "Mar 10, 2024",
-    datetime: "2024-03-10",
-    imageUrl:
-      "/assets/img/blog.jpg",
-  },
-  {
-    id: 3,
-    title: "7 نصائح لإطلاق حملة تسويقية ذكية للمتاجر الإلكترونية مثل المحترفين",
-    href: "#",
-    description:
-      "تعد الحملات التسويقية الناجحة للمتاجر الإلكترونية من أكبر الأهداف التسويقية لتجار التجزئة لجذب المزيد من العملاء المحتملين وتحقيق مبيعات وأرباح أعلى ، والحصول على أفضل النتائج من الحملات التسويقية.... ",
-    date: "Mar 10, 2024",
-    datetime: "2024-03-10",
-    imageUrl:
-      "/assets/img/blog.jpg",
-  },
-  {
-    id: 4,
-    title: "التسويق الذكي ما هو ، ما هي أهدافه وأهم استراتيجياته",
-    href: "#",
-    description:
-      "أصبحت أساليب التسويق غير محدودة ، وتطور التسويق بشكل مثير للإعجاب في ظل التطورات التكنولوجية على مدى العقود القليلة الماضية، مما دفع الشركات وتجار التجزئة من جميع الأنواع إلى تنفيذ استراتيجيات التسويق الذكية لزيادة قدرتها التنافسية وقدرتها على جذب العملاء والاحتفاظ بهم… ",
-    date: "Mar 10, 2024",
-    datetime: "2024-03-10",
-    imageUrl:
-      "/assets/img/blog.jpg",
-  },
-];
+import { blogs } from "./utils/blogs";
 
 function HelpPage() {
   const { darkMode } = useOutletContext();
+  
+  // Helper function to create a brief description by limiting the text length.
+  const getBriefDescription = (html: string, limit = 150): string => {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = html;
+    const text = tempDiv.textContent || tempDiv.innerText || "";
+    return text.length > limit ? text.slice(0, limit) + "..." : text;
+  };
 
   return (
     <div
@@ -61,7 +23,7 @@ function HelpPage() {
       {/* Start Banner */}
       <section className="mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl">
         <div className="container">
-          <div class="mx-auto max-w-2xl py-12 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl py-12 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
             <h2 className="text-[3rem] font-bold text-gray-900 dark:text-white sm:text-4xl">
               المدونة
             </h2>
@@ -72,7 +34,7 @@ function HelpPage() {
       {/* Start Content */}
       <section className="container mt-20">
         <div className="mx-auto mt-12 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
+          {blogs.map((post) => (
             <div
               key={post.title}
               className="flex flex-col overflow-hidden rounded-lg shadow-lg"
@@ -80,8 +42,8 @@ function HelpPage() {
               <div className="flex-shrink-0">
                 <img
                   className="h-64 w-full object-cover"
-                  src={post.imageUrl}
-                  alt=""
+                  src={post.image}
+                  alt={post.title}
                 />
               </div>
               <div className="flex flex-1 flex-col justify-between bg-white dark:bg-white/20 p-6">
@@ -90,9 +52,12 @@ function HelpPage() {
                     <p className="text-xl leading-7 font-semibold text-gray-900 dark:text-white">
                       {post.title}
                     </p>
-                    <p className="mt-3 text-base leading-6 text-gray-500 dark:text-white/70">
-                      {post.description}
-                    </p>
+                    <p
+                      className="mt-3 text-base leading-6 text-gray-500 dark:text-white/70"
+                      dangerouslySetInnerHTML={{
+                        __html: getBriefDescription(post.description, 150),
+                      }}
+                    ></p>
                   </Link>
                 </div>
                 <div className="mt-6 flex items-center">
@@ -111,7 +76,7 @@ function HelpPage() {
       {/* Start CTA  */}
       <section className="mt-20 mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl">
         <div className="container">
-          <div class="mx-auto max-w-2xl py-12 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl py-12 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
             <h2 className="text-[1.8rem] font-bold text-gray-900 dark:text-white sm:text-4xl">
               جاهز لتحوّل فكرتك إلى واقع؟
             </h2>

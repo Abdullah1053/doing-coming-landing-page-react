@@ -7,49 +7,49 @@ const Features = () => {
   const features = [
     {
       icon: (
-        <i className="fa-light fa-arrow-up-right-dots"></i>
+        <i className="fa-solid fa-bullseye-arrow"></i>
       ),
-      title: "تجارتك تنمو بدون توقف",
-      description: "مع أدواتنا الذكية استهدف عملاءك بناءً على اهتماماتهم وسلوكهم، وأطلق حملاتك التسويقية.",
+      title: "عملاؤك أقرب مما تتخيل",
+      description: "لا تفوّت أي فرصة ! استهدف عملاءك برسائل تسويقية ذكية.",
     },
     {
       icon: (
-        <i className="fa-light fa-map-location"></i>
+        <i className="fa-regular fa-cart-shopping"></i>
       ),
-      title: "توصيل طلباتك أسرع",
-      description: " بضغطة زر خلي عملاءك يستلموا طلباتهم بدون تأخير ، خيارات الشحن تحت إدارتك مع إمكانية تتبع الطلبات.",
+      title: "سلات متروكة؟ أرباح مسترجعة",
+      description: "ذكّر عملاءك بمنتجاتهم المفضلة، وأعدهم لإكمال مشترياتهم.",
     },
     {
       icon: (
-        <i className="fa-light fa-calendar-lines-pen"></i>
+        <i className="fa-regular fa-paintbrush"></i>
       ),
-      title: "القرارات الصعبة صارت سهلة",
+      title: "متجرك... بأسلوبك!",
       description:
-        "تقارير تفصيلية ، تمكنك من تحليل أداء متجرك، تحديد نقاط القوة، لتحسين أداء تجارتك اعتمادًا على معلومات دقيقة.",
+        "حرية التصميم بين يديك، خصص متجرك ليناسب هوية علامتك التجارية.",
     },
     {
       icon: (
-        <i className="fa-light fa-paintbrush-pencil"></i>
+        <i className="fa-regular fa-megaphone"></i>
       ),
-      title: "تجربة تصميم على مقاس طموحك",
+      title: "إعلاناتك حيث يجب أن تكون",
       description:
-        "متجرك لوحتك، وأنت الفنان! مع ثيمات قابلة للتخصيص أضف لمساتك الخاصة بتصميم يُبرز هويتك التجارية.",
+        "تكامل سلس مع Google وFacebook Ads، ليصل إعلانك إلى جمهورك المستهدف.",
     },
     {
       icon: (
-        <i className="fa-light fa-credit-card"></i>
+        <i className="fa-regular fa-users-gear"></i>
       ),
-      title: "وسائل الدفع بدون تعقيد",
+      title: "إدارة متقدمة، تجربة سلسة",
       description:
-        "من التحويل إلى الدفع عند الاستلام، إلى المحافظ الإلكترونية، نوفر لك كل طرق الدفع التي تلبي احتياجات عملائك.",
+        "نظّم طلباتك، صنّف عملاءك، واضبط الإعدادات بسهولة لمتجر أكثر كفاءة.",
     },
     {
       icon: (
-        <i className="fa-light fa-box-taped"></i>
+        <i className="fa-regular fa-link-horizontal"></i>
       ),
-      title: "تحكم ذكي في مخزونك",
+      title: "متجرك بهويتك الخاصة",
       description:
-        "ابقَى على اطلاع دائم بكل تفاصيل منتجاتك، تتبع كميات المنتجات، اعدّ تنبيهات للنقص في المخزون، وقم بتصنيف منتجاتك.",
+        "احجز دومينك الخاص واجعل علامتك التجارية أكثر احترافية بين المنافسين.",
     },
   ];
 
@@ -97,7 +97,7 @@ const Features = () => {
                   </span>
                   {feature.title}
                 </h5>
-                <p className="m-0 lg:ps-12 leading-8 text-gray-500 dark:text-white/50">
+                <p className="m-0 lg:ps-1 leading-8 text-gray-500 dark:text-white/50">
                   {feature.description}
                 </p>
               </div>

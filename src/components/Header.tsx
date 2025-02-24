@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import logoLight from "/assets/img/logo/logoLight.png";
 import logoDark from "/assets/img/logo/logoDark.webp";
 import { NavLink, Link } from "react-router-dom";
@@ -16,11 +17,44 @@ interface Props {
 }
 
 const Navigation = ({ theme, onChangeTheme }: Props) => {
+  const location = useLocation();
+
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isMobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    let title: string;
+    switch (location.pathname) {
+      case "/":
+        title = "الرئيسية";
+        break;
+      case "/how-to-serve":
+        title = "كيف نخدمك";
+        break;
+      case "/timeline":
+        title = "رحلة دوينج";
+        break;
+      case "/about":
+        title = "عن دوينج";
+        break;
+      case "/price":
+        title = "الأسعار";
+        break;
+      case "/login":
+        title = "تسجيل الدخول";
+        break;
+      case "/signup":
+        title = "انشاء حساب";
+        break;
+      default:
+        title = "مدونة دوينج";
+        break;
+    }
+    document.title = title;
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {

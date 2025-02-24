@@ -45,6 +45,68 @@ const PricingCard = ({ plan, activated, onActivate }) => {
   };
 
   return (
+    <>
+    <style jsx>
+      {`
+      
+        @media (min-width: 1024px) {
+          .video-price-card {
+            top: -270px;
+          }
+        }
+        @media (max-width: 1023px) {
+          .video-price-card {
+            top: -280px;
+          }
+        }
+        @media (max-width: 768px) {
+          .video-price-card {
+            top: -280px;
+          }
+        }
+
+        @media (max-width: 450px) {
+          .video-price-card {
+            top: -280px;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .video-price-card {
+            top: -225px;
+          }
+        }
+
+
+        @media (max-width: 370px) {
+          .video-price-card {
+            top: -220px;
+            width: 750px;
+            left: -215px;
+          }
+        }
+
+        @media (max-width: 315px) {
+          .video-price-card {
+            top: -190px;
+            width: 500px;
+            height: 1000px;
+            left: -200px;
+          }
+        }
+
+
+        @media (max-width: 240px) {
+          .video-price-card {
+            top: -220px;
+            width: 750px;
+            left: -215px;
+          }
+        }
+      `}
+    </style>
+
+
     <div
       onClick={handleActivate}
       className={`plan-card mb-4 item relative mr-14 flex aspect-[0.7372] w-[390px] flex-shrink-0 cursor-pointer snap-center flex-col rounded-[24px] border border-[rgba(255,255,255,0.05)] p-[28px] pb-[25px] text-white transition-all duration-200 lg:mr-12 md:w-[366px] sm:mr-5 sm:w-[91%] sm:max-w-[366px] sm:p-[18px] xs:w-[336px] ${
@@ -102,7 +164,7 @@ const PricingCard = ({ plan, activated, onActivate }) => {
         <>
           <div className="pointer-events-auto select-auto rounded-[inherit]">
             <div
-              className="absolute -left-[69%] -top-[252px] -z-20 aspect-[0.925925] w-[943px] rounded-[inherit] ms:-top-[252px] md:-top-[275px] md:w-[932px] sm:-left-[68.666%] sm:w-[255%]"
+              className="absolute video-price-card -left-[69%] -top-[252px] -z-20 aspect-[0.925925] w-[943px] rounded-[inherit] ms:-top-[252px] md:-top-[275px] md:w-[932px] sm:-left-[68.666%] sm:w-[255%]"
               style={{ opacity: 1 }}
             >
               <div className="absolute -inset-0">
@@ -153,6 +215,8 @@ const PricingCard = ({ plan, activated, onActivate }) => {
         </>
       )}
     </div>
+
+    </>
   );
 };
 

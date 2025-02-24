@@ -10,27 +10,27 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Peline Jan",
-      role: "Entrepreneur",
+      name: "ابو ألياس",
+      role: "للماركات العالمية",
       image: "./assets/img/testimonialAvatar/202306020840avatar-1.jpg",
       quote:
-        '"Not only did it save me time, but it also helped me produce content that was more engaging and effective than what I had been creating on my own."',
+        'كنا نبحث عن منصة موثوقة تدعم نمونا في التجارة الإلكترونية، ووجدنا في دوينج الحل الأمثل. الدعم الفني متجاوب، والميزات تلبي جميع احتياجاتنا، مما ساعدنا في توسيع نطاق أعمالنا بكل سهولة.',
     },
     {
       id: 2,
-      name: "Tom Daniel",
-      role: "Writer",
+      name: "منتصر ",
+      role: "",
       image: "./assets/img/testimonialAvatar/202306020840avatar-3.jpg",
       quote:
-        '"As a freelance writer, I was looking for a tool that could help me generate ideas and write faster. This AI Text website has done that and more."',
+        'منصة دوينج أحدثت نقلة نوعية في طريقة إدارتنا لمتجرنا الإلكتروني. الواجهة السلسة، والتكامل مع وسائل الدفع، وسرعة التنفيذ جعلت تجربتنا أكثر سلاسة واحترافية!',
     },
     {
       id: 3,
-      name: "Eric Sanchez",
-      role: "UX Designer",
+      name: "جمال عثمان",
+      role: "دلع ستور",
       image: "./assets/img/testimonialAvatar/202306020840avatar-2.jpg",
       quote:
-        "\"The customer support team has been incredibly helpful whenever I've had any questions. I can't imagine going back to my old content-creation methods!\"",
+        'لقد غيرت منصة "دوينج" تجربتنا في التجارة الإلكترونية بالكامل! بفضل الأدوات المبتكرة والدعم الرائع، أصبح بإمكاننا إدارة متجرنا بكفاءة وسهولة.',
     },
   ];
 
@@ -108,19 +108,19 @@ const TestimonialsSection = () => {
                   <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
                   <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
                 </svg>
-                التغطيات
+                شركاؤنا
               </h6>
-              <h2 className="text-white">التغطيات المختلفة.</h2>
+              <h2 className="text-white">قالوا عنا.</h2>
             </div>
 
             <div className="w-full lg:w-1/3">
               <p className="mb-6 text-white">
-                التغطيات المختلفة التي يمكنك اختيارها وفقاً لاحتياجاتك.
+                شركاؤنا الذين يؤكدون على جودة الخدمة والدعم المتميز.
               </p>
             </div>
           </header>
 
-          <div className="relative mx-auto lg:mb-20 lg:w-1/2 relative z-10">
+          <div className="relative mx-auto w-full lg:mb-20 lg:w-1/2 relative z-10">
             <div
               ref={carouselRef}
               className="testimonials-carousel carousel text-center flickity-enabled is-draggable"
@@ -137,7 +137,7 @@ const TestimonialsSection = () => {
                       alt={testimonial.name}
                     />
                   </figure>
-                  <blockquote className="mb-4">
+                  <blockquote className="mb-4 w-full max-w-full sm:max-w-xl mx-auto">
                     <p className="text-white">{testimonial.quote}</p>
                   </blockquote>
                   <figcaption>

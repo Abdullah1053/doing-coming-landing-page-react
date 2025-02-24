@@ -82,16 +82,23 @@ const PricingCard = ({ plan, activated, onActivate }) => {
           .video-price-card {
             top: -220px;
             width: 750px;
-            left: -215px;
+            left: -211px;
+          }
+
+          .plan-card {
+            height: 400px;
           }
         }
 
         @media (max-width: 315px) {
           .video-price-card {
-            top: -190px;
-            width: 500px;
-            height: 1000px;
-            left: -200px;
+            top: -180px;
+            width: 590px;
+            left: -165px;
+          }
+
+          .plan-card {
+            height: 300px;
           }
         }
 
@@ -99,8 +106,11 @@ const PricingCard = ({ plan, activated, onActivate }) => {
         @media (max-width: 240px) {
           .video-price-card {
             top: -220px;
-            width: 750px;
+            width: 500px;
             left: -215px;
+          }
+            .plan-card {
+            height: 300px;
           }
         }
       `}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link, useOutletContext } from "react-router-dom";
 
 const LoginPage = () => {
@@ -27,6 +28,10 @@ const LoginPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>تسجيل الدخول لمنصة دوينج</title>
+      </Helmet>
+
       {/* Header (extracted from login.html) */}
       <header className={`absolute left-0 top-0 z-50 w-full px-safe pt-safe ${darkMode ? "bg-black text-white" : "bg-white text-gray-950"}`}>
         <div className="container">

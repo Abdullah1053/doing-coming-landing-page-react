@@ -20,19 +20,13 @@ function HelpPage() {
         darkMode ? "bg-black text-white" : "bg-white text-gray-950"
       }`}
     >
-      {/* Start Banner */}
-      <section className="mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl w-[90%] mx-auto bg-[linear-gradient(146deg,rgba(48,120,175,1)_0%,rgba(24,59,91,1)_52%,rgba(10,162,242,1)_100%)]">
-        <div className="container">
-          <div className="mx-auto max-w-xl py-12 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
-            <h2 className="text-[2.5rem] font-bold text-gray-900 dark:text-white sm:text-4xl">
-              المدونة
-            </h2>
-          </div>
-        </div>
-      </section>
-      {/* End Banner */}
       {/* Start Content */}
-      <section className="container mt-20">
+      <section className="container">
+        <div className="rounded-3xl mb-3 py-12 px-4 text-center sm:py-20 sm:px-6 lg:px-8 bg-[linear-gradient(146deg,rgba(48,120,175,1)_0%,rgba(24,59,91,1)_52%,rgba(10,162,242,1)_100%)]">
+          <h2 className="text-[2.5rem] w-100 font-bold text-gray-900 dark:text-white sm:text-4xl">
+            المدونة
+          </h2>
+        </div>
         <div className="mx-auto mt-12 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {blogs.map((post) => (
             <div

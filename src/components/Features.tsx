@@ -95,7 +95,9 @@ const Features = () => {
                   <span className="w-7 [&_svg]:h-auto [&_svg]:w-full">
                     {feature.icon}
                   </span>
-                  {feature.title}
+                  <span className="mx-2">
+                    {feature.title}
+                  </span>
                 </h5>
                 <p className="m-0 lg:ps-1 leading-8 text-gray-500 dark:text-white/50">
                   {feature.description}

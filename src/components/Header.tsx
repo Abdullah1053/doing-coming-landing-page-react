@@ -213,7 +213,7 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
                   </button>
                   {isDropdownOpen && (
                     <div className="absolute bg-stone-200 dark:bg-black text-gray-900 dark:text-white rounded-md w-40 mt-0 py-2 shadow-lg">
-                      <NavLink
+                      {/* <NavLink
                         to="/help"
                         className={({ isActive }) =>
                           `block px-4 py-2 hover:text-sky-400 ${
@@ -222,7 +222,7 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
                         }
                       >
                         مركز المساعدة
-                      </NavLink>
+                      </NavLink> */}
                       <NavLink
                         to="/blogs"
                         className={({ isActive }) =>

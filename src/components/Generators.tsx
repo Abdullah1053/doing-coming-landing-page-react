@@ -14,47 +14,47 @@ const Generators = () => {
         "قصة نجاحك في تجارتك تبدأ اليوم أنشئ متجرك الخاص بدقائق واحصل على استضافة مجانية وابدأ انطلاقتك التجارية بمرونة.",
       iconClass: "fa-regular fa-bag-shopping",
       image:
-        "./assets/img/generatorlist/R5dw-intelligent-writing-assistant-image.png",
+        "./assets/img/generatorlist/doing-signin.png",
       alt: "Generate, edit, export.",
     },
     {
       id: "ai-image-generator",
       title: "مـنصـات دفـع آمـنـة",
       description:
-        "نوفر لك جميع وسائل الدفع بدءاً من التحويل البنكي والدفع عند الاستلام والدفع بالبطاقات الائتمانية (فيزا وماستر كارد) والدفع بواسطة المحافظ الإلكترونية",
+        "من التحويل إلى الدفع عند الاستلام، إلى المحافظ الإلكترونية، نوفر لك كل طرق الدفع التي تلبي احتياجات عملائك.",
       iconClass: "fa-regular fa-credit-card",
       image:
-        "./assets/img/generatorlist/X6tD-create-eye-catching-images-and-graphics-image.png",
+        "./assets/img/generatorlist/doing-payments.png",
       alt: "Imagine, Genearate, Publish.",
     },
     {
       id: "ai-code-generator",
       title: "خيارات شحن متنوعة",
       description:
-        "استخدم خيارات شحن مُتنوعة مع عملائك وبسعر مخفص خاص بمتجرك واشحن بكل بساطة",
+        "بضغطة زر خلي عملاءك يستلموا طلباتهم بدون تأخير ، خيارات الشحن تحت إدارتك مع إمكانية تتبع الطلبات.",
       iconClass: "fa-light fa-cart-flatbed",
       image:
-        "./assets/img/generatorlist/jO70-generate-high-quality-code-in-no-time-image.png",
+        "./assets/img/generatorlist/doing-shipping.png",
       alt: "Fix. Improve. Generate.",
     },
     {
       id: "ai-chat-bot",
       title: "إدارة مخزون باحترافية",
       description:
-        "ستتمكن من إدارة منتجاتك، مهما كان نوع هذه المنتجات سواءً منتجات جاهزة أو حسب الطلب أو منتجات رقمية وغيرها بكل سهولة",
+        "ابقَى على اطلاع دائم بكل تفاصيل منتجاتك، تتبع كميات المنتجات، اعدّ تنبيهات للنقص في المخزون، وقم بتصنيف منتجاتك.",
       iconClass: "fa-light fa-boxes-stacked",
       image:
-        "./assets/img/generatorlist/OSlG-meet-your-next-virtual-assistant-image.png",
+        "./assets/img/generatorlist/doing-inventory.png",
       alt: "Chat, Solve, Repeat.",
     },
     {
       id: "ai-speech-to-text",
       title: "تقاريـر مبيعات فورية",
       description:
-        "من خلال التقارير ستتمكن من الحصول على جميع المعلومات التي تحتاج إليها لمعرفة أداء المتجر واتخاذ أفضل القرارا",
+        "تقارير تفصيلية ، تمكنك من تحليل أداء متجرك، تحديد نقاط القوة، لتحسين أداء تجارتك اعتمادًا على معلومات دقيقة.",
       iconClass: "fa-light fa-chart-pie",
       image:
-        "./assets/img/generatorlist/gHfo-transcribe-your-speech-into-text-image.png",
+        "./assets/img/generatorlist/doing-reports.png",
       alt: "Upload, Analyze, Generate.",
     },
   ];

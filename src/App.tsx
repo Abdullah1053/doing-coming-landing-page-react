@@ -1,3 +1,5 @@
+import React from "react";
+
 import Banner from "./components/Banner";
 import Generators from "./components/Generators";
 import Features from "./components/Features";
@@ -10,9 +12,10 @@ import FaqSection from "./components/FaqSection";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 import { useOutletContext } from "react-router-dom";
+import { SparklesPreview } from "./components/ui/code.demo";
 
 function App() {
-  const { darkMode } = useOutletContext();
+  const { darkMode } = useOutletContext<{ darkMode: boolean }>();
 
   return (
     <div
@@ -31,6 +34,7 @@ function App() {
       <TestimonialsSection />
       <FaqSection />
       <CTASection />
+      <SparklesPreview />
       <Footer />
     </div>
   );

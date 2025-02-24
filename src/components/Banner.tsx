@@ -2,12 +2,16 @@ import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useOutletContext } from "react-router-dom";
-
+import React from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Banner = () => {
-  const { darkMode } = useOutletContext();
+interface BannerProps {
+  theme: boolean;
+}
+
+const Banner: React.FC<BannerProps> = ({ theme }) => {
+  const { darkMode } = useOutletContext<{ darkMode: boolean }>();
   const [isInView, setIsInView] = useState(false);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const image1Ref = useRef(null);
@@ -22,11 +26,6 @@ const Banner = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const rotatingTexts = ["متجرك الإلكتورني", "موقعك الخاص", "مدونتك"];
-
-
-
-  // Trigger a resize event to ensure styles are applied correctly
-
 
   useEffect(() => {
     // Set initial in-view state
@@ -245,7 +244,6 @@ const Banner = () => {
     // Start with video 1 and set its opacity to 1
     video1.style.opacity = '1';
     video1.play();
-
 
     return () => {
       video1.removeEventListener('ended', handleVideo1End);

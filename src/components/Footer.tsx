@@ -29,21 +29,13 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="site-footer lg:pt-30 relative pt-20 text-white">
+    <footer className="site-footer lg:pt-30 relative -mt-[275px] text-white">
       <div className="relative">
 
         <div className="container relative w-full max-w-[1680px]">
-          <hr className="border-gray-500 dark:border-white/50 border-opacity-15" />
           
-          <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-14 max-sm:justify-center">
-            <div>
-              <Link to="/">
-                <img
-                  src={darkMode ? logoLight : logoDark}
-                  alt="Doing logo"
-                  style={{ maxHeight: "2.75rem" }}
-                />
-              </Link>
+          <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-14 justify-between">
+            <div className="">
               <p className="mt-2 text-sm xl:text-md leading-7 text-gray-500 dark:text-white w-2/3">
                 يوم جديد لتحقيق انطلاقتك في تجارتك، ابدأ الآن مع منصة دوينج، وكن
                 جزءاً من مستقبل التجارة الإلكترونية
@@ -140,7 +132,7 @@ const Footer = () => {
 
           <hr className="border-gray-500 dark:border-white/50 border-opacity-15" />
 
-          <div className="container flex flex-wrap items-center justify-between gap-y-4 py-9">
+          <div className="container flex flex-wrap items-center justify-between gap-y-4 py-2">
             <p className="w-full text-sm text-gray-900 dark:text-white/90 md:w-1/2 sm:text-center md:text-right">
               © 2025 Doing. جميع الحقوق محفوظة.
             </p>

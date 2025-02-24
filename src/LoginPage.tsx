@@ -231,7 +231,7 @@ const LoginPage = () => {
               <div
                 className="absolute inset-0 -z-10 overflow-hidden rounded-[20px] shadow-[0px_4px_25px_rgba(11,13,16,0.8)] [transform:translateZ(0)] xs:rounded-[18px]">
                 <img alt=""
-                  className="absolute inset-[1px] -z-10 max-w-none rounded-[20px] bg-black xs:left-1/2 h-[575px] xs:w-auto xs:-translate-x-1/2"
+                  className="absolute -z-10 max-w-none w-full rounded-[20px] bg-black xs:left-1/2 h-[575px] xs:-translate-x-1/2"
                   data-nimg="1" decoding="async" height="575"
                   src="assets/img/login/card-image.jpg"
                   style={{ color: "transparent" }} width="480" />

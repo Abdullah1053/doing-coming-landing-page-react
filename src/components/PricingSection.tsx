@@ -65,40 +65,57 @@ const PricingCard = ({ plan, activated, onActivate }) => {
           }
         }
 
-        @media (max-width: 450px) {
+        @media (max-width: 640px) {
           .video-price-card {
             top: -280px;
           }
         }
 
+        @media (max-width: 450px) {
+          .video-price-card {
+            top: -240px;
+            width: 780px;
+            left: -200px;
+          }
+          .plan-card {
+            height: 400px;
+            width: 320px;
+          }
+        }
+
         @media (max-width: 400px) {
           .video-price-card {
-            top: -225px;
+            top: -240px;
+          }
+          .plan-card {
+            height: 400px;
           }
         }
 
 
         @media (max-width: 370px) {
           .video-price-card {
-            top: -220px;
-            width: 750px;
-            left: -211px;
-          }
-
-          .plan-card {
-            height: 400px;
-          }
-        }
-
-        @media (max-width: 315px) {
-          .video-price-card {
-            top: -180px;
-            width: 590px;
+            top: -190px;
+            width: 620px;
             left: -165px;
           }
 
           .plan-card {
-            height: 300px;
+            height: 320px;
+            width: 250px;
+          }
+        }
+
+        @media (max-width: 335px) {
+          .video-price-card {
+            top: -180px;
+            width: 600px;
+            left: -155px;
+          }
+
+          .plan-card {
+            height: 320px;
+            width: 245px;
           }
         }
 
@@ -119,12 +136,12 @@ const PricingCard = ({ plan, activated, onActivate }) => {
 
     <div
       onClick={handleActivate}
-      className={`plan-card mb-4 item relative mr-14 flex aspect-[0.7372] w-[390px] flex-shrink-0 cursor-pointer snap-center flex-col rounded-[24px] border border-[rgba(255,255,255,0.05)] p-[28px] pb-[25px] text-white transition-all duration-200 lg:mr-12 md:w-[366px] sm:mr-5 sm:w-[91%] sm:max-w-[366px] sm:p-[18px] xs:w-[336px] ${
+      className={`plan-card mb-4 item relative lg:mr-14 flex aspect-[0.7372] w-[390px] flex-shrink-0 cursor-pointer snap-center flex-col rounded-[24px] border border-[rgba(255,255,255,0.05)] p-[28px] pb-[25px] text-white transition-all duration-200 md:w-[366px] sm:w-[91%] sm:max-w-[366px] sm:p-[18px] xs:w-[336px] ${
         plan.featured ? "bg-stone-100 dark:bg-white/20" : "bg-stone-100 dark:bg-white/20"
       }`}
       style={{ background: "unset" }}
     >
-      <div className="md:hover:-translate-y-1 md:hover:scale-[1.025]  w-[100%] h-[400px] lg:h-[440px]  overflow-hidden">
+      <div className="md:hover:-translate-y-1 md:hover:scale-[1.025]  w-[100%] h-[400px] lg:h-[440px]  lg:overflow-y-hidden overflow-y-auto">
         <h3 className="text-20 font-semibold leading-snug tracking-tight sm:text-16">
           {plan.name}
         </h3>
@@ -271,7 +288,7 @@ const renderPricingCard = (plan) => (
     <hr className="w-full opacity-10" />
 
     <div className="relative mt-8 flex flex-col justify-between flex-grow">
-      <ul className="mb-12 mt-8 flex flex-col gap-6 text-base text-gray-900 dark:text-white/80 text-sm">
+      <ul className="mb-12 mt-8 flex flex-col gap-6 text-base text-gray-900 dark:text-white/80 text-sm lg:overflow-y-hidden overflow-y-auto">
         {plan.features.map((feature, index) => (
           <li key={index} className="group flex items-center">
             <span className="size-7 me-5 inline-grid shrink-0 place-content-center rounded-full bg-secondary text-white transition-all group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">

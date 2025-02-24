@@ -178,7 +178,7 @@ const LoginPage = () => {
             </div>
             <div className="mt-[25px] grid grid-cols-2 gap-x-4 lg:mt-[22px] md:gap-x-2 xs:mt-4 xs:grid-cols-1 xs:gap-y-3">
               <a
-                className="transition-colors duration-200 transition-all duration-200 uppercase font-bold flex items-center justify-center h-10 px-16 text-12 text-white tracking-snugger rounded bg-grey-5 ring-1 ring-white/10 transition-all duration-200 hover:ring-white/15 mx-px gap-x-2 !px-2 !text-13"
+                className="w-full transition-colors duration-200 transition-all duration-200 uppercase font-bold flex items-center justify-center h-10 px-16 text-12 text-white tracking-snugger rounded bg-grey-5 ring-1 ring-white/10 transition-all duration-200 hover:ring-white/15 mx-px gap-x-2 !px-2 !text-13 col-span-2"
                 href="https://account.huly.app/auth/google"
               >
                 <img
@@ -191,29 +191,11 @@ const LoginPage = () => {
                   style={{ color: "transparent" }}
                   width="22"
                 />
-                <span className="font-medium normal-case">
+                <span className="normal-case sm:text-10">
                   Sign in with Google
                 </span>
               </a>
-              <a
-                className="transition-colors duration-200 transition-all duration-200 uppercase font-bold flex items-center justify-center h-10 px-16 text-12 text-white tracking-snugger rounded bg-grey-5 ring-1 ring-white/10 transition-all duration-200 hover:ring-white/15 mx-px gap-x-2 !px-2 !text-13"
-                href="https://account.huly.app/auth/github"
-              >
-                <img
-                  alt="GitHub Logo"
-                  data-nimg="1"
-                  decoding="async"
-                  height="28"
-                  width="28"
-
-                  loading="lazy"
-                  src="/assets/img/login/github.svg"
-                  style={{ color: "transparent" }}
-                />
-                <span className="font-medium normal-case">
-                  Sign in with GitHub
-                </span>
-              </a>
+              
             </div>
           </main>
 

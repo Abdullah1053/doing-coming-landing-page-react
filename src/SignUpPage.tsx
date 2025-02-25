@@ -63,8 +63,8 @@ const SignUpPage = () => {
       </header>
 
       {/* Main Section */}
-      <section className={`min-w-[350px] bg-[#090a0f] relative flex h-screen min-h-[120vh] flex-col items-center justify-center overflow-hidden py-16 px-safe xs:min-h-[440px] xs:px-5 ${darkMode ? "bg-black text-white" : "bg-white text-gray-950"}`}>
-        <div className="relative z-10 h-[100%] mt-10 w-[480px] bg-black px-12 pt-14 lg:w-[464px] lg:px-10 lg:pt-[64px] md:px-11 xs:w-full xs:max-w-sm xs:px-5 xs:py-5">
+      <section className={`min-w-[350px] bg-[#090a0f] pb-10 relative flex h-screen min-h-[110vh] flex-col items-center justify-center overflow-hidden px-safe xs:min-h-[115vh] xs:px-5 ${darkMode ? "bg-black text-white" : "bg-white text-gray-950"}`}>
+        <div className="relative z-10 h-[100%] lg:mt-40 mt-[70px] w-[480px] bg-black px-12 pt-14 lg:w-[464px] lg:px-10 lg:pt-[64px] md:px-11 xs:w-full xs:max-w-sm xs:px-5 xs:py-5">
           {/* Logo */}
           <img
             alt="Logo"
@@ -77,7 +77,7 @@ const SignUpPage = () => {
             width="28"
           />
           <main>
-            <h1 className="mt-[17px] font-title text-36 font-semibold leading-none tracking-snugger text-white lg:text-32 md:text-28 xs:mt-3 xs:text-24">
+            <h1 className="mt-[17px] font-title font-semibold leading-none tracking-snugger text-white mx-auto text-center text-32 md:text-28 xs:mt-3 xs:text-24">
               انشاء حساب في منصة دوينج
             </h1>
             {/* Sign In Form */}
@@ -99,7 +99,7 @@ const SignUpPage = () => {
                     autoComplete="name"
                     placeholder="إدخل اسم المتجر"
                     required
-                    className="remove-autocomplete-styles relative block h-[42px] w-full appearance-none rounded border bg-black px-3 py-[9px] text-15 tracking-snugger text-white placeholder-white/20 outline-none focus:ring-[rgba(209,208,255,0.5)] md:h-[41px] sm:text-16 border-white/10"
+                    className="remove-autocomplete-styles relative block h-[42px] w-full appearance-none rounded border bg-black/20 px-3 py-[9px] text-15 tracking-snugger text-white placeholder-white/50 outline-none focus:ring-[rgba(209,208,255,0.5)] md:h-[41px] sm:text-16 border-white/10"
                   />
                 </div>
               </div>
@@ -118,7 +118,7 @@ const SignUpPage = () => {
                   autoComplete="email"
                   placeholder="البريد الإلكتروني"
                   required
-                  className="remove-autocomplete-styles relative block h-[42px] w-full appearance-none rounded border bg-black px-3 py-[9px] text-15 tracking-snugger text-white placeholder-white/20 outline-none focus:ring-[rgba(209,208,255,0.5)] md:h-[41px] sm:text-16 border-white/10"
+                  className="remove-autocomplete-styles relative block h-[42px] w-full appearance-none rounded border bg-black/20 px-3 py-[9px] text-15 tracking-snugger text-white placeholder-white/50 outline-none focus:ring-[rgba(209,208,255,0.5)] md:h-[41px] sm:text-16 border-white/10"
                 />
               </div>
               
@@ -130,16 +130,20 @@ const SignUpPage = () => {
                 >
                   رقم الجوال
                 </label>
-                <div className="mt-1">
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    autoComplete="phone"
-                    placeholder="إدخل رقم الجوال"
-                    required
-                    className="remove-autocomplete-styles relative block h-[42px] w-full appearance-none rounded border bg-black px-3 py-[9px] text-15 tracking-snugger text-white placeholder-white/20 outline-none focus:ring-[rgba(209,208,255,0.5)] md:h-[41px] sm:text-16 border-white/10"
-                  />
+                <div className="mt-1" >
+                  <div className="relative">
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-white/50">967</span>
+                    <input dir="rtl"
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      autoComplete="phone"
+                      placeholder="إدخل رقم الجوال"
+                      maxLength={9}
+                      required
+                      className="remove-autocomplete-styles relative block h-[42px] w-full appearance-none rounded border bg-black/20 px-3 pl-12 py-[9px] text-15 tracking-snugger text-white placeholder-white/50 outline-none focus:ring-[rgba(209,208,255,0.5)] md:h-[41px] sm:text-16 border-white/10"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -157,7 +161,7 @@ const SignUpPage = () => {
                   autoComplete="current-password"
                   placeholder="أدخل كلمة المرور"
                   required
-                  className="remove-autocomplete-styles relative block h-[42px] w-full appearance-none rounded border bg-black px-3 py-[9px] text-15 tracking-snugger text-white placeholder-white/20 outline-none focus:ring-[rgba(209,208,255,0.5)] md:h-[41px] sm:text-16 border-white/10"
+                  className="remove-autocomplete-styles relative block h-[42px] w-full appearance-none rounded border bg-black/20 px-3 py-[9px] text-15 tracking-snugger text-white placeholder-white/50 outline-none focus:ring-[rgba(209,208,255,0.5)] md:h-[41px] sm:text-16 border-white/10"
                 />
               </div>
 
@@ -176,7 +180,7 @@ const SignUpPage = () => {
                     autoComplete="current-password"
                     placeholder="إدخل كلمة المرور"
                     required
-                    className="remove-autocomplete-styles relative block h-[42px] w-full appearance-none rounded border bg-black px-3 py-[9px] text-15 tracking-snugger text-white placeholder-white/20 outline-none focus:ring-[rgba(209,208,255,0.5)] md:h-[41px] sm:text-16 border-white/10"
+                    className="remove-autocomplete-styles relative block h-[42px] w-full appearance-none rounded border bg-black/20 px-3 py-[9px] text-15 tracking-snugger text-white placeholder-white/50 outline-none focus:ring-[rgba(209,208,255,0.5)] md:h-[41px] sm:text-16 border-white/10"
                   />
                 </div>
               </div>
@@ -192,9 +196,9 @@ const SignUpPage = () => {
                   />
                   <label
                     htmlFor="remember-me"
-                    className="block text-sm text-grey-60"
+                    className="block lg:text-sm sm:text-12 text-grey-60"
                   >
-                    بالتسجيل فأنا أوافق على سياسات منصة دوينج
+                    بالتسجيل فأنا أوافق على <Link to="/legal/terms.html" className="text-blue-500">سياسات منصة دوينج</Link>
                   </label>
                   
                 </div>
@@ -316,10 +320,10 @@ const SignUpPage = () => {
             </div>
 
             {/* Sign up Link */}
-            <div className="relative mt-[25px] flex items-center lg:mt-[23px] xs:mt-4" dir='rtl'>
-              <span className="text-white opacity-40">ليس لديك حساب؟</span>
-              <Link className="text-grey-90 hover:text-white ms-2" to="/signup">
-                انشاء حساب
+            <div className="relative mt-[25px] flex items-center lg:mt-[23px] xs:mt-10" dir='rtl'>
+              <span className="text-white opacity-40">لديك حساب؟</span>
+              <Link className="text-grey-90 hover:text-white ms-2" to="/login">
+                تسجيل الدخول
               </Link>
             </div>
           </div>

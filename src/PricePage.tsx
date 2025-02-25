@@ -328,223 +328,238 @@ function Price() {
         darkMode ? "bg-black text-white" : "bg-white text-gray-950"
       }`}
     >
-      <div className="bg-white dark:bg-black">
-        <div className="mx-auto max-w-7xl bg-white dark:bg-black py-16 sm:py-24 sm:px-6 lg:px-8">
-          <h4 className="mb-28 text-center text-[2.4rem] font-bold leading-[44px] text-gray-900 dark:text-white">ابدأ تجارتك مع دوينج! باقات مرنة تناسب انطلاقتك</h4>
-          {/* xs to lg */}
-          <div className="mx-auto max-w-2xl space-y-16 lg:hidden">
-            {tiers.map((tier, tierIdx) => (
-              <section key={tier.name}>
-                <div className="mb-8 px-4">
-                  <h2 className="text-2xl font-bold leading-6 text-gray-900 dark:text-white">
-                    {tier.name}
-                  </h2>
-                  <p className="mt-4">
-                    <span className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      {tier.priceMonthly}
-                    </span>{" "}
-                    <span className="text-base font-medium text-gray-500 dark:text-white/70">
-                      ريال/شهرياً
-                    </span>
-                  </p>
-                </div>
+      <img 
+        src="assets/img/doing-image.png"
+        alt="Background"
+        className="absolute inset-0 w-full object-contain top-0 left-0 lg:h-[18%] h-[6.5%]"
+      />
+      <div className="bg-white/80 dark:bg-black/80">
+        <div className="mx-auto max-w-7xl bg-white/80 dark:bg-black/5 py-16 sm:py-24 sm:px-6 lg:px-8 relative">
+        
+          <div className="">
+            <div className="mb-28">
+              <h4 className="relative z-10 text-center text-[2.4rem] font-bold leading-[44px] text-gray-900/80 dark:text-white/80">
+                ابدأ تجارتك مع دوينج! باقات مرنة تناسب انطلاقتك
+              </h4>
+            </div>
+            {/* xs to lg */}
 
-                {sections.map((section) => (
-                  <table key={section.name} className="w-full">
-                    <caption className="border-t border-gray-200 dark:border-gray-500 bg-stone-100 dark:bg-white/20 py-3 px-4 text-right text-lg font-bold text-gray-900 dark:text-white">
-                      {section.name}
-                    </caption>
-                    <thead>
+            <div className="mx-auto max-w-2xl space-y-16 lg:hidden  block">
+              
+              {tiers.map((tier, tierIdx) => (
+                <section key={tier.name}>
+                  <div className="mb-8 px-4">
+                    <h2 className="text-2xl font-bold leading-6 text-gray-900/80 dark:text-white/80">
+                      {tier.name}
+                    </h2>
+                    <p className="mt-4">
+                      <span className="text-4xl font-bold tracking-tight text-gray-900/80 dark:text-white/80">
+                        {tier.priceMonthly}
+                      </span>{" "}
+                      <span className="text-base font-medium text-gray-500/80 dark:text-white/60">
+                        ريال/شهرياً
+                      </span>
+                    </p>
+                  </div>
+
+                  {sections.map((section) => (
+                    <table key={section.name} className="w-full">
+                      <caption className="bg-gradient-to-r from-stone-100/40 to-stone-100/10 dark:from-white/10 dark:to-white/5 py-3 pl-6 pr-6 text-right text-lg font-bold text-gray-900/80 dark:text-white/80">
+                        {section.name}
+                      </caption>
+                      <thead>
+                        <tr>
+                          <th className="sr-only" scope="col">
+                            Feature
+                          </th>
+                          <th className="sr-only" scope="col">
+                            Included
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-200/80 dark:divide-gray-500/80">
+                        {section.features.map((feature) => (
+                          <tr
+                            key={feature.name}
+                            className="border-t border-gray-200/80 dark:border-gray-500/80 pl-4 flex justify-between items-center"
+                          >
+                            <th
+                              className="py-5 px-4 text-right text-sm font-normal text-gray-500/80 dark:text-white/70"
+                              scope="row"
+                            >
+                              {feature.name}
+                            </th>
+                            <td className="py-5 pr-4">
+                              {typeof feature.tiers[tier.name] === "string" ? (
+                                <span className="block text-right text-sm text-gray-700/80 dark:text-white/80">
+                                  {feature.tiers[tier.name]}
+                                </span>
+                              ) : (
+                                <>
+                                  {feature.tiers[tier.name] === true ? (
+                                    <FontAwesomeIcon
+                                      className="h-5 w-5 text-green-500/80"
+                                      icon={faCircleCheck}
+                                    />
+                                  ) : (
+                                    <FontAwesomeIcon
+                                      className="h-5 w-5 text-gray-500/80"
+                                      icon={faCircleXmark}
+                                    />
+                                  )}
+
+                                  <span className="sr-only">
+                                    {feature.tiers[tier.name] === true
+                                      ? "Yes"
+                                      : "No"}
+                                  </span>
+                                </>
+                              )}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  ))}
+
+                  {/* <div
+                    className={classNames(
+                      tierIdx < tiers.length - 1 ? "py-5 border-b" : "pt-5",
+                      "border-t border-gray-200 px-4"
+                    )}
+                  >
+                    <a
+                      href={tier.href}
+                      className="block w-full rounded-md border border-gray-800 bg-gray-800 py-2 text-center text-sm font-semibold text-white hover:bg-gray-900"
+                    >
+                      Buy {tier.name}
+                    </a>
+                  </div> */}
+                </section>
+              ))}
+            </div>
+
+            {/* lg+ */}
+            <div className="hidden lg:block">
+              <table className="h-px w-full table-fixed">
+                <thead>
+                  <tr>
+                    <th
+                      className="px-6 pb-4 text-right text-sm font-medium text-gray-900/80 dark:text-white/80"
+                      scope="col"
+                    >
+                      <span className="sr-only">Feature by</span>
+                      <span>الباقات الشهرية</span>
+                    </th>
+
+                    {tiers.map((tier) => (
+                      <th
+                        key={tier.name}
+                        className="w-1/4 px-6 pb-4 text-right text-lg font-medium leading-6 text-gray-900/80 dark:text-white/80"
+                        scope="col"
+                      >
+                        {tier.name}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200/80 dark:divide-gray-500/80 border-t border-gray-200/80 dark:border-gray-500/80">
+                  <tr>
+                    <th
+                      className="py-8 px-6 text-right align-top text-sm font-medium text-gray-900/80 dark:text-white/80"
+                      scope="row"
+                    >
+                      الأشتراك الشهري
+                    </th>
+                    {tiers.map((tier) => (
+                      <td key={tier.name} className="h-full py-8 px-6 align-top">
+                        <div className="relative table h-full">
+                          <p>
+                            <span className="text-4xl font-bold tracking-tight text-gray-900/80 dark:text-white/80">
+                              {tier.priceMonthly}
+                            </span>{" "}
+                            <span className="text-base font-medium text-gray-500/80 dark:text-white/60">
+                              ريال/شهرياً
+                            </span>
+                          </p>
+                        </div>
+                      </td>
+                    ))}
+                  </tr>
+                  {sections.map((section) => (
+                    <Fragment key={section.name}>
                       <tr>
-                        <th className="sr-only" scope="col">
-                          Feature
-                        </th>
-                        <th className="sr-only" scope="col">
-                          Included
+                        <th
+                          className="bg-gradient-to-r from-stone-100/40 to-stone-100/10 dark:from-white/10 dark:to-white/5 py-3 pl-6 pr-6 text-right text-lg font-bold text-gray-900/80 dark:text-white/80"
+                          colSpan={4}
+                          scope="colgroup"
+                        >
+                          {section.name}
                         </th>
                       </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-200 dark:divide-gray-500">
                       {section.features.map((feature) => (
-                        <tr
-                          key={feature.name}
-                          className="border-t border-gray-200 dark:border-gray-500 pl-4 flex justify-between items-center"
-                        >
+                        <tr key={feature.name}>
                           <th
-                            className="py-5 px-4 text-right text-sm font-normal text-gray-500 dark:text-white/90"
+                            className="py-5 px-6 text-right text-sm font-normal text-gray-500/80 dark:text-white/80"
                             scope="row"
                           >
                             {feature.name}
                           </th>
-                          <td className="py-5 pr-4">
-                            {typeof feature.tiers[tier.name] === "string" ? (
-                              <span className="block text-right text-sm text-gray-700 dark:text-white">
-                                {feature.tiers[tier.name]}
-                              </span>
-                            ) : (
-                              <>
-                                {feature.tiers[tier.name] === true ? (
-                                  <FontAwesomeIcon
-                                    className="h-5 w-5 text-green-500"
-                                    icon={faCircleCheck}
-                                  />
-                                ) : (
-                                  <FontAwesomeIcon
-                                    className="h-5 w-5 text-red-500"
-                                    icon={faCircleXmark}
-                                  />
-                                )}
-
-                                <span className="sr-only">
-                                  {feature.tiers[tier.name] === true
-                                    ? "Yes"
-                                    : "No"}
+                          {tiers.map((tier) => (
+                            <td key={tier.name} className="py-5 px-6">
+                              {/* <span>{feature.tiers[tier.name]}</span> */}
+                              {typeof feature.tiers[tier.name] === "string" ? (
+                                <span className="block text-md text-gray-700/80 dark:text-white/80">
+                                  {feature.tiers[tier.name]}
                                 </span>
-                              </>
-                            )}
-                          </td>
+                              ) : (
+                                <>
+                                  {feature.tiers[tier.name] === true ? (
+                                    <FontAwesomeIcon
+                                      className="h-5 w-5 text-green-500/80"
+                                      icon={faCircleCheck}
+                                    />
+                                  ) : (
+                                    <FontAwesomeIcon
+                                      className="h-5 w-5 text-gray-500/80"
+                                      icon={faCircleXmark}
+                                    />
+                                  )}
+
+                                  <span className="sr-only">
+                                    {feature.tiers[tier.name] === true
+                                      ? "Included"
+                                      : "Not included"}{" "}
+                                    in {tier.name}
+                                  </span>
+                                </>
+                              )}
+                            </td>
+                          ))}
                         </tr>
                       ))}
-                    </tbody>
-                  </table>
-                ))}
-
-                {/* <div
-                  className={classNames(
-                    tierIdx < tiers.length - 1 ? "py-5 border-b" : "pt-5",
-                    "border-t border-gray-200 px-4"
-                  )}
-                >
-                  <a
-                    href={tier.href}
-                    className="block w-full rounded-md border border-gray-800 bg-gray-800 py-2 text-center text-sm font-semibold text-white hover:bg-gray-900"
-                  >
-                    Buy {tier.name}
-                  </a>
-                </div> */}
-              </section>
-            ))}
-          </div>
-
-          {/* lg+ */}
-          <div className="hidden lg:block">
-            <table className="h-px w-full table-fixed">
-              <thead>
-                <tr>
-                  <th
-                    className="px-6 pb-4 text-right text-sm font-medium text-gray-900 dark:text-white"
-                    scope="col"
-                  >
-                    <span className="sr-only">Feature by</span>
-                    <span>الباقات الشهرية</span>
-                  </th>
-                  {tiers.map((tier) => (
-                    <th
-                      key={tier.name}
-                      className="w-1/4 px-6 pb-4 text-right text-lg font-medium leading-6 text-gray-900 dark:text-white"
-                      scope="col"
-                    >
-                      {tier.name}
+                    </Fragment>
+                  ))}
+                </tbody>
+                {/* <tfoot>
+                  <tr className="border-t border-gray-200">
+                    <th className="sr-only" scope="row">
+                      Choose your plan
                     </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200 dark:divide-gray-500 border-t border-gray-200 dark:border-gray-500">
-                <tr>
-                  <th
-                    className="py-8 px-6 text-right align-top text-sm font-medium text-gray-900 dark:text-white"
-                    scope="row"
-                  >
-                    الأشتراك الشهري
-                  </th>
-                  {tiers.map((tier) => (
-                    <td key={tier.name} className="h-full py-8 px-6 align-top">
-                      <div className="relative table h-full">
-                        <p>
-                          <span className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {tier.priceMonthly}
-                          </span>{" "}
-                          <span className="text-base font-medium text-gray-500 dark:text-white/70">
-                            ريال/شهرياً
-                          </span>
-                        </p>
-                      </div>
-                    </td>
-                  ))}
-                </tr>
-                {sections.map((section) => (
-                  <Fragment key={section.name}>
-                    <tr>
-                      <th
-                        className="bg-stone-100 dark:bg-white/20 py-3 pl-6 pr-6 text-right text-lg font-bold text-gray-900 dark:text-white"
-                        colSpan={4}
-                        scope="colgroup"
-                      >
-                        {section.name}
-                      </th>
-                    </tr>
-                    {section.features.map((feature) => (
-                      <tr key={feature.name}>
-                        <th
-                          className="py-5 px-6 text-right text-sm font-normal text-gray-500 dark:text-white"
-                          scope="row"
+                    {tiers.map((tier) => (
+                      <td key={tier.name} className="px-6 pt-5">
+                        <a
+                          href={tier.href}
+                          className="block w-full rounded-md border border-gray-800 bg-gray-800 py-2 text-center text-sm font-semibold text-white hover:bg-gray-900"
                         >
-                          {feature.name}
-                        </th>
-                        {tiers.map((tier) => (
-                          <td key={tier.name} className="py-5 px-6">
-                            {/* <span>{feature.tiers[tier.name]}</span> */}
-                            {typeof feature.tiers[tier.name] === "string" ? (
-                              <span className="block text-md text-gray-700 dark:text-white">
-                                {feature.tiers[tier.name]}
-                              </span>
-                            ) : (
-                              <>
-                                {feature.tiers[tier.name] === true ? (
-                                  <FontAwesomeIcon
-                                    className="h-5 w-5 text-green-500"
-                                    icon={faCircleCheck}
-                                  />
-                                ) : (
-                                  <FontAwesomeIcon
-                                    className="h-5 w-5 text-red-500"
-                                    icon={faCircleXmark}
-                                  />
-                                )}
-
-                                <span className="sr-only">
-                                  {feature.tiers[tier.name] === true
-                                    ? "Included"
-                                    : "Not included"}{" "}
-                                  in {tier.name}
-                                </span>
-                              </>
-                            )}
-                          </td>
-                        ))}
-                      </tr>
+                          Buy {tier.name}
+                        </a>
+                      </td>
                     ))}
-                  </Fragment>
-                ))}
-              </tbody>
-              {/* <tfoot>
-                <tr className="border-t border-gray-200">
-                  <th className="sr-only" scope="row">
-                    Choose your plan
-                  </th>
-                  {tiers.map((tier) => (
-                    <td key={tier.name} className="px-6 pt-5">
-                      <a
-                        href={tier.href}
-                        className="block w-full rounded-md border border-gray-800 bg-gray-800 py-2 text-center text-sm font-semibold text-white hover:bg-gray-900"
-                      >
-                        Buy {tier.name}
-                      </a>
-                    </td>
-                  ))}
-                </tr>
-              </tfoot> */}
-            </table>
+                  </tr>
+                </tfoot> */}
+              </table>
+            </div>
           </div>
         </div>
       </div>

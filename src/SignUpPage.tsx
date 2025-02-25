@@ -63,19 +63,24 @@ const SignUpPage = () => {
       </header>
 
       {/* Main Section */}
-      <section className={`min-w-[350px] bg-[#090a0f] pb-10 relative flex h-screen min-h-[110vh] flex-col items-center justify-center overflow-hidden px-safe xs:min-h-[115vh] xs:px-5 ${darkMode ? "bg-black text-white" : "bg-white text-gray-950"}`}>
+      <section className={`min-w-[350px] bg-[#090a0f] pb-10 relative flex h-screen min-h-[113vh] flex-col items-center justify-center overflow-hidden px-safe xs:min-h-[115vh] xs:px-5 ${darkMode ? "bg-black text-white" : "bg-white text-gray-950"}`}>
         <div className="relative z-10 h-[100%] lg:mt-40 mt-[70px] w-[480px] bg-black px-12 pt-14 lg:w-[464px] lg:px-10 lg:pt-[64px] md:px-11 xs:w-full xs:max-w-sm xs:px-5 xs:py-5">
-          {/* Logo */}
-          <img
-            alt="Logo"
-            className="lg:max-w-6 xs:max-w-5"
-            data-nimg="1"
-            decoding="async"
-            height="28"
-            src="/assets/img/login/logo.png"
-            style={{ color: "transparent" }}
-            width="28"
-          />
+          {/* Doing Logo with hover effects */}
+          <div className="relative inline-flex group">
+            <img
+              alt="Doing Platform Logo" 
+              className="w-6 h-6 lg:w-7 lg:h-7 xs:w-6 xs:h-6 transition-transform duration-300 group-hover:scale-110"
+              src="/assets/img/login/logo.png"
+              width="28"
+              height="28"
+            />
+            <div
+              className="border-button-light-blur absolute left-1/2 top-1/2 h-[calc(100%+9px)] w-[calc(100%+9px)] -translate-x-1/2 -translate-y-1/2 scale-x-[-1] transform rounded-full will-change-transform transition-opacity duration-300 opacity-70 group-hover:opacity-100"
+              style={{ opacity: 1 }}
+            >
+              <div className="border-button-light relative h-full w-full rounded-full animate-pulse"></div>
+            </div>
+          </div>
           <main>
             <h1 className="mt-[17px] font-title font-semibold leading-none tracking-snugger text-white mx-auto text-center text-32 md:text-28 xs:mt-3 xs:text-24">
               انشاء حساب في منصة دوينج
@@ -320,7 +325,7 @@ const SignUpPage = () => {
             </div>
 
             {/* Sign up Link */}
-            <div className="relative mt-[25px] flex items-center lg:mt-[23px] xs:mt-10" dir='rtl'>
+            <div className="relative mt-[25px] flex items-center justify-center lg:mt-[23px] xs:mt-10" dir='rtl'>
               <span className="text-white opacity-40">لديك حساب؟</span>
               <Link className="text-grey-90 hover:text-white ms-2" to="/login">
                 تسجيل الدخول

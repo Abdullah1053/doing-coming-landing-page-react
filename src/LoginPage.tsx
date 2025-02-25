@@ -62,19 +62,24 @@ const LoginPage = () => {
       {/* Main Section */}
       <section className={`min-w-[350px] bg-[#090a0f] relative flex h-screen min-h-[770px] flex-col items-center justify-center overflow-hidden py-16 px-safe xs:min-h-[440px] xs:px-5 ${darkMode ? "bg-black text-white" : "bg-white text-gray-950"}`}>
         <div className="relative z-10 h-[575px] w-[480px] bg-black px-12 pt-14 lg:w-[464px] lg:px-10 lg:pt-[64px] md:px-11 xs:w-full xs:max-w-sm xs:px-5 xs:py-5">
-          {/* Logo */}
-          <img
-            alt="Logo"
-            className="lg:max-w-6 xs:max-w-5"
-            data-nimg="1"
-            decoding="async"
-            height="28"
-            src="/assets/img/login/logo.png"
-            style={{ color: "transparent" }}
-            width="28"
-          />
+          {/* Doing Logo with hover effects */}
+          <div className="relative inline-flex group">
+            <img
+              alt="Doing Platform Logo" 
+              className="w-6 h-6 lg:w-7 lg:h-7 xs:w-6 xs:h-6 transition-transform duration-300 group-hover:scale-110"
+              src="/assets/img/login/logo.png"
+              width="28"
+              height="28"
+            />
+            <div
+              className="border-button-light-blur absolute left-1/2 top-1/2 h-[calc(100%+9px)] w-[calc(100%+9px)] -translate-x-1/2 -translate-y-1/2 scale-x-[-1] transform rounded-full will-change-transform transition-opacity duration-300 opacity-70 group-hover:opacity-100"
+              style={{ opacity: 1 }}
+            >
+              <div className="border-button-light relative h-full w-full rounded-full animate-pulse"></div>
+            </div>
+          </div>
           <main>
-            <h1 className="mt-[17px] font-title text-36 font-semibold leading-none tracking-snugger text-white lg:text-32 md:text-28 xs:mt-3 xs:text-24">
+            <h1 className="mt-[17px] font-title text-36 font-semibold leading-none tracking-snugger text-white lg:text-32 md:text-28 xs:mt-3 xs:text-24 text-center">
               سجل الدخول لمنصة دوينج
             </h1>
             {/* Login Form */}

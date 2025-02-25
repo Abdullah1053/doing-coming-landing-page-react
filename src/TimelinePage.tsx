@@ -101,13 +101,13 @@ function HelpPage() {
           </div>
         </div>
       </section> */}
-      <section className="container mx-auto w-full h-full mt-24 mb-24">
-        <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
-          <div className="relative flex items-center md:justify-normal md:odd:flex-row-reverse group is-active">
-            <div className="relative left-[10px] md:left-[62px] lg:left-[86px] xl:left-[107px] flex items-center justify-center w-10 h-10 rounded-full bg-slate-300 group-[.is-active]:bg-sky-600 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+      <section className="container p-0 w-full h-full mt-24 mb-24">
+        <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-sky-500 before:to-transparent">
+          <div className="relative flex items-center md:justify-normal md:odd:flex-row-reverse group is-active opacity-100 animate-slideIn">
+            <div className="relative -left-[10px] lg:-left-[10px] md:left-[65px] lg:left-[85px] xl:left-[110px] flex items-center justify-center w-10 h-10 rounded-full bg-slate-300 group-[.is-active]:bg-sky-600 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 bg-[linear-gradient(146deg,rgba(48,120,175,1)_0%,rgba(24,59,91,1)_52%,rgba(10,162,242,1)_100%)]">
               1
             </div>
-            <div className="w-full md:w-5/12 bg-stone-200 dark:bg-white/20 px-6 py-4 rounded-lg border border-slate-200 dark:border-black shadow-lg">
+            <div className="lg:w-full w-[85%] md:w-5/12 bg-stone-200 dark:bg-white/20 px-6 py-4 rounded-lg border border-slate-200 dark:border-black shadow-lg">
               <div className="flex items-center justify-between space-x-2 mb-1">
                 <div className="font-bold text-gray-900 dark:text-white">سجل الآن</div>
               </div>
@@ -118,10 +118,10 @@ function HelpPage() {
           </div>
 
           <div className="relative flex items-center md:justify-normal md:odd:flex-row-reverse group is-active">
-            <div className="relative right-[10px] md:right-[62px] lg:right-[86px] xl:right-[107px] flex items-center justify-center w-10 h-10 rounded-full bg-slate-300 group-[.is-active]:bg-sky-600 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+            <div className="relative right-[10px] md:right-[62px] lg:right-[86px] xl:right-[107px] flex items-center justify-center w-10 h-10 rounded-full bg-slate-300 group-[.is-active]:bg-sky-600 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 bg-[linear-gradient(146deg,rgba(48,120,175,1)_0%,rgba(24,59,91,1)_52%,rgba(10,162,242,1)_100%)]">
               2
             </div>
-            <div className="w-full md:w-5/12 bg-stone-200 dark:bg-white/20 px-6 py-4 rounded-lg border border-slate-200 dark:border-black shadow-lg">
+            <div className="lg:w-full w-[85%] md:w-5/12 bg-stone-200 dark:bg-white/20 px-6 py-4 rounded-lg border border-slate-200 dark:border-black shadow-lg transition-all duration-500 hover:scale-105">
               <div className="flex items-center justify-between space-x-2 mb-1">
                 <div className="font-bold text-gray-900 dark:text-white">اختر تصميمك</div>
               </div>
@@ -131,11 +131,11 @@ function HelpPage() {
             </div>
           </div>
 
-          <div className="relative flex items-center md:justify-normal md:odd:flex-row-reverse group is-active">
-            <div className="relative left-[10px] md:left-[62px] lg:left-[86px] xl:left-[107px] flex items-center justify-center w-10 h-10 rounded-full bg-slate-300 group-[.is-active]:bg-sky-600 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+          <div className="relative flex items-center md:justify-normal md:odd:flex-row-reverse group is-active opacity-100 animate-slideIn animation-delay-600">
+            <div className="relative -left-[10px] lg:-left-[10px] md:left-[65px] lg:left-[85px] xl:left-[110px] flex items-center justify-center w-10 h-10 rounded-full bg-slate-300 group-[.is-active]:bg-sky-600 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 bg-[linear-gradient(146deg,rgba(48,120,175,1)_0%,rgba(24,59,91,1)_52%,rgba(10,162,242,1)_100%)]">
               3
             </div>
-            <div className="w-full md:w-5/12 bg-stone-200 dark:bg-white/20 px-6 py-4 rounded-lg border border-slate-200 dark:border-black shadow-lg">
+            <div className="lg:w-full w-[85%] md:w-5/12 bg-stone-200 dark:bg-white/20 px-6 py-4 rounded-lg border border-slate-200 dark:border-black shadow-lg transition-all duration-500 hover:scale-105">
               <div className="flex items-center justify-between space-x-2 mb-1">
                 <div className="font-bold text-gray-900 dark:text-white">اربط وسائل الدفع</div>
               </div>
@@ -145,11 +145,26 @@ function HelpPage() {
             </div>
           </div>
 
-          <div className="relative flex items-center md:justify-normal md:odd:flex-row-reverse group is-active">
-            <div className="relative right-[10px] md:right-[62px] lg:right-[86px] xl:right-[107px] flex items-center justify-center w-10 h-10 rounded-full bg-slate-300 group-[.is-active]:bg-sky-600 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-              4
+          <div className="relative flex items-center md:justify-normal md:odd:flex-row-reverse group is-active opacity-100 animate-slideIn animation-delay-900">
+            <div className="relative right-[10px] md:right-[62px] lg:right-[86px] xl:right-[107px] flex items-center justify-center w-10 h-10 rotate-45 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+              {/* Doing Logo with hover effects */}
+              <div className="relative inline-flex group -rotate-45">
+                <img
+                  alt="Doing Platform Logo" 
+                  className="w-6 h-6 lg:w-7 lg:h-7 xs:w-6 xs:h-6 transition-transform duration-300 group-hover:scale-110"
+                  src="/assets/img/login/logo.png"
+                  width="28"
+                  height="28"
+                />
+                <div
+                  className="border-button-light-blur absolute left-1/2 top-1/2 h-[calc(100%+9px)] w-[calc(100%+9px)] -translate-x-1/2 -translate-y-1/2 scale-x-[-1] transform rounded-full will-change-transform transition-opacity duration-300 opacity-70 group-hover:opacity-100"
+                  style={{ opacity: 1 }}
+                >
+                  <div className="border-button-light relative h-full w-full rounded-full animate-pulse"></div>
+                </div>
+              </div>
             </div>
-            <div className="w-full md:w-5/12 bg-stone-200 dark:bg-white/20 px-6 py-4 rounded-lg border border-slate-200 dark:border-black shadow-lg">
+            <div className="lg:w-full w-[85%] md:w-5/12 bg-stone-200 dark:bg-white/20 px-6 py-4 rounded-lg border border-slate-200 dark:border-black shadow-lg transition-all duration-500 hover:scale-105">
               <div className="flex items-center justify-between space-x-2 mb-1">
                 <div className="font-bold text-gray-900 dark:text-white">ابدأ البيع</div>
               </div>

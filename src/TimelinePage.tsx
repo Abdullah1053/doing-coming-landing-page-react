@@ -177,7 +177,7 @@ function HelpPage() {
       </section>
       {/* End Timeline */}
       {/* Start CTA  */}
-      <section className="mt-20 mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl">
+      <section className="mt-20 mx-5 rounded-3xl">
         <div className="container">
           <div className="mx-auto max-w-2xl py-12 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
             <h2 className="text-[1.8rem] font-bold text-gray-900 dark:text-white">

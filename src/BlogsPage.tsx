@@ -1,9 +1,15 @@
+import React from "react";
 import Footer from "./components/Footer";
 import { Link, useOutletContext } from "react-router-dom";
 import { blogs } from "./utils/blogs";
 
+// Add type definition for the context
+interface AppContext {
+  darkMode: boolean;
+}
+
 function HelpPage() {
-  const { darkMode } = useOutletContext();
+  const { darkMode } = useOutletContext<AppContext>();
   
   // Helper function to create a brief description by limiting the text length.
   const getBriefDescription = (html: string, limit = 150): string => {
@@ -22,11 +28,40 @@ function HelpPage() {
     >
       {/* Start Content */}
       <section className="container">
-        <div className="rounded-3xl mb-3 py-12 px-4 text-center sm:py-20 sm:px-6 lg:px-8 bg-[linear-gradient(146deg,rgba(48,120,175,1)_0%,rgba(24,59,91,1)_52%,rgba(10,162,242,1)_100%)]">
-          <h2 className="text-[2.5rem] w-100 font-bold text-gray-900 dark:text-white sm:text-4xl">
-            المدونة
-          </h2>
+        <div className="rounded-3xl pt-12 px-4 sm:py-20 sm:px-6 lg:px-8 flex lg:flex-row flex-col items-center justify-between pb-0">
+
+            <div className="w-full lg:w-1/2 gap-5">
+
+              <h2 className="text-[3rem] lg:text-[6rem] w-1/2 font-bold text-gray-900 dark:text-white lg:mb-10 mb-2">
+              المدونة
+              </h2>
+
+              <p className="text-[1.5rem] lg:text-[2rem] text-gray-900 dark:text-white p-2 leading-[1.5]">
+              ستجد هنا اجابات تلهمك وحلولا لتحقق النمو الذي يجعلك دائماً في الصدارة
+              </p>
+            </div>
+
+            <div className="relative w-full lg:w-1/2">
+              <img 
+                src='./assets/img/blog/blog.png' 
+                alt="logo" 
+                className="w-[300px] sm:w-[500px] h-[270px] sm:h-[450px] top-0 left-0 relative 
+                animate-draw"
+                width={200} 
+                height={200}
+              />
+            </div>
+
         </div>
+
+        <div className="relative lg:w-[70%] w-[100%] mx-auto flex justify-center items-center h-[10px]">
+          <div className="mx-auto absolute inset-x-0 top-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-[#00C2FF] to-transparent h-[2px] w-3/4 blur-sm" />
+          <div className="mx-auto absolute inset-x-0 top-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-[#00C2FF] to-transparent h-px w-3/4" />
+          <div className="mx-auto absolute inset-x-0 top-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-[#00A3E0] to-transparent h-[5px] w-1/2 blur-sm" />
+          <div className="mx-auto absolute inset-x-0 top-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-[#00A3E0] to-transparent h-px w-1/2" />
+        </div>
+
+        
         <div className="mx-auto mt-12 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {blogs.map((post) => (
             <div

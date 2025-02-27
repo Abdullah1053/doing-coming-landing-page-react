@@ -4,14 +4,16 @@ import {
   faXTwitter,
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
-import logoLight from "/assets/img/logo/logoLight.png";
-import logoDark from "/assets/img/logo/logoDark.webp";
 import { Link, useOutletContext } from "react-router-dom";
 import { SparklesPreview } from "./ui/code.demo";
+import React from "react";
 
+interface AppContext {
+  darkMode: boolean;
+}
 
 const Footer = () => {
-  const { darkMode } = useOutletContext();
+  const { darkMode } = useOutletContext<AppContext>();
   const socialLinks = [
     {
       name: "فيسبوك",
@@ -34,7 +36,7 @@ const Footer = () => {
     <>
     <SparklesPreview />
 
-    <footer className="site-footer lg:pt-30 relative -mt-[275px] text-white">
+    <footer className="site-footer lg:pt-30 relative -mt-[275px] text-white z-30">
       <div className="relative">
 
         <div className="container relative w-full max-w-[1680px]">

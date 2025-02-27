@@ -1,106 +1,62 @@
+import React from "react";
 import Footer from "./components/Footer";
 import { useOutletContext } from "react-router-dom";
+import { DemoBackgroundPaths } from "./components/ui/background-path-demo";
+
+// Add type definition for the context
+interface AppContext {
+  darkMode: boolean;
+}
 
 function HelpPage() {
-  const { darkMode } = useOutletContext();
+  // Add type assertion for the context
+  const { darkMode } = useOutletContext<AppContext>();
 
   return (
     <div
       dir="rtl"
-      className={`min-h-screen pt-4 ${
+      className={`min-h-screen pt-4 overflow-x-hidden ${
         darkMode ? "bg-black text-white" : "bg-white text-gray-950"
       }`}
     >
+
+
+      
+      
       {/* Start Banner */}
-      <section className="mx-5 bg-stone-100 dark:bg-white/20 rounded-3xl py-8">
-        <div className="container">
+      <section className="mx-5 rounded-3xl py-8 bg-white/30 dark:bg-black/30 backdrop-blur-lg relative">
+
+
+        {/* Add BackgroundPaths component */}
+        <div className="absolute top-0 left-0 right-0 bottom-0">
+          <DemoBackgroundPaths />
+        </div>
+        <div className="container mt-10 ">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex flex-col justify-center">
-              <h2 className="text-[2rem] leading-[40px] font-semibold tracking-tight text-gray-900 dark:text-white">
-                انطلق إلى التجارة الإلكترونية الحديثة مع دوينج، منصتنا تمكّنك من
-                إطلاق عملك التجاري بسرعة وذكاء، دون الحاجة لخبرة تقنية.
+            <div className="flex flex-col justify-center z-20">
+              <h2 className="text-[1.5rem] leading-[39px] tracking-tight text-gray-900 dark:text-white">
+                <span className="block text-[2.5rem] font-bold">
+                  انطلق إلى التجارة الإلكترونية مع{' '}
+                  <span className="text-[#00C2FF]">دوينج</span>
+                </span>
+
+                <span className="block mt-2 font-normal">
+                  منصتنا تمكّنك من إطلاق عملك التجاري بسرعة وذكاء، دون الحاجة لخبرة تقنية.
+                </span>
               </h2>
               <a
                 href="#"
-                className="mt-4 inline-flex items-center justify-center w-36 rounded-md border-transparent bg-gradient-to-r from-sky-500 to-sky-700 px-4 py-2 text-base font-medium text-white shadow-sm hover:from-sky-600 hover:to-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                className="mt-4 inline-flex items-center justify-center w-36 rounded-md border-transparent bg-gradient-to-r from-sky-500/80 to-sky-700/80 px-4 py-2 text-base font-medium text-white shadow-sm hover:from-sky-600/80 hover:to-sky-800/80 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
               >
                 ابدأ تجارتك الآن
               </a>
             </div>
-            <div className="rounded-xl overflow-hidden h-[485px]">
-              <img className="w-full h-full object-cover" src="/assets/img/doing-jounary.jpeg" alt="" width="620" height="620" />
+            <div className="rounded-xl overflow-hidden h-[485px] bg-white/20 dark:bg-black/20 backdrop-blur-sm">
+              <img className="w-full h-full object-cover opacity-80" src="/assets/img/doing-jounary.jpeg" alt="" width="620" height="620" />
             </div>
           </div>
         </div>
       </section>
-      {/* End Banner */}
-      {/* Start Timeline */}
-      {/* <section className="container mx-auto w-full h-full mt-24 mb-24">
-        <div className="relative wrap overflow-hidden p-10 h-full">
-          <div className="border-2-2 absolute left-1/2 border-opacity-20 border-gray-700 h-full border"></div>
-
-          <div className="mb-8 flex justify-between items-center w-full right-timeline">
-            <div className="order-1 w-5/12"></div>
-            <div className="z-20 flex items-center order-1 bg-sky-600 shadow-xl w-8 h-8 rounded-full">
-              <h1 className="mx-auto font-semibold text-lg text-white">1</h1>
-            </div>
-            <div className="order-1 bg-stone-200 rounded-lg shadow-lg w-5/12 px-6 py-4">
-              <h3 className="mb-3 font-bold text-gray-800 text-xl">سجل الآن</h3>
-              <p className="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">
-                ببساطة، ابدأ رحلتك بتسجيل حساب جديد في خطوات سهلة وسريعة.
-              </p>
-            </div>
-          </div>
-
-          <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-            <div className="order-1 w-5/12"></div>
-            <div className="z-20 flex items-center order-1 bg-sky-600 shadow-xl w-8 h-8 rounded-full">
-              <h1 className="mx-auto text-white font-semibold text-lg">2</h1>
-            </div>
-            <div className="order-1 bg-stone-200 rounded-lg shadow-lg w-5/12 px-6 py-4">
-              <h3 className="mb-3 font-bold text-gray-800 text-xl">
-                اختر تصميمك
-              </h3>
-              <p className="text-sm font-medium leading-snug tracking-wide text-gray-900 text-opacity-100">
-                اختر بين مجموعة من القوالب الجاهزة التي تناسب احتياجاتك التجارية
-                او ابدأ بتصميم متجرك.
-              </p>
-            </div>
-          </div>
-
-          <div className="mb-8 flex justify-between items-center w-full right-timeline">
-            <div className="order-1 w-5/12"></div>
-            <div className="z-20 flex items-center order-1 bg-sky-600 shadow-xl w-8 h-8 rounded-full">
-              <h1 className="mx-auto font-semibold text-lg text-white">3</h1>
-            </div>
-            <div className="order-1 bg-stone-200 rounded-lg shadow-lg w-5/12 px-6 py-4">
-              <h3 className="mb-3 font-bold text-gray-800 text-xl">
-                اربط وسائل الدفع
-              </h3>
-              <p className="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">
-                قم بربط متجرك مع وسائل الدفع الإلكترونية الموثوقة، لتبدأ عمليات
-                البيع بأمان.
-              </p>
-            </div>
-          </div>
-
-          <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-            <div className="order-1 w-5/12"></div>
-            <div className="z-20 flex items-center order-1 bg-sky-600 shadow-xl w-8 h-8 rounded-full">
-              <h1 className="mx-auto text-white font-semibold text-lg">4</h1>
-            </div>
-            <div className="order-1 bg-stone-200 rounded-lg shadow-lg w-5/12 px-6 py-4">
-              <h3 className="mb-3 font-bold text-gray-800 text-xl">
-                ابدأ البيع
-              </h3>
-              <p className="text-sm font-medium leading-snug tracking-wide text-gray-900 text-opacity-100">
-                بعد تجهيز متجرك، ابدأ بيع منتجاتك على الفور. تتيح لك منصتنا
-                البدء في بيع المنتجات بعد دقائق من الإعداد.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> */}
       <section className="container p-0 w-full h-full mt-24 mb-24">
         <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-sky-500 before:to-transparent">
           <div className="relative flex items-center md:justify-normal md:odd:flex-row-reverse group is-active opacity-100 animate-slideIn">

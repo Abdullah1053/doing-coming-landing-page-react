@@ -10,6 +10,7 @@ import {
   faAngleUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
 interface Props {
   theme: boolean;
@@ -198,31 +199,22 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
                   onMouseEnter={() => setDropdownOpen(true)}
                   onMouseLeave={() => setDropdownOpen(false)}
                 >
-                  <button className="pl-5 text-md hover:text-sky-400 focus:outline-none">
+                  <button className={`pl-5 text-md hover:text-sky-400 focus:outline-none ${
+                    location.pathname.startsWith('/help') || location.pathname.startsWith('/blogs') 
+                      ? 'text-sky-400' 
+                      : 'opacity-80'
+                  }`}>
                     <span>
                       <span className="ml-1">خدمة التُجار</span>
                       {isMobileDropdownOpen ? (
                         <FontAwesomeIcon className="w-4 h-4" icon={faAngleUp} />
                       ) : (
-                        <FontAwesomeIcon
-                          className="w-4 h-4"
-                          icon={faAngleDown}
-                        />
+                        <FontAwesomeIcon className="w-4 h-4" icon={faAngleDown} />
                       )}
                     </span>
                   </button>
                   {isDropdownOpen && (
                     <div className="absolute bg-stone-200 dark:bg-black text-gray-900 dark:text-white rounded-md w-40 mt-0 py-2 shadow-lg">
-                      {/* <NavLink
-                        to="/help"
-                        className={({ isActive }) =>
-                          `block px-4 py-2 hover:text-sky-400 ${
-                            isActive ? "text-sky-400" : ""
-                          }`
-                        }
-                      >
-                        مركز المساعدة
-                      </NavLink> */}
                       <NavLink
                         to="/blogs"
                         className={({ isActive }) =>
@@ -378,7 +370,11 @@ const Navigation = ({ theme, onChangeTheme }: Props) => {
             <div className="block">
               <button
                 onClick={() => setMobileDropdownOpen(!isMobileDropdownOpen)}
-                className="w-full text-right px-3 py-2 hover:text-sky-400 focus:outline-none flex items-center justify-between"
+                className={`w-full text-right px-3 py-2 hover:text-sky-400 focus:outline-none flex items-center justify-between ${
+                  location.pathname.startsWith('/help') || location.pathname.startsWith('/blogs') 
+                    ? 'text-sky-400' 
+                    : 'opacity-80'
+                }`}
               >
                 <span>خدمة التُجار</span>
                 <FontAwesomeIcon 
